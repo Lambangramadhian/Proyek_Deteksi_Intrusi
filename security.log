@@ -1,0 +1,11 @@
+Failed login attempt from 127.0.0.1
+Server Error: 400 Bad Request: Failed to decode JSON object: Invalid \escape: line 1 column 9 (char 8)
+Server Error: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+Server Error: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+Potential Attack Detected from 127.0.0.1: SELECT * FROM users
+Potential Attack Detected from 127.0.0.1: SELECT * FROM users
+Expired Token Used from 127.0.0.1
+Expired Token Used from 127.0.0.1
+Expired Token Used from 127.0.0.1
+Expired Token Used from 127.0.0.1
+Expired Token Used from 127.0.0.1
