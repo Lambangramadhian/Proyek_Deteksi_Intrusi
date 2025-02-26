@@ -1,0 +1,6 @@
+2025-02-26 18:19:09,587 - INFO - [2025-02-26T18:19:09.587298] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: ' OR '1'='1' --
+2025-02-26 18:19:09,600 - INFO - [2025-02-26T18:19:09.587298] Prediction: Normal
+2025-02-26 18:21:29,936 - INFO - [2025-02-26T18:21:29.936458] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
+2025-02-26 18:21:29,946 - INFO - [2025-02-26T18:21:29.936458] Prediction: SQL Injection
+2025-02-26 18:24:36,621 - INFO - [2025-02-26T18:24:36.621507] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('Hacked!')</script>
+2025-02-26 18:24:36,631 - INFO - [2025-02-26T18:24:36.621507] Prediction: XSS
