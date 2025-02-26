@@ -4,3 +4,9 @@
 2025-02-26 18:21:29,946 - INFO - [2025-02-26T18:21:29.936458] Prediction: SQL Injection
 2025-02-26 18:24:36,621 - INFO - [2025-02-26T18:24:36.621507] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('Hacked!')</script>
 2025-02-26 18:24:36,631 - INFO - [2025-02-26T18:24:36.621507] Prediction: XSS
+2025-02-26 22:13:18,469 - INFO - [2025-02-26T22:13:18.469795] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: Halo, selamat datang di website kami!
+2025-02-26 22:13:18,482 - INFO - [2025-02-26T22:13:18.469795] Prediksi: Normal
+2025-02-26 22:13:34,800 - INFO - [2025-02-26T22:13:34.800682] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users WHERE username='admin' --
+2025-02-26 22:13:34,819 - INFO - [2025-02-26T22:13:34.800682] Prediksi: SQL Injection
+2025-02-26 22:13:42,719 - INFO - [2025-02-26T22:13:42.719402] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('XSS')</script>
+2025-02-26 22:13:42,727 - INFO - [2025-02-26T22:13:42.719402] Prediksi: XSS

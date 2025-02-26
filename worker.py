@@ -2,13 +2,13 @@ import redis
 from rq import Queue
 from rq.worker import SimpleWorker
 from rq.timeouts import BaseDeathPenalty
-from app_factory import create_app  # Import the Flask app factory
-from predict import make_prediction  # Import the prediction function
+from app_factory import create_app  # Impor pabrik aplikasi Flask
+from predict import make_prediction  # Impor fungsi prediksi
 
-# Redis connection
+# Koneksi Redis
 redis_connection = redis.StrictRedis(host='localhost', port=6379, db=0)
 
-# Custom DummyDeathPenalty to avoid using timeouts
+# DummyDeathPenalty Kustom untuk menghindari penggunaan timeout
 class DummyDeathPenalty(BaseDeathPenalty):
     def __init__(self, *args, **kwargs):
         pass
@@ -20,18 +20,18 @@ class DummyDeathPenalty(BaseDeathPenalty):
         pass
 
 if __name__ == '__main__':
-    # Push Flask app context to allow current_app usage in jobs
+    # Dorong konteks aplikasi Flask untuk memungkinkan penggunaan current_app dalam tugas
     app, redis_client = create_app()
 
     with app.app_context():
-        # Create a worker for the default queue
+        # Buat pekerja untuk antrean default
         queue = Queue('default', connection=redis_connection)
         
-        # Use SimpleWorker with custom death penalty class
+        # Gunakan SimpleWorker dengan kelas death penalty kustom
         worker = SimpleWorker([queue], connection=redis_connection)
         
-        # Set DummyDeathPenalty to avoid SIGALRM issues on Windows
+        # Tetapkan DummyDeathPenalty untuk menghindari masalah SIGALRM pada Windows
         worker.death_penalty_class = DummyDeathPenalty
         
-        # Start the worker (keep it running to process tasks)
+        # Jalankan pekerja (tetap berjalan untuk memproses tugas)
         worker.work(with_scheduler=False)

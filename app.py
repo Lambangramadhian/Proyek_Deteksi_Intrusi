@@ -4,53 +4,53 @@ from predict import make_prediction
 from rq import Queue
 from worker import redis_connection
 
-# Create app and Redis client
+# Buat aplikasi dan Redis client
 app, redis_client = create_app()
 
-# Create a Redis queue for background tasks
+# Buat Redis queue untuk tugas latar belakang
 task_queue = Queue(connection=redis_connection)
 
-# ===================== Routes ===================== #
+# ===================== Rute ===================== #
 
 @app.route("/", methods=["GET"])
 def home():
-    return "Welcome to the Intrusion Detection API"
+    return "Selamat datang di API Deteksi Intrusi"
 
 @app.route("/favicon.ico")
 def favicon():
-    return "", 204  # Empty response, no content
+    return "", 204  # Respon kosong, tidak ada konten
 
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
-    input_text = data.get("payload", "").strip()  # Extract the payload from request
+    input_text = data.get("payload", "").strip()  # Ambil payload dari permintaan
 
     if not input_text:
-        return jsonify({"error": "Payload is required"}), 400
+        return jsonify({"error": "Payload diperlukan"}), 400
 
-    # Get client IP and User-Agent from the request
+    # Dapatkan IP client dan User-Agent dari permintaan
     client_ip = request.remote_addr
-    user_agent = request.headers.get("User-Agent", "Unknown")
+    user_agent = request.headers.get("User-Agent", "Tidak Dikenal")
 
-    # Offload prediction task to Redis Queue (pass input_text, client_ip, user_agent)
-    task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None)  # Disable timeouts
+    # Lepaskan tugas prediksi ke Redis Queue (kirim input_text, client_ip, user_agent)
+    task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None)  # Nonaktifkan timeout
     
-    return jsonify({"task_id": task.id, "message": "Prediction task started"}), 202
+    return jsonify({"task_id": task.id, "message": "Tugas prediksi dimulai"}), 202
 
 @app.route("/task-status/<task_id>", methods=["GET"])
 def task_status(task_id):
-    """Check the status of a queued task."""
+    """Periksa status dari tugas yang ada di antrian."""
     task = task_queue.fetch_job(task_id)
     
     if task is None:
-        return jsonify({"error": "Task not found"}), 404
+        return jsonify({"error": "Tugas tidak ditemukan"}), 404
     
     if task.is_finished:
-        return jsonify({"status": "completed", "result": task.result}), 200
+        return jsonify({"status": "selesai", "hasil": task.result}), 200
     elif task.is_failed:
-        return jsonify({"status": "failed", "error": str(task.exc_info)}), 500
+        return jsonify({"status": "gagal", "error": str(task.exc_info)}), 500
     else:
-        return jsonify({"status": "in progress"}), 202
+        return jsonify({"status": "sedang diproses"}), 202
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
