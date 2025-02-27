@@ -42,3 +42,5 @@
 2025-02-28 01:20:28,252 - INFO - [2025-02-28T01:20:28.235717] Prediction: XSS
 2025-02-28 01:27:43,745 - INFO - [2025-02-28T01:27:43.745750] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
 2025-02-28 01:27:43,746 - INFO - [2025-02-28T01:27:43.745750] Pre-validation detected: SQL Injection
+2025-02-28 01:52:30,503 - INFO - [2025-02-28T01:52:30.503068] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
+2025-02-28 01:52:30,505 - INFO - [2025-02-28T01:52:30.503068] Validasi awal mendeteksi: SQL Injection

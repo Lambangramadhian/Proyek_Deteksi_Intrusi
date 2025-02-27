@@ -5,71 +5,71 @@ import datetime
 import joblib
 from flask import current_app
 
-# Load the model and vectorizer
+# Muat model dan vectorizer
 model = joblib.load('svm_intrusion_detection.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
 
 def validate_input(input_text):
-    """Detect if the input is a potential SQL Injection or XSS attack."""
-    sql_patterns = r"(?i)(\bUNION\b|\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b|\bDROP\b|\b--|\b#|/\*|\*/)"
-    xss_patterns = r"(?i)(<script|javascript:|onerror=|onload=|alert\()"
+    """Deteksi apakah input berpotensi serangan SQL Injection atau XSS."""
+    pola_sql = r"(?i)(\bUNION\b|\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b|\bDROP\b|\b--|\b#|/\*|\*/)"
+    pola_xss = r"(?i)(<script|javascript:|onerror=|onload=|alert\()"
 
-    if re.search(sql_patterns, input_text):
+    if re.search(pola_sql, input_text):
         return "SQL Injection"
-    elif re.search(xss_patterns, input_text):
+    elif re.search(pola_xss, input_text):
         return "XSS"
     return "Normal"
 
 def get_cache_key(input_text):
-    """Generate a cache key based on the hashed input text."""
+    """Hasilkan cache key berdasarkan teks input yang di-hash."""
     return f"prediction:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
-def make_prediction(input_text, client_ip="Unknown", user_agent="Unknown"):
+def make_prediction(input_text, client_ip="Tidak Diketahui", user_agent="Tidak Diketahui"):
     try:
-        # Get the current timestamp
+        # Dapatkan timestamp saat ini
         timestamp = datetime.datetime.now().isoformat()
 
-        # Log the input details with IP address and User-Agent
-        log_message = f"[{timestamp}] IP: {client_ip} | User-Agent: {user_agent} | Input: {input_text}"
-        current_app.logger.info(log_message)
+        # Catat detail input dengan alamat IP dan User-Agent
+        pesan_log = f"[{timestamp}] IP: {client_ip} | User-Agent: {user_agent} | Input: {input_text}"
+        current_app.logger.info(pesan_log)
 
         if not input_text:
-            return {"error": "Payload is required"}
+            return {"error": "Payload diperlukan"}
 
-        # Optional pre-validation using basic rules (fail-safe)
-        pre_validation_result = validate_input(input_text)
-        if pre_validation_result != "Normal":
-            current_app.logger.info(f"[{timestamp}] Pre-validation detected: {pre_validation_result}")
-            return {"prediction": pre_validation_result}  # Early return for obvious attacks
+        # Validasi awal menggunakan aturan dasar (pencegahan)
+        hasil_validasi_awal = validate_input(input_text)
+        if hasil_validasi_awal != "Normal":
+            current_app.logger.info(f"[{timestamp}] Validasi awal mendeteksi: {hasil_validasi_awal}")
+            return {"prediction": hasil_validasi_awal}  # Kembali lebih awal untuk serangan yang jelas
 
-        # Create Redis client inside the function
+        # Buat client Redis di dalam fungsi
         redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
-        # Check Redis cache first
+        # Periksa cache Redis terlebih dahulu
         cache_key = get_cache_key(input_text)
-        cached_result = redis_client.get(cache_key)
-        if cached_result:
-            current_app.logger.info(f"[{timestamp}] Cache hit: {cached_result}")
-            return {"prediction": cached_result}
+        hasil_cache = redis_client.get(cache_key)
+        if hasil_cache:
+            current_app.logger.info(f"[{timestamp}] Cache hit: {hasil_cache}")
+            return {"prediction": hasil_cache}
 
-        # Preprocess the input using the vectorizer (transform the input text into numerical features)
-        input_vectorized = vectorizer.transform([input_text])
+        # Pra-proses input menggunakan vectorizer (ubah teks input menjadi fitur numerik)
+        input_tervektorisasi = vectorizer.transform([input_text])
 
-        # Use the model to make a prediction
-        prediction = model.predict(input_vectorized)[0]
+        # Gunakan model untuk membuat prediksi
+        prediksi = model.predict(input_tervektorisasi)[0]
 
-        # Map the prediction to a human-readable label
-        label_mapping = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
-        prediction_label = label_mapping.get(prediction, "Unknown")
+        # Peta prediksi ke label yang mudah dibaca manusia
+        pemetaan_label = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
+        label_prediksi = pemetaan_label.get(prediksi, "Tidak Diketahui")
 
-        # Cache the prediction result for 60 seconds
-        redis_client.setex(cache_key, 60, prediction_label)
+        # Cache hasil prediksi selama 60 detik
+        redis_client.setex(cache_key, 60, label_prediksi)
 
-        # Log the prediction result
-        current_app.logger.info(f"[{timestamp}] Prediction: {prediction_label}")
+        # Catat hasil prediksi
+        current_app.logger.info(f"[{timestamp}] Prediksi: {label_prediksi}")
 
-        return {"prediction": prediction_label}
+        return {"prediction": label_prediksi}
 
     except Exception as e:
-        current_app.logger.error(f"[{timestamp}] Server Error: {str(e)}")
-        return {"error": "Internal server error"}
+        current_app.logger.error(f"[{timestamp}] Kesalahan Server: {str(e)}")
+        return {"error": "Kesalahan server internal"}
