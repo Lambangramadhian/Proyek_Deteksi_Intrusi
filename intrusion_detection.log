@@ -10,3 +10,9 @@
 2025-02-26 22:13:34,819 - INFO - [2025-02-26T22:13:34.800682] Prediksi: SQL Injection
 2025-02-26 22:13:42,719 - INFO - [2025-02-26T22:13:42.719402] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('XSS')</script>
 2025-02-26 22:13:42,727 - INFO - [2025-02-26T22:13:42.719402] Prediksi: XSS
+2025-02-27 23:18:54,075 - INFO - [2025-02-27T23:18:54.075332] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
+2025-02-27 23:18:54,092 - INFO - [2025-02-27T23:18:54.075332] Prediction: XSS
+2025-02-27 23:35:22,708 - INFO - [2025-02-27T23:35:22.708844] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
+2025-02-27 23:35:22,730 - INFO - [2025-02-27T23:35:22.708844] Prediction: XSS
+2025-02-27 23:35:49,477 - INFO - [2025-02-27T23:35:49.477588] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users WHERE username='admin' --
+2025-02-27 23:35:49,497 - INFO - [2025-02-27T23:35:49.477588] Prediction: XSS
