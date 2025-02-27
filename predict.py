@@ -2,12 +2,12 @@ import re
 import hashlib
 import redis
 import datetime
-import joblib  # Import joblib to load the model and vectorizer
+import joblib
 from flask import current_app
 
 # Load the model and vectorizer
-model = joblib.load('svm_intrusion_detection.pkl')  # Load the pre-trained SVM model
-vectorizer = joblib.load('tfidf_vectorizer.pkl')  # Load the pre-trained TF-IDF vectorizer
+model = joblib.load('svm_intrusion_detection.pkl')
+vectorizer = joblib.load('tfidf_vectorizer.pkl')
 
 def validate_input(input_text):
     """Detect if the input is a potential SQL Injection or XSS attack."""
@@ -36,6 +36,12 @@ def make_prediction(input_text, client_ip="Unknown", user_agent="Unknown"):
         if not input_text:
             return {"error": "Payload is required"}
 
+        # Optional pre-validation using basic rules (fail-safe)
+        pre_validation_result = validate_input(input_text)
+        if pre_validation_result != "Normal":
+            current_app.logger.info(f"[{timestamp}] Pre-validation detected: {pre_validation_result}")
+            return {"prediction": pre_validation_result}  # Early return for obvious attacks
+
         # Create Redis client inside the function
         redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
@@ -53,7 +59,7 @@ def make_prediction(input_text, client_ip="Unknown", user_agent="Unknown"):
         prediction = model.predict(input_vectorized)[0]
 
         # Map the prediction to a human-readable label
-        label_mapping = {0: "Normal", 1: "SQL Injection", 2: "XSS"}  # Adjust the mapping based on your model's output
+        label_mapping = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
         prediction_label = label_mapping.get(prediction, "Unknown")
 
         # Cache the prediction result for 60 seconds
@@ -66,4 +72,4 @@ def make_prediction(input_text, client_ip="Unknown", user_agent="Unknown"):
 
     except Exception as e:
         current_app.logger.error(f"[{timestamp}] Server Error: {str(e)}")
-        return {"error": "Internal server error"}   
+        return {"error": "Internal server error"}
