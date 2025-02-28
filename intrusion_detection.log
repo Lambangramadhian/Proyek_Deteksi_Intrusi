@@ -19,3 +19,5 @@
 2025-02-28 14:23:02,044 - INFO - [2025-02-28T14:23:02.027696] Prediksi: Normal
 2025-02-28 14:28:46,237 - INFO - [2025-02-28T14:28:46.237514] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: Hello, this is a normal message.
 2025-02-28 14:28:46,259 - INFO - [2025-02-28T14:28:46.237514] Prediksi: XSS
+2025-02-28 22:23:23,450 - INFO - [2025-02-28T22:23:23.450794] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: Select * from users
+2025-02-28 22:23:23,452 - INFO - [2025-02-28T22:23:23.450794] Validasi awal mendeteksi: SQL Injection
