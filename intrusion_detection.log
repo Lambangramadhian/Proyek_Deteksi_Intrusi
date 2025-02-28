@@ -1,5 +1,3 @@
-2025-02-26 18:19:09,587 - INFO - [2025-02-26T18:19:09.587298] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: ' OR '1'='1' --
-2025-02-26 18:19:09,600 - INFO - [2025-02-26T18:19:09.587298] Prediction: Normal
 2025-02-26 18:21:29,936 - INFO - [2025-02-26T18:21:29.936458] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
 2025-02-26 18:21:29,946 - INFO - [2025-02-26T18:21:29.936458] Prediction: SQL Injection
 2025-02-26 18:24:36,621 - INFO - [2025-02-26T18:24:36.621507] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('Hacked!')</script>
@@ -11,4 +9,13 @@
 2025-02-26 22:13:42,719 - INFO - [2025-02-26T22:13:42.719402] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('XSS')</script>
 2025-02-26 22:13:42,727 - INFO - [2025-02-26T22:13:42.719402] Prediksi: XSS
 2025-02-28 01:52:30,503 - INFO - [2025-02-28T01:52:30.503068] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
-2025-02-28 01:52:30,505 - INFO - [2025-02-28T01:52:30.503068] Validasi awal mendeteksi: SQL Injection
+2025-02-28 14:19:28,204 - INFO - [2025-02-28T14:19:28.204755] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users WHERE username='admin' --
+2025-02-28 14:19:28,205 - INFO - [2025-02-28T14:19:28.204755] Validasi awal mendeteksi: SQL Injection
+2025-02-28 14:19:39,276 - INFO - [2025-02-28T14:19:39.276889] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('XSS')</script>
+2025-02-28 14:19:39,278 - INFO - [2025-02-28T14:19:39.276889] Validasi awal mendeteksi: XSS
+2025-02-28 14:21:08,474 - INFO - [2025-02-28T14:21:08.474481] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: ' OR '1'='1' --
+2025-02-28 14:21:08,491 - INFO - [2025-02-28T14:21:08.474481] Prediksi: SQL Injection
+2025-02-28 14:23:02,027 - INFO - [2025-02-28T14:23:02.027696] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: Makan
+2025-02-28 14:23:02,044 - INFO - [2025-02-28T14:23:02.027696] Prediksi: Normal
+2025-02-28 14:28:46,237 - INFO - [2025-02-28T14:28:46.237514] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: Hello, this is a normal message.
+2025-02-28 14:28:46,259 - INFO - [2025-02-28T14:28:46.237514] Prediksi: XSS
