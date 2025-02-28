@@ -10,37 +10,5 @@
 2025-02-26 22:13:34,819 - INFO - [2025-02-26T22:13:34.800682] Prediksi: SQL Injection
 2025-02-26 22:13:42,719 - INFO - [2025-02-26T22:13:42.719402] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: <script>alert('XSS')</script>
 2025-02-26 22:13:42,727 - INFO - [2025-02-26T22:13:42.719402] Prediksi: XSS
-2025-02-27 23:18:54,075 - INFO - [2025-02-27T23:18:54.075332] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
-2025-02-27 23:18:54,092 - INFO - [2025-02-27T23:18:54.075332] Prediction: XSS
-2025-02-27 23:35:22,708 - INFO - [2025-02-27T23:35:22.708844] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
-2025-02-27 23:35:22,730 - INFO - [2025-02-27T23:35:22.708844] Prediction: XSS
-2025-02-27 23:35:49,477 - INFO - [2025-02-27T23:35:49.477588] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users WHERE username='admin' --
-2025-02-27 23:35:49,497 - INFO - [2025-02-27T23:35:49.477588] Prediction: XSS
-2025-02-28 01:12:55,343 - INFO - [2025-02-28T01:12:55.343933] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
-2025-02-28 01:12:55,356 - INFO - Vectorized input: <Compressed Sparse Row sparse matrix of dtype 'float64'
-	with 3 stored elements and shape (1, 5000)>
-  Coords	Values
-  (0, 2679)	0.48532241650667685
-  (0, 4193)	0.3848780949522212
-  (0, 4662)	0.7850675156074596
-2025-02-28 01:12:55,361 - INFO - [2025-02-28T01:12:55.343933] Prediction: XSS
-2025-02-28 01:16:46,069 - INFO - [2025-02-28T01:16:46.069605] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
-2025-02-28 01:16:46,081 - INFO - Vectorized input: <Compressed Sparse Row sparse matrix of dtype 'float64'
-	with 3 stored elements and shape (1, 5000)>
-  Coords	Values
-  (0, 2679)	0.48532241650667685
-  (0, 4193)	0.3848780949522212
-  (0, 4662)	0.7850675156074596
-2025-02-28 01:16:46,087 - INFO - [2025-02-28T01:16:46.069605] Prediction: XSS
-2025-02-28 01:20:28,235 - INFO - [2025-02-28T01:20:28.235717] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
-2025-02-28 01:20:28,247 - INFO - Vectorized input: <Compressed Sparse Row sparse matrix of dtype 'float64'
-	with 3 stored elements and shape (1, 5000)>
-  Coords	Values
-  (0, 2679)	0.48532241650667685
-  (0, 4193)	0.3848780949522212
-  (0, 4662)	0.7850675156074596
-2025-02-28 01:20:28,252 - INFO - [2025-02-28T01:20:28.235717] Prediction: XSS
-2025-02-28 01:27:43,745 - INFO - [2025-02-28T01:27:43.745750] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
-2025-02-28 01:27:43,746 - INFO - [2025-02-28T01:27:43.745750] Pre-validation detected: SQL Injection
 2025-02-28 01:52:30,503 - INFO - [2025-02-28T01:52:30.503068] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
 2025-02-28 01:52:30,505 - INFO - [2025-02-28T01:52:30.503068] Validasi awal mendeteksi: SQL Injection
