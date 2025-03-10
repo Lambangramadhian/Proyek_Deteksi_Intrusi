@@ -21,3 +21,786 @@
 2025-02-28 14:28:46,259 - INFO - [2025-02-28T14:28:46.237514] Prediksi: XSS
 2025-02-28 22:23:23,450 - INFO - [2025-02-28T22:23:23.450794] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: Select * from users
 2025-02-28 22:23:23,452 - INFO - [2025-02-28T22:23:23.450794] Validasi awal mendeteksi: SQL Injection
+2025-03-03 09:11:52,880 - INFO - [2025-03-03T09:11:52.880074] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
+2025-03-03 09:11:52,880 - INFO - [2025-03-03T09:11:52.880074] IP: 127.0.0.1 | User-Agent: PostmanRuntime/7.39.1 | Input: SELECT * FROM users
+2025-03-03 09:11:52,885 - INFO - [2025-03-03T09:11:52.880074] Validasi awal mendeteksi: SQL Injection
+2025-03-03 09:11:52,885 - INFO - [2025-03-03T09:11:52.880074] Validasi awal mendeteksi: SQL Injection
+2025-03-10 08:39:37,287 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,287 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,287 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,287 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,289 - INFO - [2025-03-10T08:39:37.289819] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,290 - INFO - [2025-03-10T08:39:37.290818] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,289 - INFO - [2025-03-10T08:39:37.289819] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,290 - INFO - [2025-03-10T08:39:37.290818] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-03-10 08:39:37,299 - INFO - [2025-03-10T08:39:37.289819] Prediksi: XSS
+2025-03-10 08:39:37,299 - INFO - [2025-03-10T08:39:37.290818] Prediksi: XSS
+2025-03-10 08:39:37,299 - INFO - [2025-03-10T08:39:37.289819] Prediksi: XSS
+2025-03-10 08:39:37,299 - INFO - [2025-03-10T08:39:37.290818] Prediksi: XSS
+2025-03-10 08:39:37,302 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:39:37,302 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:39:37,302 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:39:37,302 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:18,718 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:44:18,718 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:44:18,718 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:44:18,721 - INFO - [2025-03-10T08:44:18.720699] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:44:18,721 - INFO - [2025-03-10T08:44:18.721698] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:44:18,721 - INFO - [2025-03-10T08:44:18.720699] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:44:18,721 - INFO - [2025-03-10T08:44:18.721698] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:44:18,730 - INFO - [2025-03-10T08:44:18.721698] Prediksi: XSS
+2025-03-10 08:44:18,730 - INFO - [2025-03-10T08:44:18.720699] Prediksi: XSS
+2025-03-10 08:44:18,730 - INFO - [2025-03-10T08:44:18.720699] Prediksi: XSS
+2025-03-10 08:44:18,730 - INFO - [2025-03-10T08:44:18.721698] Prediksi: XSS
+2025-03-10 08:44:18,732 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:18,732 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:18,732 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:18,732 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:22,190 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,190 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,191 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,191 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,192 - INFO - [2025-03-10T08:44:22.192950] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,192 - INFO - [2025-03-10T08:44:22.192950] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,193 - INFO - [2025-03-10T08:44:22.193951] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,193 - INFO - [2025-03-10T08:44:22.193951] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD",
+        "submitted_at": "2025-03-10T01:44:22.001Z"
+    }
+}
+2025-03-10 08:44:22,202 - INFO - [2025-03-10T08:44:22.192950] Prediksi: Normal
+2025-03-10 08:44:22,202 - INFO - [2025-03-10T08:44:22.192950] Prediksi: Normal
+2025-03-10 08:44:22,202 - INFO - [2025-03-10T08:44:22.193951] Prediksi: Normal
+2025-03-10 08:44:22,202 - INFO - [2025-03-10T08:44:22.193951] Prediksi: Normal
+2025-03-10 08:44:22,204 - INFO - Prediction result: {'prediction': 'Normal'}
+2025-03-10 08:44:22,204 - INFO - Prediction result: {'prediction': 'Normal'}
+2025-03-10 08:44:22,208 - INFO - Prediction result: {'prediction': 'Normal'}
+2025-03-10 08:44:22,208 - INFO - Prediction result: {'prediction': 'Normal'}
+2025-03-10 08:44:24,402 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD"
+    }
+}
+2025-03-10 08:44:24,402 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD"
+    }
+}
+2025-03-10 08:44:24,402 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD"
+    }
+}
+2025-03-10 08:44:24,405 - INFO - [2025-03-10T08:44:24.404886] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD"
+    }
+}
+2025-03-10 08:44:24,405 - INFO - [2025-03-10T08:44:24.404886] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD"
+    }
+}
+2025-03-10 08:44:24,406 - INFO - [2025-03-10T08:44:24.406866] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD"
+    }
+}
+2025-03-10 08:44:24,406 - INFO - [2025-03-10T08:44:24.406866] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php",
+    "body": {
+        "category": "1",
+        "sesskey": "pHoiscYPmD"
+    }
+}
+2025-03-10 08:44:24,414 - INFO - [2025-03-10T08:44:24.404886] Prediksi: XSS
+2025-03-10 08:44:24,415 - INFO - [2025-03-10T08:44:24.406866] Prediksi: XSS
+2025-03-10 08:44:24,415 - INFO - [2025-03-10T08:44:24.406866] Prediksi: XSS
+2025-03-10 08:44:24,414 - INFO - [2025-03-10T08:44:24.404886] Prediksi: XSS
+2025-03-10 08:44:24,417 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:24,417 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:24,417 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:44:24,417 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:37,153 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "pHoiscYPmD",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Pembelajaran Mesin",
+        "shortname": "PM",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "11",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "11",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "",
+            "format": "1",
+            "itemid": "55387917"
+        },
+        "overviewfiles_filemanager": "178524149",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-10T01:46:36.875Z"
+    }
+}
+2025-03-10 08:46:37,153 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "pHoiscYPmD",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Pembelajaran Mesin",
+        "shortname": "PM",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "11",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "11",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "",
+            "format": "1",
+            "itemid": "55387917"
+        },
+        "overviewfiles_filemanager": "178524149",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-10T01:46:36.875Z"
+    }
+}
+2025-03-10 08:46:37,154 - INFO - Processing payload from IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "pHoiscYPmD",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Pembelajaran Mesin",
+        "shortname": "PM",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "11",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "11",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "",
+            "format": "1",
+            "itemid": "55387917"
+        },
+        "overviewfiles_filemanager": "178524149",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-10T01:46:36.875Z"
+    }
+}
+2025-03-10 08:46:37,155 - INFO - [2025-03-10T08:46:37.155243] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "pHoiscYPmD",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Pembelajaran Mesin",
+        "shortname": "PM",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "11",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "11",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "",
+            "format": "1",
+            "itemid": "55387917"
+        },
+        "overviewfiles_filemanager": "178524149",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-10T01:46:36.875Z"
+    }
+}
+2025-03-10 08:46:37,156 - INFO - [2025-03-10T08:46:37.156246] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "pHoiscYPmD",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Pembelajaran Mesin",
+        "shortname": "PM",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "11",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "11",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "",
+            "format": "1",
+            "itemid": "55387917"
+        },
+        "overviewfiles_filemanager": "178524149",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-10T01:46:36.875Z"
+    }
+}
+2025-03-10 08:46:37,155 - INFO - [2025-03-10T08:46:37.155243] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "pHoiscYPmD",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Pembelajaran Mesin",
+        "shortname": "PM",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "11",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "11",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "",
+            "format": "1",
+            "itemid": "55387917"
+        },
+        "overviewfiles_filemanager": "178524149",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-10T01:46:36.875Z"
+    }
+}
+2025-03-10 08:46:37,156 - INFO - [2025-03-10T08:46:37.156246] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "pHoiscYPmD",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Pembelajaran Mesin",
+        "shortname": "PM",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "11",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "11",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "",
+            "format": "1",
+            "itemid": "55387917"
+        },
+        "overviewfiles_filemanager": "178524149",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-10T01:46:36.875Z"
+    }
+}
+2025-03-10 08:46:37,167 - INFO - [2025-03-10T08:46:37.155243] Prediksi: XSS
+2025-03-10 08:46:37,167 - INFO - [2025-03-10T08:46:37.155243] Prediksi: XSS
+2025-03-10 08:46:37,168 - INFO - [2025-03-10T08:46:37.156246] Prediksi: XSS
+2025-03-10 08:46:37,168 - INFO - [2025-03-10T08:46:37.156246] Prediksi: XSS
+2025-03-10 08:46:37,170 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:37,170 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:37,171 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:37,171 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:44,509 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,509 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,509 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,509 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,512 - INFO - [2025-03-10T08:46:44.512037] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,512 - INFO - [2025-03-10T08:46:44.512037] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,512 - INFO - [2025-03-10T08:46:44.512037] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,512 - INFO - [2025-03-10T08:46:44.512037] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-10 08:46:44,528 - INFO - [2025-03-10T08:46:44.512037] Prediksi: XSS
+2025-03-10 08:46:44,528 - INFO - [2025-03-10T08:46:44.512037] Prediksi: XSS
+2025-03-10 08:46:44,528 - INFO - [2025-03-10T08:46:44.512037] Prediksi: XSS
+2025-03-10 08:46:44,528 - INFO - [2025-03-10T08:46:44.512037] Prediksi: XSS
+2025-03-10 08:46:44,530 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:44,530 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:44,531 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:46:44,531 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:47:18,977 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,977 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,977 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,977 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,979 - INFO - [2025-03-10T08:47:18.979575] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,979 - INFO - [2025-03-10T08:47:18.979575] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,979 - INFO - [2025-03-10T08:47:18.979575] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,979 - INFO - [2025-03-10T08:47:18.979575] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-10 08:47:18,987 - INFO - [2025-03-10T08:47:18.979575] Prediksi: XSS
+2025-03-10 08:47:18,987 - INFO - [2025-03-10T08:47:18.979575] Prediksi: XSS
+2025-03-10 08:47:18,989 - INFO - [2025-03-10T08:47:18.979575] Prediksi: XSS
+2025-03-10 08:47:18,989 - INFO - [2025-03-10T08:47:18.979575] Prediksi: XSS
+2025-03-10 08:47:18,990 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:47:18,990 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 08:47:18,990 - INFO - Prediction result: {'prediction': 'XSS'}
