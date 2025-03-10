@@ -804,3 +804,371 @@
 2025-03-10 08:47:18,990 - INFO - Prediction result: {'prediction': 'XSS'}
 2025-03-10 08:47:18,990 - INFO - Prediction result: {'prediction': 'XSS'}
 2025-03-10 08:47:18,990 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 09:15:46,467 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:15:46,467 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:15:46,471 - INFO - [2025-03-10T09:15:46.471289] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:15:46,471 - INFO - [2025-03-10T09:15:46.471289] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:15:46,473 - ERROR - [2025-03-10T09:15:46.471289] Kesalahan Server: name 'validate_input' is not defined
+2025-03-10 09:15:46,473 - ERROR - [2025-03-10T09:15:46.471289] Kesalahan Server: name 'validate_input' is not defined
+2025-03-10 09:15:46,475 - INFO - Prediction result: {'error': 'Kesalahan server internal'}
+2025-03-10 09:15:46,475 - INFO - Prediction result: {'error': 'Kesalahan server internal'}
+2025-03-10 09:15:52,039 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/?redirect=0",
+    "body": "redirect=0"
+}
+2025-03-10 09:15:52,039 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/?redirect=0",
+    "body": "redirect=0"
+}
+2025-03-10 09:15:52,042 - INFO - [2025-03-10T09:15:52.042633] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/?redirect=0",
+    "body": "redirect=0"
+}
+2025-03-10 09:15:52,042 - INFO - [2025-03-10T09:15:52.042633] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/?redirect=0",
+    "body": "redirect=0"
+}
+2025-03-10 09:15:52,044 - ERROR - [2025-03-10T09:15:52.042633] Kesalahan Server: name 'validate_input' is not defined
+2025-03-10 09:15:52,044 - ERROR - [2025-03-10T09:15:52.042633] Kesalahan Server: name 'validate_input' is not defined
+2025-03-10 09:15:52,047 - INFO - Prediction result: {'error': 'Kesalahan server internal'}
+2025-03-10 09:15:52,047 - INFO - Prediction result: {'error': 'Kesalahan server internal'}
+2025-03-10 09:53:39,585 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,585 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,586 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,586 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,587 - INFO - [2025-03-10T09:53:39.587259] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,588 - INFO - [2025-03-10T09:53:39.588065] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,587 - INFO - [2025-03-10T09:53:39.587259] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,588 - INFO - [2025-03-10T09:53:39.588065] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 09:53:39,604 - INFO - [2025-03-10T09:53:39.587259] Prediksi: XSS
+2025-03-10 09:53:39,604 - INFO - [2025-03-10T09:53:39.587259] Prediksi: XSS
+2025-03-10 09:53:39,606 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 09:53:39,606 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 09:53:39,607 - INFO - [2025-03-10T09:53:39.588065] Prediksi: XSS
+2025-03-10 09:53:39,607 - INFO - [2025-03-10T09:53:39.588065] Prediksi: XSS
+2025-03-10 09:53:39,608 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 09:53:39,608 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 10:13:34,637 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:13:34,637 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:13:34,637 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:13:34,637 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:13:34,638 - INFO - [2025-03-10T10:13:34.638687] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:13:34,638 - INFO - [2025-03-10T10:13:34.638687] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:13:34,638 - INFO - [2025-03-10T10:13:34.638687] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:13:34,649 - INFO - [2025-03-10T10:13:34.638687] Prediksi: XSS
+2025-03-10 10:13:34,649 - INFO - [2025-03-10T10:13:34.638687] Prediksi: XSS
+2025-03-10 10:13:34,650 - INFO - [2025-03-10T10:13:34.638687] Prediksi: XSS
+2025-03-10 10:13:34,650 - INFO - [2025-03-10T10:13:34.638687] Prediksi: XSS
+2025-03-10 10:13:34,651 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:13:34,651 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:13:34,653 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:13:34,653 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:17:08,384 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:17:08,384 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:17:08,384 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:17:08,386 - INFO - [2025-03-10T10:17:08.386897] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:17:08,386 - INFO - [2025-03-10T10:17:08.386897] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:17:08,386 - INFO - [2025-03-10T10:17:08.386897] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:17:08,386 - INFO - [2025-03-10T10:17:08.386897] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:17:08,396 - INFO - [2025-03-10T10:17:08.386897] Prediksi: XSS
+2025-03-10 10:17:08,396 - INFO - [2025-03-10T10:17:08.386897] Prediksi: XSS
+2025-03-10 10:17:08,396 - INFO - [2025-03-10T10:17:08.386897] Prediksi: XSS
+2025-03-10 10:17:08,398 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:17:08,398 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:17:08,398 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:17:08,398 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:22:21,503 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:21,503 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:21,504 - INFO - [2025-03-10T10:22:21.504071] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:21,504 - INFO - [2025-03-10T10:22:21.504071] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:21,513 - INFO - [2025-03-10T10:22:21.504071] Prediksi: XSS
+2025-03-10 10:22:21,513 - INFO - [2025-03-10T10:22:21.504071] Prediksi: XSS
+2025-03-10 10:22:21,514 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:22:21,514 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:22:31,784 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,784 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,784 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,784 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,786 - INFO - [2025-03-10T10:22:31.786553] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,786 - INFO - [2025-03-10T10:22:31.786553] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,786 - INFO - [2025-03-10T10:22:31.786553] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,786 - INFO - [2025-03-10T10:22:31.786553] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:22:31,791 - INFO - [2025-03-10T10:22:31.786553] Cache hit: XSS
+2025-03-10 10:22:31,791 - INFO - [2025-03-10T10:22:31.786553] Cache hit: XSS
+2025-03-10 10:22:31,791 - INFO - [2025-03-10T10:22:31.786553] Cache hit: XSS
+2025-03-10 10:22:31,791 - INFO - [2025-03-10T10:22:31.786553] Cache hit: XSS
+2025-03-10 10:22:31,792 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:22:31,793 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:22:31,792 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:22:31,793 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:23:59,971 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:23:59,971 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:23:59,971 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:23:59,971 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:23:59,973 - INFO - [2025-03-10T10:23:59.972646] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:23:59,973 - INFO - [2025-03-10T10:23:59.973646] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:23:59,973 - INFO - [2025-03-10T10:23:59.973646] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:23:59,982 - INFO - [2025-03-10T10:23:59.972646] Prediksi: XSS
+2025-03-10 10:23:59,982 - INFO - [2025-03-10T10:23:59.972646] Prediksi: XSS
+2025-03-10 10:23:59,984 - INFO - [2025-03-10T10:23:59.973646] Prediksi: XSS
+2025-03-10 10:23:59,984 - INFO - [2025-03-10T10:23:59.973646] Prediksi: XSS
+2025-03-10 10:23:59,985 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:23:59,985 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:23:59,988 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:23:59,988 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:37:26,150 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:37:26,151 - INFO - [2025-03-10T10:37:26.151438] IP: ::1 | User-Agent: Unknown | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:37:26,150 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:37:26,151 - INFO - [2025-03-10T10:37:26.151438] IP: ::1 | User-Agent: Unknown | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:37:26,161 - INFO - [2025-03-10T10:37:26.151438] Prediction: XSS
+2025-03-10 10:37:26,161 - INFO - [2025-03-10T10:37:26.151438] Prediction: XSS
+2025-03-10 10:37:26,162 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:37:26,162 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:39:28,360 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:39:28,360 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:39:28,360 - INFO - [2025-03-10T10:39:28.360830] IP: ::1 | User-Agent: Unknown | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:39:28,361 - INFO - [2025-03-10T10:39:28.361863] IP: ::1 | User-Agent: Unknown | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:39:28,370 - INFO - [2025-03-10T10:39:28.360830] Prediction: XSS
+2025-03-10 10:39:28,370 - INFO - [2025-03-10T10:39:28.361863] Prediction: XSS
+2025-03-10 10:39:28,371 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:39:28,371 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:43:24,293 - INFO - Processing payload from IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:43:24,295 - INFO - [2025-03-10T10:43:24.295211] IP: ::1 | User-Agent: Unknown | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:43:24,314 - INFO - [2025-03-10T10:43:24.295211] Prediction: XSS
+2025-03-10 10:43:24,314 - INFO - Prediction result: {'prediction': 'XSS'}
+2025-03-10 10:52:28,588 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:52:28,588 - INFO - [2025-03-10T10:52:28.588209] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 10:52:28,595 - INFO - [2025-03-10T10:52:28.588209] Prediksi: XSS
+2025-03-10 10:52:28,596 - INFO - Hasil prediksi: {'prediction': 'XSS'}

@@ -3,105 +3,116 @@ from flask import request, jsonify, current_app
 from app_factory import create_app
 from predict import make_prediction
 from rq import Queue
-from worker import redis_connection, start_worker  # Import worker logic
+from worker import redis_connection, start_worker
 import json
 
-# Create Flask app and Redis client
+# Buat aplikasi Flask dan klien Redis
 app, redis_client = create_app()
 
-# Create a Redis queue for background tasks
+# Buat antrian Redis untuk tugas latar belakang
 task_queue = Queue(connection=redis_connection)
 
-# ===================== Routes ===================== #
+# ===================== Rute ===================== #
 
 @app.route("/", methods=["GET"])
 def home():
-    return "Welcome to the Intrusion Detection API"
+    return "Selamat datang di API Deteksi Intrusi"
 
 @app.route("/favicon.ico")
 def favicon():
-    return "", 204  # Empty response, no content
+    return "", 204  # Respon kosong, tidak ada konten
 
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
-    input_text = data.get("payload", "").strip()  # Get payload from request
+    input_text = data.get("payload", "").strip()
 
     if not input_text:
-        return jsonify({"error": "Payload is required"}), 400
+        return jsonify({"error": "Payload diperlukan"}), 400
 
-    # Get client IP and User-Agent from request
+    # Dapatkan IP klien dan User-Agent dari request
     client_ip = request.remote_addr
-    user_agent = request.headers.get("User-Agent", "Unknown")
+    user_agent = request.headers.get("User-Agent", "Tidak Diketahui")
 
-    # Enqueue the prediction task into Redis Queue (pass input_text, client_ip, user_agent)
-    task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None)  # No timeout
+    # Masukkan tugas prediksi ke dalam antrian Redis (kirim input_text, client_ip, user_agent)
+    task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None)  # Tidak ada timeout
     
-    return jsonify({"task_id": task.id, "message": "Prediction task started"}), 202
+    return jsonify({"task_id": task.id, "message": "Tugas prediksi dimulai"}), 202
 
 @app.route("/task-status/<task_id>", methods=["GET"])
 def task_status(task_id):
-    """Check the status of a queued task."""
+    """Periksa status tugas yang ada di antrian."""
     task = task_queue.fetch_job(task_id)
     
     if task is None:
-        return jsonify({"error": "Task not found"}), 404
+        return jsonify({"error": "Tugas tidak ditemukan"}), 404
     
     if task.is_finished:
-        return jsonify({"status": "completed", "result": task.result}), 200
+        return jsonify({"status": "selesai", "hasil": task.result}), 200
     elif task.is_failed:
-        return jsonify({"status": "failed", "error": str(task.exc_info)}), 500
+        return jsonify({"status": "gagal", "error": str(task.exc_info)}), 500
     else:
-        return jsonify({"status": "in progress"}), 202
+        return jsonify({"status": "sedang diproses"}), 202
 
-# ===================== Redis Subscription Logic ===================== #
+# ===================== Logika Subscription Redis ===================== #
 
 def subscribe_to_logs(app):
-    """Subscribe to Redis 'moodle_logs' and process each message."""
+    """Berlangganan ke Redis 'moodle_logs' dan memproses setiap pesan."""
     pubsub = redis_connection.pubsub()
-    
-    # Subscribe to 'moodle_logs' channel
+
+    # Berlangganan ke channel 'moodle_logs'
     pubsub.subscribe('moodle_logs')
-    print("Subscribed to 'moodle_logs' channel...")
+    print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
 
-    # Start listening to the channel
+    processed_messages = set()  # Lacak pesan yang diproses
+
+    # Mulai mendengarkan channel
     for message in pubsub.listen():
-        if message['type'] == 'message':  # Only process actual messages
+        if message['type'] == 'message':  # Hanya memproses pesan yang sebenarnya
             try:
-                # Parse the incoming message as JSON
+                # Parse pesan yang masuk sebagai JSON
                 data = json.loads(message['data'])
-                print(f"Received message: {data}")
 
-                # Extract fields from the message
+                # Hindari memproses pesan yang sama beberapa kali
+                message_id = data.get('timestamp')  # Atau field unik lain dalam pesan
+                if message_id in processed_messages:
+                    continue  # Lewati pesan yang sudah diproses
+
+                # Tandai pesan sebagai diproses
+                processed_messages.add(message_id)
+
+                print(f"Pesan diterima: {data} pada thread: {threading.current_thread().name}")
+
+                # Ekstrak field dari pesan
                 payload = data.get('payload', '')
-                ip = data.get('ip', 'Unknown')
+                ip = data.get('ip', 'Tidak Diketahui')
 
-                # Use Flask app context
+                # Gunakan konteks aplikasi Flask
                 with app.app_context():
-                    # Log the received message
-                    current_app.logger.info(f"Processing payload from IP {ip}: {payload}")
+                    # Catat pesan yang diterima sekali
+                    current_app.logger.info(f"Memproses payload dari IP {ip}: {payload}")
                     
-                    # Call your make_prediction function within app context
-                    prediction_result = make_prediction(payload, client_ip=ip)
+                    # Panggil fungsi make_prediction dalam konteks app
+                    hasil_prediksi = make_prediction(payload, client_ip=ip)
 
-                    # Log or handle the prediction result
-                    current_app.logger.info(f"Prediction result: {prediction_result}")
+                    # Catat hasil prediksi sekali
+                    current_app.logger.info(f"Hasil prediksi: {hasil_prediksi}")
 
             except Exception as e:
-                print(f"Error processing message: {str(e)}")
+                print(f"Kesalahan saat memproses pesan: {str(e)}")
 
-# ===================== Main ===================== #
+# ===================== Utama ===================== #
 
 if __name__ == "__main__":
-    # Start Redis worker in a background thread
+    # Jalankan worker Redis dalam background thread
     worker_thread = threading.Thread(target=start_worker)
-    worker_thread.daemon = True  # Daemon thread will shut down when the main program exits
+    worker_thread.daemon = True  # Thread daemon akan berhenti saat program utama keluar
     worker_thread.start()
 
-    # Start Redis subscription in another background thread
+    # Jalankan subscription Redis dalam background thread lain
     subscriber_thread = threading.Thread(target=subscribe_to_logs, args=(app,))
-    subscriber_thread.daemon = True  # Daemon thread will shut down when the main program exits
+    subscriber_thread.daemon = True  # Thread daemon akan berhenti saat program utama keluar
     subscriber_thread.start()
 
-    # Run the Flask app
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # Jalankan aplikasi Flask
+    app.run(host="0.0.0.0", port=5000, debug=False)
