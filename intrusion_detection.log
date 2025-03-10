@@ -1184,3 +1184,75 @@
 }
 2025-03-10 11:13:22,776 - INFO - [2025-03-10T11:13:22.750537] Prediksi: XSS
 2025-03-10 11:13:22,777 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 11:28:52,649 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 11:28:52,713 - INFO - [2025-03-10T11:28:52.713005] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 11:28:52,938 - INFO - [2025-03-10T11:28:52.713005] Prediksi: XSS
+2025-03-10 11:28:52,965 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 20:58:11,978 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 20:58:11,980 - INFO - [2025-03-10T20:58:11.980366] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 20:58:12,004 - INFO - [2025-03-10T20:58:11.980366] Prediksi: XSS
+2025-03-10 20:58:12,005 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 21:19:18,148 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:19:18,149 - INFO - [2025-03-10T21:19:18.149632] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:19:18,174 - INFO - [2025-03-10T21:19:18.149632] Prediksi: XSS
+2025-03-10 21:19:18,176 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 21:31:50,869 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:31:50,871 - INFO - [2025-03-10T21:31:50.871372] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:31:50,898 - INFO - [2025-03-10T21:31:50.871372] Prediksi: XSS
+2025-03-10 21:31:50,899 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 21:36:21,336 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:36:21,338 - INFO - [2025-03-10T21:36:21.338981] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:36:21,367 - INFO - [2025-03-10T21:36:21.338981] Prediksi: XSS
+2025-03-10 21:36:21,368 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-10 21:43:55,894 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:43:55,894 - INFO - [2025-03-10T21:43:55.894723] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-10 21:43:55,901 - INFO - [2025-03-10T21:43:55.894723] Prediksi: XSS
+2025-03-10 21:43:55,903 - INFO - Hasil prediksi: {'prediction': 'XSS'}

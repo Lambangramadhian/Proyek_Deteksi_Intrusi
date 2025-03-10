@@ -4,10 +4,10 @@ import redis
 from logging_config import setup_logging
 
 def create_app():
-    """Fungsi pabrik untuk membuat aplikasi Flask."""
+    """Fungsi pabrik untuk membuat dan mengonfigurasi aplikasi Flask."""
     app = Flask(__name__)
 
-    # Konfigurasi Secret Key
+    # Konfigurasi Secret Key dari variabel lingkungan
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "your_default_secret_key")
 
     # Pengaturan koneksi Redis

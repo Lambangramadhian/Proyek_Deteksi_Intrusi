@@ -1,10 +1,12 @@
 import threading
+import time
+import json
 from flask import request, jsonify, current_app
 from app_factory import create_app
 from predict import make_prediction
 from rq import Queue
 from worker import redis_connection, start_worker
-import json
+from redis.exceptions import TimeoutError
 
 # Buat aplikasi Flask dan klien Redis
 app, redis_client = create_app()
@@ -34,8 +36,8 @@ def predict():
     client_ip = request.remote_addr
     user_agent = request.headers.get("User-Agent", "Tidak Diketahui")
 
-    # Masukkan tugas prediksi ke dalam antrian Redis (kirim input_text, client_ip, user_agent)
-    task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None)  # Tidak ada timeout
+    # Masukkan tugas prediksi ke dalam antrian Redis
+    task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None)
     
     return jsonify({"task_id": task.id, "message": "Tugas prediksi dimulai"}), 202
 
@@ -58,48 +60,57 @@ def task_status(task_id):
 
 def subscribe_to_logs(app):
     """Berlangganan ke Redis 'moodle_logs' dan memproses setiap pesan."""
-    pubsub = redis_connection.pubsub()
+    processed_messages = set()  # Lacak pesan yang sudah diproses
 
-    # Berlangganan ke channel 'moodle_logs'
-    pubsub.subscribe('moodle_logs')
-    print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
+    while True:
+        try:
+            pubsub = redis_connection.pubsub()
+            pubsub.subscribe('moodle_logs')
+            print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
 
-    processed_messages = set()  # Lacak pesan yang diproses
+            last_ping = time.time()  # Lacak waktu ping terakhir
 
-    # Mulai mendengarkan channel
-    for message in pubsub.listen():
-        if message['type'] == 'message':  # Hanya memproses pesan yang sebenarnya
-            try:
-                # Parse pesan yang masuk sebagai JSON
-                data = json.loads(message['data'])
+            for message in pubsub.listen():
+                if message['type'] == 'message':  # Hanya memproses pesan yang sebenarnya
+                    try:
+                        # Parse pesan yang masuk sebagai JSON
+                        data = json.loads(message['data'])
 
-                # Hindari memproses pesan yang sama beberapa kali
-                message_id = data.get('timestamp')  # Atau field unik lain dalam pesan
-                if message_id in processed_messages:
-                    continue  # Lewati pesan yang sudah diproses
+                        # Hindari memproses pesan yang sama beberapa kali
+                        message_id = data.get('timestamp')  # Gunakan field timestamp atau ID unik lain
+                        if message_id in processed_messages:
+                            continue  # Lewati pesan yang sudah diproses
 
-                # Tandai pesan sebagai diproses
-                processed_messages.add(message_id)
+                        # Tandai pesan sebagai diproses
+                        processed_messages.add(message_id)
 
-                print(f"Pesan diterima: {data} pada thread: {threading.current_thread().name}")
+                        print(f"Pesan diterima: {data} pada thread: {threading.current_thread().name}")
 
-                # Ekstrak field dari pesan
-                payload = data.get('payload', '')
-                ip = data.get('ip', 'Tidak Diketahui')
+                        # Ekstrak field dari pesan
+                        payload = data.get('payload', '')
+                        ip = data.get('ip', 'Tidak Diketahui')
 
-                # Gunakan konteks aplikasi Flask
-                with app.app_context():
-                    # Catat pesan yang diterima sekali
-                    current_app.logger.info(f"Memproses payload dari IP {ip}: {payload}")
-                    
-                    # Panggil fungsi make_prediction dalam konteks app
-                    hasil_prediksi = make_prediction(payload, client_ip=ip)
+                        # Gunakan konteks aplikasi Flask
+                        with app.app_context():
+                            current_app.logger.info(f"Memproses payload dari IP {ip}: {payload}")
+                            
+                            # Panggil fungsi make_prediction dalam konteks app
+                            hasil_prediksi = make_prediction(payload, client_ip=ip)
 
-                    # Catat hasil prediksi sekali
-                    current_app.logger.info(f"Hasil prediksi: {hasil_prediksi}")
+                            # Catat hasil prediksi
+                            current_app.logger.info(f"Hasil prediksi: {hasil_prediksi}")
 
-            except Exception as e:
-                print(f"Kesalahan saat memproses pesan: {str(e)}")
+                    except Exception as e:
+                        print(f"Kesalahan saat memproses pesan: {str(e)}")
+                
+                # Kirim PING ke Redis setiap 60 detik untuk menjaga koneksi tetap aktif
+                if time.time() - last_ping > 60:
+                    redis_connection.ping()
+                    last_ping = time.time()
+
+        except TimeoutError:
+            print("Redis TimeoutError: Menghubungkan kembali ke Redis...")
+            pubsub.close()  # Tutup koneksi saat timeout, lalu ulangi proses
 
 # ===================== Utama ===================== #
 
