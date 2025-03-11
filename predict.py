@@ -1,4 +1,3 @@
-import re
 import hashlib
 import redis
 import datetime
@@ -8,17 +7,6 @@ from flask import current_app
 # Muat model dan vectorizer
 model = joblib.load('svm_intrusion_detection.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
-
-def validate_input(input_text):
-    """Deteksi serangan SQL Injection atau XSS menggunakan pola dasar."""
-    pola_sql = r"(?i)(\bUNION\b|\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b|\bDROP\b|\b--|\b#|/\*|\*/)"
-    pola_xss = r"(?i)(<script|javascript:|onerror=|onload=|alert\()"
-
-    if re.search(pola_sql, input_text):
-        return "SQL Injection"
-    elif re.search(pola_xss, input_text):
-        return "XSS"
-    return "Normal"
 
 def get_cache_key(input_text):
     """Hasilkan cache key berdasarkan teks input yang di-hash."""
@@ -34,12 +22,6 @@ def make_prediction(input_text, client_ip="Tidak Diketahui", user_agent="Tidak D
 
         if not input_text:
             return {"error": "Payload diperlukan"}
-
-        # Validasi awal menggunakan aturan dasar
-        validasi_awal = validate_input(input_text)
-        if validasi_awal != "Normal":
-            current_app.logger.info(f"[{timestamp}] Validasi awal mendeteksi: {validasi_awal}")
-            return {"prediction": validasi_awal}
 
         # Inisialisasi klien Redis
         redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)

@@ -1256,3 +1256,219 @@
 }
 2025-03-10 21:43:55,901 - INFO - [2025-03-10T21:43:55.894723] Prediksi: XSS
 2025-03-10 21:43:55,903 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-11 10:15:59,970 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/",
+    "body": ""
+}
+2025-03-11 10:16:00,039 - INFO - [2025-03-11T10:16:00.039636] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/",
+    "body": ""
+}
+2025-03-11 10:16:00,049 - INFO - [2025-03-11T10:16:00.039636] Prediksi: Normal
+2025-03-11 10:16:00,049 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-03-11 10:16:50,772 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-11 10:16:50,773 - INFO - [2025-03-11T10:16:50.773689] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-11 10:16:50,794 - INFO - [2025-03-11T10:16:50.773689] Prediksi: Normal
+2025-03-11 10:16:50,796 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-03-11 10:24:04,911 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-11 10:24:04,913 - INFO - [2025-03-11T10:24:04.913848] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-11 10:24:04,939 - INFO - [2025-03-11T10:24:04.913848] Prediksi: Normal
+2025-03-11 10:24:04,940 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-03-11 12:44:55,621 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-11 12:44:55,624 - INFO - [2025-03-11T12:44:55.623054] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-11 12:44:55,666 - INFO - [2025-03-11T12:44:55.623054] Prediksi: Normal
+2025-03-11 12:44:55,667 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-03-11 12:45:11,124 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "submitted_at": "2025-03-11T05:45:10.939Z"
+    }
+}
+2025-03-11 12:45:11,124 - INFO - [2025-03-11T12:45:11.124618] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/my\/courses.php",
+    "body": {
+        "submitted_at": "2025-03-11T05:45:10.939Z"
+    }
+}
+2025-03-11 12:45:11,135 - INFO - [2025-03-11T12:45:11.124618] Prediksi: Normal
+2025-03-11 12:45:11,135 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-03-11 12:45:15,075 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php?category=1",
+    "body": ""
+}
+2025-03-11 12:45:15,076 - INFO - [2025-03-11T12:45:15.076660] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/course\/edit.php?category=1",
+    "body": ""
+}
+2025-03-11 12:45:15,083 - INFO - [2025-03-11T12:45:15.076660] Prediksi: Normal
+2025-03-11 12:45:15,084 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-03-11 12:47:09,066 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php?category=1",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "nzJKGXByEC",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Machine Learning",
+        "shortname": "ML",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "12",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "12",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "<p>Aku anak ML<\/p>",
+            "format": "1",
+            "itemid": "102705117"
+        },
+        "overviewfiles_filemanager": "166883638",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-11T05:47:08.793Z"
+    }
+}
+2025-03-11 12:47:09,067 - INFO - [2025-03-11T12:47:09.067188] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/course\/edit.php?category=1",
+    "body": {
+        "returnto": "0",
+        "returnurl": "http:\/\/localhost\/moodle\/course\/",
+        "mform_isexpanded_id_descriptionhdr": "1",
+        "addcourseformatoptionshere": "",
+        "id": "",
+        "sesskey": "nzJKGXByEC",
+        "_qf__course_edit_form": "1",
+        "mform_isexpanded_id_general": "1",
+        "mform_isexpanded_id_courseformathdr": "0",
+        "mform_isexpanded_id_appearancehdr": "0",
+        "mform_isexpanded_id_filehdr": "0",
+        "mform_isexpanded_id_completionhdr": "0",
+        "mform_isexpanded_id_groups": "0",
+        "mform_isexpanded_id_tagshdr": "0",
+        "fullname": "Machine Learning",
+        "shortname": "ML",
+        "category": "1",
+        "visible": "1",
+        "startdate": {
+            "day": "12",
+            "month": "3",
+            "year": "2025",
+            "hour": "0",
+            "minute": "0"
+        },
+        "enddate": {
+            "enabled": "1",
+            "day": "12",
+            "month": "3",
+            "year": "2026",
+            "hour": "0",
+            "minute": "0"
+        },
+        "idnumber": "",
+        "summary_editor": {
+            "text": "<p>Aku anak ML<\/p>",
+            "format": "1",
+            "itemid": "102705117"
+        },
+        "overviewfiles_filemanager": "166883638",
+        "format": "topics",
+        "numsections": "4",
+        "hiddensections": "1",
+        "coursedisplay": "0",
+        "lang": "",
+        "newsitems": "5",
+        "showgrades": "1",
+        "showreports": "0",
+        "showactivitydates": "1",
+        "maxbytes": "0",
+        "enablecompletion": "1",
+        "showcompletionconditions": "1",
+        "groupmode": "0",
+        "groupmodeforce": "0",
+        "defaultgroupingid": "0",
+        "tags": "_qf__force_multiselect_submission",
+        "submitted_at": "2025-03-11T05:47:08.793Z"
+    }
+}
+2025-03-11 12:47:09,086 - INFO - [2025-03-11T12:47:09.067188] Prediksi: Normal
+2025-03-11 12:47:09,087 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-03-11 12:47:25,438 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=3",
+    "body": "id=3"
+}
+2025-03-11 12:47:25,438 - INFO - [2025-03-11T12:47:25.438342] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=3",
+    "body": "id=3"
+}
+2025-03-11 12:47:25,447 - INFO - [2025-03-11T12:47:25.438342] Prediksi: XSS
+2025-03-11 12:47:25,448 - INFO - Hasil prediksi: {'prediction': 'XSS'}
