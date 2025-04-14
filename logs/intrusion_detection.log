@@ -1472,3 +1472,123 @@
 }
 2025-03-11 12:47:25,447 - INFO - [2025-03-11T12:47:25.438342] Prediksi: XSS
 2025-03-11 12:47:25,448 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-18 10:55:26,036 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-18 10:55:26,069 - INFO - [2025-03-18T10:55:26.069862] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-18 10:55:26,109 - ERROR - [2025-03-18T10:55:26.069862] Kesalahan Server: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2025-03-18 10:55:26,110 - INFO - Hasil prediksi: {'error': 'Kesalahan server internal'}
+2025-03-18 10:55:45,805 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-18 10:55:45,806 - INFO - [2025-03-18T10:55:45.806587] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-03-18 10:55:45,814 - ERROR - [2025-03-18T10:55:45.806587] Kesalahan Server: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2025-03-18 10:55:45,814 - INFO - Hasil prediksi: {'error': 'Kesalahan server internal'}
+2025-03-18 11:10:30,821 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-18 11:10:30,821 - INFO - [2025-03-18T11:10:30.821885] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-03-18 11:10:30,831 - INFO - [2025-03-18T11:10:30.821885] Prediksi: Normal
+2025-03-18 11:10:30,833 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+    2025-03-18 11:12:00,438 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-18 11:12:00,438 - INFO - [2025-03-18T11:12:00.438439] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-18 11:12:00,565 - INFO - [2025-03-18T11:12:00.438439] Prediksi: XSS
+2025-03-18 11:12:00,565 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-18 11:13:03,073 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/edit.php?id=2",
+    "body": "id=2"
+}
+2025-03-18 11:13:03,074 - INFO - [2025-03-18T11:13:03.074908] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/edit.php?id=2",
+    "body": "id=2"
+}
+2025-03-18 11:13:03,083 - INFO - [2025-03-18T11:13:03.074908] Prediksi: XSS
+2025-03-18 11:13:03,083 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-18 11:15:29,625 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-18 11:15:29,625 - INFO - [2025-03-18T11:15:29.625894] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-03-18 11:15:29,635 - INFO - [2025-03-18T11:15:29.625894] Prediksi: XSS
+2025-03-18 11:15:29,636 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-03-18 12:01:15,915 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-03-18 12:01:15,916 - INFO - [2025-03-18T12:01:15.916574] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-03-18 12:01:15,945 - INFO - [2025-03-18T12:01:15.916574] Prediksi: Normal
+2025-03-18 12:01:15,946 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 09:28:09,137 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/",
+    "body": ""
+}
+2025-04-14 09:28:09,138 - INFO - [2025-04-14T09:28:09.138702] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/",
+    "body": ""
+}
+2025-04-14 09:28:09,313 - INFO - [2025-04-14T09:28:09.138702] Prediksi: Normal
+2025-04-14 09:28:09,313 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 09:28:32,950 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/",
+    "body": ""
+}
+2025-04-14 09:28:32,950 - INFO - [2025-04-14T09:28:32.950522] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/",
+    "body": ""
+}
+2025-04-14 09:28:32,954 - INFO - [2025-04-14T09:28:32.950522] Cache hit: Normal
+2025-04-14 09:28:32,955 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 09:29:02,869 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-14 09:29:02,870 - INFO - [2025-04-14T09:29:02.870007] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-14 09:29:02,878 - INFO - [2025-04-14T09:29:02.870007] Prediksi: Normal
+2025-04-14 09:29:02,878 - INFO - Hasil prediksi: {'prediction': 'Normal'}

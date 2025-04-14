@@ -5,8 +5,8 @@ import joblib
 from flask import current_app
 
 # Muat model dan vectorizer
-model = joblib.load('svm_intrusion_detection.pkl')
-vectorizer = joblib.load('tfidf_vectorizer.pkl')
+model = joblib.load('model/svm_intrusion_detection.pkl')
+vectorizer = joblib.load('model/tfidf_vectorizer.pkl')
 
 def get_cache_key(input_text):
     """Hasilkan cache key berdasarkan teks input yang di-hash."""
