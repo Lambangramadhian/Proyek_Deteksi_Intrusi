@@ -60,7 +60,7 @@ def task_status(task_id):
 
 def subscribe_to_logs(app):
     """Berlangganan ke Redis 'moodle_logs' dan memproses setiap pesan."""
-    processed_messages = set()  # Lacak pesan yang sudah diproses
+    processed_messages = set()
 
     while True:
         try:
@@ -68,50 +68,49 @@ def subscribe_to_logs(app):
             pubsub.subscribe('moodle_logs')
             print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
 
-            last_ping = time.time()  # Lacak waktu ping terakhir
+            last_ping = time.time()
 
             for message in pubsub.listen():
-                if message['type'] == 'message':  # Hanya memproses pesan yang sebenarnya
-                    try:
-                        # Parse pesan yang masuk sebagai JSON
-                        data = json.loads(message['data'])
+                if message['type'] != 'message':
+                    continue
 
-                        # Hindari memproses pesan yang sama beberapa kali
-                        message_id = data.get('timestamp')  # Gunakan field timestamp atau ID unik lain
-                        if message_id in processed_messages:
-                            continue  # Lewati pesan yang sudah diproses
+                try:
+                    data = json.loads(message['data'])
 
-                        # Tandai pesan sebagai diproses
-                        processed_messages.add(message_id)
+                    message_id = data.get('timestamp')
+                    if message_id in processed_messages:
+                        continue
+                    processed_messages.add(message_id)
 
-                        print(f"Pesan diterima: {data} pada thread: {threading.current_thread().name}")
+                    payload_obj = data.get('payloadData', {})
+                    payload_str = json.dumps(payload_obj)
 
-                        # Ekstrak field dari pesan
-                        payload_obj = data.get('payloadData', {})
-                        payload = json.dumps(payload_obj)
-                        ip = data.get('ip', 'Tidak Diketahui')
+                    ip = data.get('ip_address', 'Tidak Diketahui')
+                    user_agent = data.get('user_agent', 'Tidak Diketahui')
 
-                        # Gunakan konteks aplikasi Flask
-                        with app.app_context():
-                            current_app.logger.info(f"Memproses payload dari IP {ip}: {payload}")
-                            
-                            # Panggil fungsi make_prediction dalam konteks app
-                            hasil_prediksi = make_prediction(payload, client_ip=ip)
+                    with app.app_context():
+                        log_input = {
+                            "timestamp": message_id,
+                            "ip": ip,
+                            "user_agent": user_agent,
+                            "input": payload_obj
+                        }
+                        current_app.logger.info(f"Memproses: {json.dumps(log_input)}")
 
-                            # Catat hasil prediksi
-                            current_app.logger.info(f"Hasil prediksi: {hasil_prediksi}")
+                        hasil_prediksi = make_prediction(payload_str, client_ip=ip, user_agent=user_agent)
 
-                    except Exception as e:
-                        print(f"Kesalahan saat memproses pesan: {str(e)}")
-                
-                # Kirim PING ke Redis setiap 60 detik untuk menjaga koneksi tetap aktif
+                        current_app.logger.info(f"Hasil prediksi: {json.dumps(hasil_prediksi)}")
+
+                except Exception as e:
+                    print(f"Kesalahan saat memproses pesan: {str(e)}")
+
                 if time.time() - last_ping > 60:
                     redis_connection.ping()
                     last_ping = time.time()
 
         except TimeoutError:
             print("Redis TimeoutError: Menghubungkan kembali ke Redis...")
-            pubsub.close()  # Tutup koneksi saat timeout, lalu ulangi proses
+            pubsub.close()
 
 # ===================== Utama ===================== #
 

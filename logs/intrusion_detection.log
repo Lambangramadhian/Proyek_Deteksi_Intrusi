@@ -2072,3 +2072,7 @@
 2025-04-15 09:26:54,823 - INFO - Memproses payload dari IP Tidak Diketahui: 
 2025-04-15 09:26:54,824 - INFO - [2025-04-15T09:26:54.824150] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
 2025-04-15 09:26:54,824 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:33:52,874 - INFO - Memproses payload dari IP Tidak Diketahui: {"method": "GET", "url": "/moodle/my/", "body": ""}
+2025-04-15 09:33:52,874 - INFO - [2025-04-15T09:33:52.874937] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: {"method": "GET", "url": "/moodle/my/", "body": ""}
+2025-04-15 09:33:52,882 - INFO - [2025-04-15T09:33:52.874937] Prediksi: Normal
+2025-04-15 09:33:52,883 - INFO - Hasil prediksi: {'prediction': 'Normal'}
