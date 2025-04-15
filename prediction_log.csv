@@ -1,0 +1,156 @@
+timestamp,ip,user_agent,input_text,prediction
+2025-04-15T09:06:18.745337,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/search.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:07:12.582341,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/my\/courses.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:07:14.312228,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/my\/courses.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:07:26.502612,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/my\/"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:11:10.322119,::1,Tidak Diketahui,"{
+    ""method"": ""POST"",
+    ""url"": ""\/moodle\/lib\/ajax\/service.php?sesskey=KSynCGfbKM&info=core_get_fragment"",
+    ""body"": [
+        {
+            ""index"": 0,
+            ""methodname"": ""core_get_fragment"",
+            ""args"": {
+                ""component"": ""calendar"",
+                ""callback"": ""event_form"",
+                ""contextid"": 2,
+                ""args"": [
+                    {
+                        ""name"": ""courseid"",
+                        ""value"": 1
+                    }
+                ]
+            }
+        }
+    ]
+}",Normal
+2025-04-15T09:12:37.272823,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/my\/courses.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:12:47.671508,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/course\/edit.php?category=1"",
+    ""body"": ""category=1""
+}",Normal
+2025-04-15T09:13:12.167815,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/course\/index.php?categoryid=1"",
+    ""body"": ""categoryid=1""
+}",Normal
+2025-04-15T09:13:15.991504,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/tool\/uploadcourse\/index.php?categoryid=1"",
+    ""body"": ""categoryid=1""
+}",Normal
+2025-04-15T09:13:18.741400,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/my\/courses.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:13:20.136121,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/my\/"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:13:27.818996,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/search.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:14:02.716471,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/search.php?query=%27+union+all+select+1%2C2%2C3+--+%27"",
+    ""body"": ""query=%27+union+all+select+1%2C2%2C3+--+%27""
+}",SQL Injection
+2025-04-15T09:15:26.504455,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/search.php?query=%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E"",
+    ""body"": ""query=%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E""
+}",Normal
+2025-04-15T09:16:08.600683,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/search.php?query=%3Cscript%3Exss%3C%2Fscript%3E"",
+    ""body"": ""query=%3Cscript%3Exss%3C%2Fscript%3E""
+}",Normal
+2025-04-15T09:16:46.787546,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/search.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:16:48.888929,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/tool\/installaddon\/index.php"",
+    ""body"": """"
+}",Normal
+2025-04-15T09:17:08.976406,::1,Tidak Diketahui,"{
+    ""method"": ""POST"",
+    ""url"": ""\/moodle\/admin\/tool\/installaddon\/index.php"",
+    ""body"": {
+        ""sesskey"": ""KSynCGfbKM"",
+        ""_qf__tool_installaddon_installfromzip_form"": ""1"",
+        ""mform_showmore_id_general"": ""0"",
+        ""mform_isexpanded_id_general"": ""1"",
+        ""zipfile"": ""924553743"",
+        ""plugintype"": """",
+        ""rootdir"": """",
+        ""submitbutton"": ""Install plugin from the ZIP file""
+    }
+}",Normal
+2025-04-15T09:17:09.542705,::1,Tidak Diketahui,"{
+    ""method"": ""POST"",
+    ""url"": ""http:\/\/localhost\/moodle\/admin\/tool\/installaddon\/index.php"",
+    ""body"": {
+        ""sesskey"": ""KSynCGfbKM"",
+        ""_qf__tool_installaddon_installfromzip_form"": ""1"",
+        ""mform_showmore_id_general"": ""0"",
+        ""mform_isexpanded_id_general"": ""1"",
+        ""zipfile"": ""924553743"",
+        ""plugintype"": """",
+        ""rootdir"": """",
+        ""submitted_at"": ""2025-04-15T02:17:08.361Z""
+    }
+}",Normal
+2025-04-15T09:17:10.007782,::1,Tidak Diketahui,"{
+    ""method"": ""GET"",
+    ""url"": ""\/moodle\/admin\/tool\/installaddon\/index.php?installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM"",
+    ""body"": ""installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM""
+}",Normal
+2025-04-15T09:17:15.393622,::1,Tidak Diketahui,"{
+    ""method"": ""POST"",
+    ""url"": ""http:\/\/localhost\/moodle\/admin\/tool\/installaddon\/index.php?installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM"",
+    ""body"": {
+        ""installzipcomponent"": ""local_requestlogger"",
+        ""installzipstorage"": ""67fdc1a51a096"",
+        ""installzipconfirm"": ""1"",
+        ""sesskey"": ""KSynCGfbKM"",
+        ""submitted_at"": ""2025-04-15T02:17:15.126Z""
+    }
+}",Normal
+2025-04-15T09:17:15.896104,::1,Tidak Diketahui,"{
+    ""method"": ""POST"",
+    ""url"": ""\/moodle\/admin\/tool\/installaddon\/index.php"",
+    ""body"": {
+        ""installzipcomponent"": ""local_requestlogger"",
+        ""installzipstorage"": ""67fdc1a51a096"",
+        ""installzipconfirm"": ""1"",
+        ""sesskey"": ""KSynCGfbKM""
+    }
+}",Normal

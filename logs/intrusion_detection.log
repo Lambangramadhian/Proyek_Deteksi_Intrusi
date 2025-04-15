@@ -1592,3 +1592,474 @@
 }
 2025-04-14 09:29:02,878 - INFO - [2025-04-14T09:29:02.870007] Prediksi: Normal
 2025-04-14 09:29:02,878 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 17:45:28,342 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-14 17:45:28,372 - INFO - [2025-04-14T17:45:28.372037] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-14 17:45:28,418 - INFO - [2025-04-14T17:45:28.372037] Prediksi: Normal
+2025-04-14 17:45:28,418 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 17:46:01,410 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-14 17:46:01,411 - INFO - [2025-04-14T17:46:01.411966] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-14 17:46:01,420 - INFO - [2025-04-14T17:46:01.411966] Prediksi: Normal
+2025-04-14 17:46:01,421 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 17:46:26,935 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-04-14 17:46:26,936 - INFO - [2025-04-14T17:46:26.936835] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/view.php?id=2",
+    "body": "id=2"
+}
+2025-04-14 17:46:26,942 - INFO - [2025-04-14T17:46:26.936835] Prediksi: XSS
+2025-04-14 17:46:26,943 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-14 17:47:32,069 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/edit.php?id=2",
+    "body": "id=2"
+}
+2025-04-14 17:47:32,070 - INFO - [2025-04-14T17:47:32.070081] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/edit.php?id=2",
+    "body": "id=2"
+}
+2025-04-14 17:47:32,075 - INFO - [2025-04-14T17:47:32.070081] Prediksi: XSS
+2025-04-14 17:47:32,076 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-14 17:48:06,224 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-14 17:48:06,224 - INFO - [2025-04-14T17:48:06.224301] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-14 17:48:06,230 - INFO - [2025-04-14T17:48:06.224301] Prediksi: Normal
+2025-04-14 17:48:06,231 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 17:50:22,440 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-14 17:50:22,440 - INFO - [2025-04-14T17:50:22.440937] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-14 17:50:22,447 - INFO - [2025-04-14T17:50:22.440937] Prediksi: Normal
+2025-04-14 17:50:22,448 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 17:53:14,143 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-14 17:53:14,143 - INFO - [2025-04-14T17:53:14.143151] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-14 17:53:14,150 - INFO - [2025-04-14T17:53:14.143151] Prediksi: Normal
+2025-04-14 17:53:14,151 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-14 17:53:33,810 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": ""
+}
+2025-04-14 17:53:33,810 - INFO - [2025-04-14T17:53:33.810161] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": ""
+}
+2025-04-14 17:53:33,816 - INFO - [2025-04-14T17:53:33.810161] Prediksi: Normal
+2025-04-14 17:53:33,816 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:06:18,744 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-15 09:06:18,745 - INFO - [2025-04-15T09:06:18.745337] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-15 09:06:18,940 - INFO - [2025-04-15T09:06:18.745337] Prediksi: Normal
+2025-04-15 09:06:18,941 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:07:12,581 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:07:12,582 - INFO - [2025-04-15T09:07:12.582341] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:07:12,588 - INFO - [2025-04-15T09:07:12.582341] Prediksi: Normal
+2025-04-15 09:07:12,589 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:07:14,311 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:07:14,312 - INFO - [2025-04-15T09:07:14.312228] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:07:14,315 - INFO - [2025-04-15T09:07:14.312228] Cache hit: Normal
+2025-04-15 09:07:14,316 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:07:26,502 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-15 09:07:26,502 - INFO - [2025-04-15T09:07:26.502612] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-15 09:07:26,508 - INFO - [2025-04-15T09:07:26.502612] Prediksi: Normal
+2025-04-15 09:07:26,509 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:11:10,322 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "\/moodle\/lib\/ajax\/service.php?sesskey=KSynCGfbKM&info=core_get_fragment",
+    "body": [
+        {
+            "index": 0,
+            "methodname": "core_get_fragment",
+            "args": {
+                "component": "calendar",
+                "callback": "event_form",
+                "contextid": 2,
+                "args": [
+                    {
+                        "name": "courseid",
+                        "value": 1
+                    }
+                ]
+            }
+        }
+    ]
+}
+2025-04-15 09:11:10,323 - INFO - [2025-04-15T09:11:10.322119] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/lib\/ajax\/service.php?sesskey=KSynCGfbKM&info=core_get_fragment",
+    "body": [
+        {
+            "index": 0,
+            "methodname": "core_get_fragment",
+            "args": {
+                "component": "calendar",
+                "callback": "event_form",
+                "contextid": 2,
+                "args": [
+                    {
+                        "name": "courseid",
+                        "value": 1
+                    }
+                ]
+            }
+        }
+    ]
+}
+2025-04-15 09:11:10,329 - INFO - [2025-04-15T09:11:10.322119] Prediksi: Normal
+2025-04-15 09:11:10,342 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:12:37,271 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:12:37,272 - INFO - [2025-04-15T09:12:37.272823] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:12:37,282 - INFO - [2025-04-15T09:12:37.272823] Prediksi: Normal
+2025-04-15 09:12:37,283 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:12:47,670 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/edit.php?category=1",
+    "body": "category=1"
+}
+2025-04-15 09:12:47,671 - INFO - [2025-04-15T09:12:47.671508] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/edit.php?category=1",
+    "body": "category=1"
+}
+2025-04-15 09:12:47,677 - INFO - [2025-04-15T09:12:47.671508] Prediksi: Normal
+2025-04-15 09:12:47,679 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:13:12,167 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/course\/index.php?categoryid=1",
+    "body": "categoryid=1"
+}
+2025-04-15 09:13:12,167 - INFO - [2025-04-15T09:13:12.167815] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/course\/index.php?categoryid=1",
+    "body": "categoryid=1"
+}
+2025-04-15 09:13:12,174 - INFO - [2025-04-15T09:13:12.167815] Prediksi: Normal
+2025-04-15 09:13:12,175 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:13:15,991 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/uploadcourse\/index.php?categoryid=1",
+    "body": "categoryid=1"
+}
+2025-04-15 09:13:15,991 - INFO - [2025-04-15T09:13:15.991504] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/uploadcourse\/index.php?categoryid=1",
+    "body": "categoryid=1"
+}
+2025-04-15 09:13:15,997 - INFO - [2025-04-15T09:13:15.991504] Prediksi: Normal
+2025-04-15 09:13:15,998 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:13:18,740 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:13:18,741 - INFO - [2025-04-15T09:13:18.741400] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/courses.php",
+    "body": ""
+}
+2025-04-15 09:13:18,744 - INFO - [2025-04-15T09:13:18.741400] Cache hit: Normal
+2025-04-15 09:13:18,745 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:13:20,136 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-15 09:13:20,136 - INFO - [2025-04-15T09:13:20.136121] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/my\/",
+    "body": ""
+}
+2025-04-15 09:13:20,144 - INFO - [2025-04-15T09:13:20.136121] Prediksi: Normal
+2025-04-15 09:13:20,145 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:13:27,818 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-15 09:13:27,818 - INFO - [2025-04-15T09:13:27.818996] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-15 09:13:27,826 - INFO - [2025-04-15T09:13:27.818996] Prediksi: Normal
+2025-04-15 09:13:27,827 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:14:02,716 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php?query=%27+union+all+select+1%2C2%2C3+--+%27",
+    "body": "query=%27+union+all+select+1%2C2%2C3+--+%27"
+}
+2025-04-15 09:14:02,717 - INFO - [2025-04-15T09:14:02.716471] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php?query=%27+union+all+select+1%2C2%2C3+--+%27",
+    "body": "query=%27+union+all+select+1%2C2%2C3+--+%27"
+}
+2025-04-15 09:14:02,723 - INFO - [2025-04-15T09:14:02.716471] Prediksi: SQL Injection
+2025-04-15 09:14:02,724 - INFO - Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-04-15 09:15:26,504 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php?query=%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E",
+    "body": "query=%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E"
+}
+2025-04-15 09:15:26,504 - INFO - [2025-04-15T09:15:26.504455] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php?query=%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E",
+    "body": "query=%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E"
+}
+2025-04-15 09:15:26,510 - INFO - [2025-04-15T09:15:26.504455] Prediksi: Normal
+2025-04-15 09:15:26,511 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:16:08,600 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php?query=%3Cscript%3Exss%3C%2Fscript%3E",
+    "body": "query=%3Cscript%3Exss%3C%2Fscript%3E"
+}
+2025-04-15 09:16:08,600 - INFO - [2025-04-15T09:16:08.600683] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php?query=%3Cscript%3Exss%3C%2Fscript%3E",
+    "body": "query=%3Cscript%3Exss%3C%2Fscript%3E"
+}
+2025-04-15 09:16:08,606 - INFO - [2025-04-15T09:16:08.600683] Prediksi: Normal
+2025-04-15 09:16:08,607 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:16:46,786 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-15 09:16:46,787 - INFO - [2025-04-15T09:16:46.787546] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/search.php",
+    "body": ""
+}
+2025-04-15 09:16:46,793 - INFO - [2025-04-15T09:16:46.787546] Prediksi: Normal
+2025-04-15 09:16:46,794 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:16:48,888 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": ""
+}
+2025-04-15 09:16:48,888 - INFO - [2025-04-15T09:16:48.888929] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": ""
+}
+2025-04-15 09:16:48,895 - INFO - [2025-04-15T09:16:48.888929] Prediksi: Normal
+2025-04-15 09:16:48,896 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:17:08,976 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": {
+        "sesskey": "KSynCGfbKM",
+        "_qf__tool_installaddon_installfromzip_form": "1",
+        "mform_showmore_id_general": "0",
+        "mform_isexpanded_id_general": "1",
+        "zipfile": "924553743",
+        "plugintype": "",
+        "rootdir": "",
+        "submitbutton": "Install plugin from the ZIP file"
+    }
+}
+2025-04-15 09:17:08,976 - INFO - [2025-04-15T09:17:08.976406] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": {
+        "sesskey": "KSynCGfbKM",
+        "_qf__tool_installaddon_installfromzip_form": "1",
+        "mform_showmore_id_general": "0",
+        "mform_isexpanded_id_general": "1",
+        "zipfile": "924553743",
+        "plugintype": "",
+        "rootdir": "",
+        "submitbutton": "Install plugin from the ZIP file"
+    }
+}
+2025-04-15 09:17:08,982 - INFO - [2025-04-15T09:17:08.976406] Prediksi: Normal
+2025-04-15 09:17:08,983 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:17:09,542 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": {
+        "sesskey": "KSynCGfbKM",
+        "_qf__tool_installaddon_installfromzip_form": "1",
+        "mform_showmore_id_general": "0",
+        "mform_isexpanded_id_general": "1",
+        "zipfile": "924553743",
+        "plugintype": "",
+        "rootdir": "",
+        "submitted_at": "2025-04-15T02:17:08.361Z"
+    }
+}
+2025-04-15 09:17:09,542 - INFO - [2025-04-15T09:17:09.542705] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": {
+        "sesskey": "KSynCGfbKM",
+        "_qf__tool_installaddon_installfromzip_form": "1",
+        "mform_showmore_id_general": "0",
+        "mform_isexpanded_id_general": "1",
+        "zipfile": "924553743",
+        "plugintype": "",
+        "rootdir": "",
+        "submitted_at": "2025-04-15T02:17:08.361Z"
+    }
+}
+2025-04-15 09:17:09,549 - INFO - [2025-04-15T09:17:09.542705] Prediksi: Normal
+2025-04-15 09:17:09,550 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:17:10,006 - INFO - Memproses payload dari IP ::1: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php?installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM",
+    "body": "installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM"
+}
+2025-04-15 09:17:10,007 - INFO - [2025-04-15T09:17:10.007782] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php?installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM",
+    "body": "installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM"
+}
+2025-04-15 09:17:10,014 - INFO - [2025-04-15T09:17:10.007782] Prediksi: Normal
+2025-04-15 09:17:10,015 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:17:15,393 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/admin\/tool\/installaddon\/index.php?installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM",
+    "body": {
+        "installzipcomponent": "local_requestlogger",
+        "installzipstorage": "67fdc1a51a096",
+        "installzipconfirm": "1",
+        "sesskey": "KSynCGfbKM",
+        "submitted_at": "2025-04-15T02:17:15.126Z"
+    }
+}
+2025-04-15 09:17:15,393 - INFO - [2025-04-15T09:17:15.393622] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http:\/\/localhost\/moodle\/admin\/tool\/installaddon\/index.php?installzipcomponent=local_requestlogger&installzipstorage=67fdc1a51a096&sesskey=KSynCGfbKM",
+    "body": {
+        "installzipcomponent": "local_requestlogger",
+        "installzipstorage": "67fdc1a51a096",
+        "installzipconfirm": "1",
+        "sesskey": "KSynCGfbKM",
+        "submitted_at": "2025-04-15T02:17:15.126Z"
+    }
+}
+2025-04-15 09:17:15,400 - INFO - [2025-04-15T09:17:15.393622] Prediksi: Normal
+2025-04-15 09:17:15,401 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:17:15,896 - INFO - Memproses payload dari IP ::1: {
+    "method": "POST",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": {
+        "installzipcomponent": "local_requestlogger",
+        "installzipstorage": "67fdc1a51a096",
+        "installzipconfirm": "1",
+        "sesskey": "KSynCGfbKM"
+    }
+}
+2025-04-15 09:17:15,896 - INFO - [2025-04-15T09:17:15.896104] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "\/moodle\/admin\/tool\/installaddon\/index.php",
+    "body": {
+        "installzipcomponent": "local_requestlogger",
+        "installzipstorage": "67fdc1a51a096",
+        "installzipconfirm": "1",
+        "sesskey": "KSynCGfbKM"
+    }
+}
+2025-04-15 09:17:15,902 - INFO - [2025-04-15T09:17:15.896104] Prediksi: Normal
+2025-04-15 09:17:15,903 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:20:25,181 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:20:25,181 - INFO - [2025-04-15T09:20:25.181606] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:20:25,181 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:20:37,171 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:20:37,172 - INFO - [2025-04-15T09:20:37.171077] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:20:37,172 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:22:05,783 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:22:05,784 - INFO - [2025-04-15T09:22:05.784221] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:22:05,784 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:22:15,353 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:22:15,353 - INFO - [2025-04-15T09:22:15.353869] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:22:15,354 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:22:25,338 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:22:25,338 - INFO - [2025-04-15T09:22:25.338433] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:22:25,339 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:23:57,423 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:23:57,424 - INFO - [2025-04-15T09:23:57.424465] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:23:57,424 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:24:15,095 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:24:15,095 - INFO - [2025-04-15T09:24:15.095208] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:24:15,095 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
