@@ -2063,3 +2063,12 @@
 2025-04-15 09:24:15,095 - INFO - Memproses payload dari IP Tidak Diketahui: 
 2025-04-15 09:24:15,095 - INFO - [2025-04-15T09:24:15.095208] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
 2025-04-15 09:24:15,095 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:25:08,591 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:25:08,591 - INFO - [2025-04-15T09:25:08.591949] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:25:08,591 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:25:39,576 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:25:39,576 - INFO - [2025-04-15T09:25:39.576241] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:25:39,576 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}
+2025-04-15 09:26:54,823 - INFO - Memproses payload dari IP Tidak Diketahui: 
+2025-04-15 09:26:54,824 - INFO - [2025-04-15T09:26:54.824150] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: 
+2025-04-15 09:26:54,824 - INFO - Hasil prediksi: {'error': 'Payload diperlukan'}

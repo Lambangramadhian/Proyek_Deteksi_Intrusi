@@ -87,7 +87,8 @@ def subscribe_to_logs(app):
                         print(f"Pesan diterima: {data} pada thread: {threading.current_thread().name}")
 
                         # Ekstrak field dari pesan
-                        payload = data.get('payload', '')
+                        payload_obj = data.get('payloadData', {})
+                        payload = json.dumps(payload_obj)
                         ip = data.get('ip', 'Tidak Diketahui')
 
                         # Gunakan konteks aplikasi Flask
