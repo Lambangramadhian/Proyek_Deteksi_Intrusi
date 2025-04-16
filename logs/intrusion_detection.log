@@ -2076,3 +2076,11 @@
 2025-04-15 09:33:52,874 - INFO - [2025-04-15T09:33:52.874937] IP: Tidak Diketahui | User-Agent: Tidak Diketahui | Input: {"method": "GET", "url": "/moodle/my/", "body": ""}
 2025-04-15 09:33:52,882 - INFO - [2025-04-15T09:33:52.874937] Prediksi: Normal
 2025-04-15 09:33:52,883 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-15 09:48:14,344 - INFO - Memproses: {"timestamp": "15/04/2025 09:48:14.318", "ip": "::1", "user_agent": "Tidak Diketahui", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-15 09:48:14,344 - INFO - [2025-04-15T09:48:14.344894] IP: ::1 | User-Agent: Tidak Diketahui | Input: {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}
+2025-04-15 09:48:14,351 - INFO - [2025-04-15T09:48:14.344894] Prediksi: Normal
+2025-04-15 09:48:14,352 - INFO - Hasil prediksi: {"prediction": "Normal"}
+2025-04-15 09:48:33,532 - INFO - Memproses: {"timestamp": "15/04/2025 09:48:33.515", "ip": "::1", "user_agent": "Tidak Diketahui", "input": {"method": "GET", "url": "/moodle/my/", "body": ""}}
+2025-04-15 09:48:33,533 - INFO - [2025-04-15T09:48:33.533627] IP: ::1 | User-Agent: Tidak Diketahui | Input: {"method": "GET", "url": "/moodle/my/", "body": ""}
+2025-04-15 09:48:33,539 - INFO - [2025-04-15T09:48:33.533627] Prediksi: Normal
+2025-04-15 09:48:33,540 - INFO - Hasil prediksi: {"prediction": "Normal"}
