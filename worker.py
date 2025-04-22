@@ -1,3 +1,4 @@
+import os
 import redis
 from rq import Queue
 from rq.worker import SimpleWorker
@@ -5,7 +6,9 @@ from rq.timeouts import BaseDeathPenalty
 from app_factory import create_app
 
 # Koneksi Redis
-redis_connection = redis.StrictRedis(host='localhost', port=6379, db=0)
+redis_host = os.getenv("REDIS_HOST", "localhost")
+redis_port = int(os.getenv("REDIS_PORT", 6379))
+redis_connection = redis.StrictRedis(host=redis_host, port=redis_port, db=0)
 
 # DummyDeathPenalty untuk menghindari masalah penanganan sinyal (terutama untuk Windows)
 class DummyDeathPenalty(BaseDeathPenalty):
@@ -23,7 +26,6 @@ class WorkerWithoutSignals(SimpleWorker):
 def start_worker():
     """Mulai worker dengan konteks aplikasi Flask."""
     app, _ = create_app()
-
     with app.app_context():
         queue = Queue('default', connection=redis_connection)
         worker = WorkerWithoutSignals([queue], connection=redis_connection)
