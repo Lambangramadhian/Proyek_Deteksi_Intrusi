@@ -25,13 +25,13 @@ def home():
     """Halaman utama aplikasi."""
     return "Selamat datang di API Deteksi Intrusi" # Mengembalikan pesan sambutan
 
-# Fungsi untuk mengembalikan favicon
+# Endpoint untuk favicon
 @app.route("/favicon.ico")
 def favicon():
     """Mengembalikan favicon kosong."""
     return "", 204 # Mengembalikan status 204 No Content
 
-# Fungsi untuk memproses prediksi
+# Endpoint untuk memproses prediksi
 @app.route("/predict", methods=["POST"])
 def predict():
     """Endpoint untuk memproses prediksi."""
@@ -46,7 +46,7 @@ def predict():
     task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None) 
     return jsonify({"task_id": task.id, "message": "Tugas prediksi dimulai"}), 202 # 202 Accepted
 
-# Fungsi untuk mendapatkan status tugas berdasarkan task_id
+# Mendapatkan status tugas berdasarkan task_id
 @app.route("/task-status/<task_id>", methods=["GET"])
 def task_status(task_id):
     """Endpoint untuk mendapatkan status tugas berdasarkan task_id."""
@@ -59,7 +59,6 @@ def task_status(task_id):
         return jsonify({"status": "gagal", "error": str(task.exc_info)}), 500
     return jsonify({"status": "sedang diproses"}), 202
 
-# Fungsi untuk berlangganan ke Redis PubSub dan memproses pesan
 def subscribe_to_logs(app):
     """Fungsi untuk berlangganan ke Redis PubSub dan memproses pesan."""
     processed_messages = set()
