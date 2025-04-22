@@ -96,7 +96,7 @@ def subscribe_to_logs(app):
                             "ip": ip,
                             "input": payload_dict
                         }
-                        current_app.logger.info(f"Memproses: {json.dumps(log_entry)}")
+                        current_app.logger.info(json.dumps(log_entry))
 
                         # Memanggil fungsi prediksi
                         hasil_prediksi = make_prediction(input_text=input_text, client_ip=ip)
