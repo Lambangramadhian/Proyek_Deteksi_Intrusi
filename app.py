@@ -62,6 +62,8 @@ def task_status(task_id):
 def subscribe_to_logs(app):
     """Fungsi untuk berlangganan ke Redis PubSub dan memproses pesan."""
     processed_messages = set()
+
+    # Fungsi untuk memproses pesan dari Redis PubSub
     while True:
         try:
             pubsub = redis_connection.pubsub()
@@ -71,38 +73,49 @@ def subscribe_to_logs(app):
 
             # Mendengarkan pesan dari Redis PubSub
             for message in pubsub.listen():
-                if message['type'] == 'message':
-                    try:
-                        data = json.loads(message['data'])
-                        message_id = data.get('timestamp')
-                        if message_id in processed_messages:
-                            continue
-                        processed_messages.add(message_id)
+                if message['type'] != 'message':
+                    continue
 
-                        ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
-                        user_agent = data.get('user_agent', 'Tidak Diketahui')
-                        payload_dict = data.get('payloadData', {})
-                        input_text = json.dumps(payload_dict)
+                # Pesan yang diterima dari Redis PubSub
+                try:
+                    data = json.loads(message['data'])
+                    message_id = data.get('timestamp')
+                    if message_id in processed_messages:
+                        continue
+                    processed_messages.add(message_id)
 
-                        with app.app_context():
-                            log_entry = {
-                                "timestamp": message_id,
-                                "ip": ip,
-                                "user_agent": user_agent,
-                                "input": payload_dict
-                            }
-                            current_app.logger.info(f"Memproses: {json.dumps(log_entry)}")
-                            hasil_prediksi = make_prediction(input_text, ip, user_agent)
-                            current_app.logger.info(json.dumps(hasil_prediksi))
-                    except Exception as e:
-                        with app.app_context():
-                            current_app.logger.error(json.dumps({
-                                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
-                                "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
-                            }))
+                    # Mendapatkan informasi dari pesan
+                    ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
+                    payload_dict = data.get('payloadData', {})
+                    input_text = json.dumps(payload_dict)
+
+                    # Memproses pesan dan menyimpan hasil ke Redis
+                    with app.app_context():
+                        log_entry = {
+                            "timestamp": message_id,
+                            "ip": ip,
+                            "input": payload_dict
+                        }
+                        current_app.logger.info(f"Memproses: {json.dumps(log_entry)}")
+
+                        # Memanggil fungsi prediksi
+                        hasil_prediksi = make_prediction(input_text=input_text, client_ip=ip)
+                        current_app.logger.info(json.dumps(hasil_prediksi))
+
+                # Handle exception and log error
+                except Exception as e:
+                    with app.app_context():
+                        current_app.logger.error(json.dumps({
+                            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                            "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
+                        }))
+
+                # Menghindari Redis TimeoutError
                 if time.time() - last_ping > 60:
                     redis_connection.ping()
                     last_ping = time.time()
+
+        # Handle Redis TimeoutError
         except TimeoutError:
             print("Redis TimeoutError: Menghubungkan kembali ke Redis...")
             pubsub.close()

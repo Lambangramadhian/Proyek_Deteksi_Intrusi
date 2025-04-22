@@ -1,3 +1,4 @@
+# predict.py
 import os
 import json
 import redis
@@ -6,28 +7,28 @@ import hashlib
 import datetime
 from flask import current_app
 
-# Load model dan vectorizer dari folder model/
-MODEL_PATH = os.getenv("MODEL_PATH", "model/random_forest_web_ids.pkl")
-VECTORIZER_PATH = os.getenv("VECTORIZER_PATH", "model/tfidf_vectorizer.pkl")
+# Load model dan vectorizer dari env atau default
+model = joblib.load(os.getenv("MODEL_PATH", "model/random_forest_web_ids.pkl"))
+vectorizer = joblib.load(os.getenv("VECTORIZER_PATH", "model/tfidf_vectorizer.pkl"))
 
-# Load model dan vectorizer
-model = joblib.load(MODEL_PATH)
-vectorizer = joblib.load(VECTORIZER_PATH)
-
-# Redis host konfigurasi fleksibel
-redis_host = os.getenv("REDIS_HOST", "localhost")
-redis_port = int(os.getenv("REDIS_PORT", 6379))
-redis_client = redis.StrictRedis(host=redis_host, port=redis_port, db=0, decode_responses=True)
+# Redis global instance
+redis_client = redis.StrictRedis(
+    host=os.getenv("REDIS_HOST", "localhost"),
+    port=int(os.getenv("REDIS_PORT", 6379)),
+    db=0,
+    decode_responses=True
+)
 
 def get_cache_key(input_text):
-    """Menghasilkan kunci cache berdasarkan input text."""
+    """Menghasilkan kunci cache berdasarkan input_text."""
     return f"prediction:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
-def make_prediction(input_text, client_ip="Tidak Diketahui", user_agent="Tidak Diketahui"):
-    """Fungsi untuk memproses prediksi dan menyimpan hasil ke Redis."""
+def make_prediction(input_text, client_ip="Tidak Diketahui"):
+    """Fungsi untuk memproses prediksi dengan model dan menyimpan hasil ke Redis."""
     try:
         timestamp = datetime.datetime.now().isoformat()
 
+        # Mendapatkan informasi IP dan User-Agent dari header permintaan
         if not input_text:
             return {"error": "Payload diperlukan"}
 
@@ -35,11 +36,10 @@ def make_prediction(input_text, client_ip="Tidak Diketahui", user_agent="Tidak D
         current_app.logger.info(json.dumps({
             "timestamp": timestamp,
             "ip": client_ip,
-            "user_agent": user_agent,
             "input": input_text
         }))
 
-        # Cek cache Redis
+        # Redis cache
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
         if hasil_cache:
@@ -50,24 +50,25 @@ def make_prediction(input_text, client_ip="Tidak Diketahui", user_agent="Tidak D
             }))
             return {"prediction": hasil_cache}
 
-        # Proses prediksi
-        input_vectorized = vectorizer.transform([input_text])
-        prediction = model.predict(input_vectorized)[0]
+        # Vektorisasi dan prediksi
+        vectorized_input = vectorizer.transform([input_text])
+        prediction = model.predict(vectorized_input)[0]
 
+        # Map label ke string
         label_map = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
-        prediction_label = label_map.get(prediction, "Tidak Diketahui")
+        label = label_map.get(prediction, "Tidak Diketahui")
 
-        redis_client.setex(cache_key, 60, prediction_label)
+        # Simpan hasil prediksi ke Redis dengan waktu kedaluwarsa 60 detik
+        redis_client.setex(cache_key, 60, label)
 
+        # Log hasil prediksi
         current_app.logger.info(json.dumps({
             "timestamp": timestamp,
-            "prediction": prediction_label
+            "prediction": label
         }))
+        return {"prediction": label}
 
-        # Simpan hasil ke Redis dengan TTL 60 detik
-        return {"prediction": prediction_label}
-
-    # Handle error dan log
+    # Handle exception and log error
     except Exception as e:
         current_app.logger.error(json.dumps({
             "timestamp": datetime.datetime.now().isoformat(),
