@@ -2100,3 +2100,11 @@
 2025-04-22 08:34:29,546 - INFO - {"timestamp": "2025-04-22T08:34:29.546922", "ip": "::1", "user_agent": "Tidak Diketahui", "input": "{\"method\": \"GET\", \"url\": \"/moodle/course/view.php?id=6\", \"body\": \"id=6\"}"}
 2025-04-22 08:34:29,616 - INFO - {"timestamp": "2025-04-22T08:34:29.546922", "prediction": "XSS"}
 2025-04-22 08:34:29,619 - INFO - {"prediction": "XSS"}
+2025-04-22 08:47:03,185 - INFO - Memproses: {"timestamp": "22/04/2025 08:45:40.108", "ip": "::1", "user_agent": "Tidak Diketahui", "input": {"method": "GET", "url": "/moodle/mod/assign/view.php?id=15", "body": "id=15"}}
+2025-04-22 08:47:03,185 - INFO - {"timestamp": "2025-04-22T08:47:03.185422", "ip": "::1", "user_agent": "Tidak Diketahui", "input": "{\"method\": \"GET\", \"url\": \"/moodle/mod/assign/view.php?id=15\", \"body\": \"id=15\"}"}
+2025-04-22 08:47:04,631 - INFO - {"timestamp": "2025-04-22T08:47:03.185422", "prediction": "XSS"}
+2025-04-22 08:47:04,633 - INFO - {"prediction": "XSS"}
+2025-04-22 08:47:05,665 - INFO - Memproses: {"timestamp": "22/04/2025 08:46:21.649", "ip": "::1", "user_agent": "Tidak Diketahui", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=iAGAr0AdOw&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-22 08:47:05,665 - INFO - {"timestamp": "2025-04-22T08:47:05.665217", "ip": "::1", "user_agent": "Tidak Diketahui", "input": "{\"method\": \"POST\", \"url\": \"/moodle/lib/ajax/service.php?sesskey=iAGAr0AdOw&info=core_get_fragment\", \"body\": \"[{\\\"index\\\":0,\\\"methodname\\\":\\\"core_get_fragment\\\",\\\"args\\\":{\\\"component\\\":\\\"mod_assign\\\",\\\"callback\\\":\\\"gradingpanel\\\",\\\"contextid\\\":\\\"35\\\",\\\"args\\\":[{\\\"name\\\":\\\"userid\\\",\\\"value\\\":2},{\\\"name\\\":\\\"attemptnumber\\\",\\\"value\\\":-1},{\\\"name\\\":\\\"jsonformdata\\\",\\\"value\\\":\\\"\\\\\\\"\\\\\\\"\\\"}]}}]\"}"}
+2025-04-22 08:47:05,874 - INFO - {"timestamp": "2025-04-22T08:47:05.665217", "prediction": "XSS"}
+2025-04-22 08:47:05,875 - INFO - {"prediction": "XSS"}
