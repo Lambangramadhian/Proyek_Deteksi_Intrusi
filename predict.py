@@ -64,6 +64,7 @@ def make_prediction(input_text, client_ip="Tidak Diketahui", user_agent="Tidak D
             "prediction": prediction_label
         }))
 
+        # Simpan hasil ke Redis dengan TTL 60 detik
         return {"prediction": prediction_label}
 
     # Handle error dan log

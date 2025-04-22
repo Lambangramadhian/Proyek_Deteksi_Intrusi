@@ -2092,3 +2092,11 @@
 2025-04-21 09:13:43,738 - INFO - {"timestamp": "2025-04-21T09:13:43.738963", "ip": "::1", "user_agent": "Tidak Diketahui", "input": "{\"method\": \"GET\", \"url\": \"/moodle/\", \"body\": \"\"}"}
 2025-04-21 09:13:43,818 - INFO - {"timestamp": "2025-04-21T09:13:43.738963", "prediction": "Normal"}
 2025-04-21 09:13:43,818 - INFO - Hasil prediksi: {"prediction": "Normal"}
+2025-04-22 08:34:26,899 - INFO - Memproses: {"timestamp": "22/04/2025 08:34:26.655", "ip": "::1", "user_agent": "Tidak Diketahui", "input": {"method": "POST", "url": "http://localhost/moodle/login/index.php", "body": {"logintoken": "IuwA8gjN4ZnNBixrduok3oQL4Jw9Izc5", "username": "admin", "password": "Admin#1234", "submitted_at": "2025-04-22T01:34:26.606Z"}}}
+2025-04-22 08:34:26,900 - INFO - {"timestamp": "2025-04-22T08:34:26.900318", "ip": "::1", "user_agent": "Tidak Diketahui", "input": "{\"method\": \"POST\", \"url\": \"http://localhost/moodle/login/index.php\", \"body\": {\"logintoken\": \"IuwA8gjN4ZnNBixrduok3oQL4Jw9Izc5\", \"username\": \"admin\", \"password\": \"Admin#1234\", \"submitted_at\": \"2025-04-22T01:34:26.606Z\"}}"}
+2025-04-22 08:34:29,479 - INFO - {"timestamp": "2025-04-22T08:34:26.900318", "prediction": "XSS"}
+2025-04-22 08:34:29,479 - INFO - {"prediction": "XSS"}
+2025-04-22 08:34:29,545 - INFO - Memproses: {"timestamp": "22/04/2025 08:34:27.627", "ip": "::1", "user_agent": "Tidak Diketahui", "input": {"method": "GET", "url": "/moodle/course/view.php?id=6", "body": "id=6"}}
+2025-04-22 08:34:29,546 - INFO - {"timestamp": "2025-04-22T08:34:29.546922", "ip": "::1", "user_agent": "Tidak Diketahui", "input": "{\"method\": \"GET\", \"url\": \"/moodle/course/view.php?id=6\", \"body\": \"id=6\"}"}
+2025-04-22 08:34:29,616 - INFO - {"timestamp": "2025-04-22T08:34:29.546922", "prediction": "XSS"}
+2025-04-22 08:34:29,619 - INFO - {"prediction": "XSS"}
