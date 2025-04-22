@@ -69,6 +69,7 @@ def subscribe_to_logs(app):
             print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
             last_ping = time.time()
 
+            # Mendengarkan pesan dari Redis PubSub
             for message in pubsub.listen():
                 if message['type'] == 'message':
                     try:
