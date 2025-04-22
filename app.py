@@ -34,16 +34,20 @@ def favicon():
 # Endpoint untuk memproses prediksi
 @app.route("/predict", methods=["POST"])
 def predict():
-    """Endpoint untuk memproses prediksi."""
+    """Endpoint untuk memproses prediksi berdasarkan payload yang diterima."""
     data = request.get_json()
-    input_text = data.get("payload", "").strip()
-    if not input_text:
-        return jsonify({"error": "Payload diperlukan"}), 400 # 400 Bad Request
-
-    # Mendapatkan informasi IP dan User-Agent dari header permintaan
+    payload = data.get("payload", {})
+    method = payload.get("method", "")
+    url = payload.get("url", "")
+    body = payload.get("body", "")
     client_ip = request.remote_addr
-    user_agent = request.headers.get("User-Agent", "Tidak Diketahui")
-    task = task_queue.enqueue(make_prediction, input_text, client_ip, user_agent, job_timeout=None) 
+
+    # Validasi input
+    if not method or not url:
+        return jsonify({"error": "Method dan URL diperlukan"}), 400 # 400 Bad Request
+
+    # Menggunakan RQ untuk memproses prediksi secara asinkron
+    task = task_queue.enqueue(make_prediction, method, url, body, client_ip, job_timeout=None)
     return jsonify({"task_id": task.id, "message": "Tugas prediksi dimulai"}), 202 # 202 Accepted
 
 # Mendapatkan status tugas berdasarkan task_id
@@ -60,10 +64,10 @@ def task_status(task_id):
     return jsonify({"status": "sedang diproses"}), 202
 
 def subscribe_to_logs(app):
-    """Fungsi untuk berlangganan ke Redis PubSub dan memproses pesan."""
+    """Fungsi untuk berlangganan ke Redis PubSub dan memproses pesan dari channel 'moodle_logs'."""
     processed_messages = set()
 
-    # Fungsi untuk memproses pesan dari Redis PubSub
+    # Mengatur timeout untuk Redis PubSub
     while True:
         try:
             pubsub = redis_connection.pubsub()
@@ -71,51 +75,62 @@ def subscribe_to_logs(app):
             print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
             last_ping = time.time()
 
-            # Mendengarkan pesan dari Redis PubSub
+            # Menggunakan set untuk menyimpan ID pesan yang sudah diproses
             for message in pubsub.listen():
-                if message['type'] != 'message':
-                    continue
+                if message['type'] == 'message':
+                    try:
+                        data = json.loads(message['data'])
+                        message_id = data.get('timestamp')
+                        if message_id in processed_messages:
+                            continue
+                        processed_messages.add(message_id)
 
-                # Pesan yang diterima dari Redis PubSub
-                try:
-                    data = json.loads(message['data'])
-                    message_id = data.get('timestamp')
-                    if message_id in processed_messages:
-                        continue
-                    processed_messages.add(message_id)
+                        # Mendapatkan informasi dari data yang diterima
+                        ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
+                        payload = data.get('payloadData', {})
+                        method = payload.get('method', '')
+                        url = payload.get('url', '')
+                        body = payload.get('body', '')
 
-                    # Mendapatkan informasi dari pesan
-                    ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
-                    payload_dict = data.get('payloadData', {})
-                    input_text = json.dumps(payload_dict)
+                        # Validasi input
+                        with app.app_context():
+                            current_app.logger.info(json.dumps({
+                                "timestamp": message_id,
+                                "ip": ip,
+                                "input": payload
+                            }))
 
-                    # Memproses pesan dan menyimpan hasil ke Redis
-                    with app.app_context():
-                        log_entry = {
-                            "timestamp": message_id,
-                            "ip": ip,
-                            "input": payload_dict
-                        }
-                        current_app.logger.info(json.dumps(log_entry))
+                            # Melakukan prediksi menggunakan fungsi make_prediction
+                            hasil_prediksi = make_prediction(
+                                method=method,
+                                url=url,
+                                body=body,
+                                client_ip=ip
+                            )
 
-                        # Memanggil fungsi prediksi
-                        hasil_prediksi = make_prediction(input_text=input_text, client_ip=ip)
-                        current_app.logger.info(json.dumps(hasil_prediksi))
+                            # Menyimpan hasil prediksi ke Redis
+                            current_app.logger.info(json.dumps(hasil_prediksi))
 
-                # Handle exception and log error
-                except Exception as e:
-                    with app.app_context():
-                        current_app.logger.error(json.dumps({
-                            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
-                            "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
-                        }))
+                    # Menghindari kesalahan saat memproses pesan Redis
+                    except Exception as e:
+                        with app.app_context():
+                            current_app.logger.error(json.dumps({
+                                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                                "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
+                            }))
 
-                # Menghindari Redis TimeoutError
+                # Menghindari kesalahan saat berlangganan ke Redis PubSub
                 if time.time() - last_ping > 60:
                     redis_connection.ping()
                     last_ping = time.time()
 
-        # Handle Redis TimeoutError
+        # Menghindari kesalahan saat berlangganan ke Redis PubSub
+        except TimeoutError:
+            print("Redis TimeoutError: Menghubungkan kembali ke Redis...")
+            pubsub.close()
+            continue
+
+        # Menghindari kesalahan saat berlangganan ke Redis PubSub
         except TimeoutError:
             print("Redis TimeoutError: Menghubungkan kembali ke Redis...")
             pubsub.close()

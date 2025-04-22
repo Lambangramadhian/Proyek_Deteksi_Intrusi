@@ -2108,3 +2108,95 @@
 2025-04-22 08:47:05,665 - INFO - {"timestamp": "2025-04-22T08:47:05.665217", "ip": "::1", "user_agent": "Tidak Diketahui", "input": "{\"method\": \"POST\", \"url\": \"/moodle/lib/ajax/service.php?sesskey=iAGAr0AdOw&info=core_get_fragment\", \"body\": \"[{\\\"index\\\":0,\\\"methodname\\\":\\\"core_get_fragment\\\",\\\"args\\\":{\\\"component\\\":\\\"mod_assign\\\",\\\"callback\\\":\\\"gradingpanel\\\",\\\"contextid\\\":\\\"35\\\",\\\"args\\\":[{\\\"name\\\":\\\"userid\\\",\\\"value\\\":2},{\\\"name\\\":\\\"attemptnumber\\\",\\\"value\\\":-1},{\\\"name\\\":\\\"jsonformdata\\\",\\\"value\\\":\\\"\\\\\\\"\\\\\\\"\\\"}]}}]\"}"}
 2025-04-22 08:47:05,874 - INFO - {"timestamp": "2025-04-22T08:47:05.665217", "prediction": "XSS"}
 2025-04-22 08:47:05,875 - INFO - {"prediction": "XSS"}
+2025-04-22 13:50:21,349 - INFO - {"timestamp": "22/04/2025 13:50:21.807", "ip": "::1", "input": {"method": "POST", "url": "http://localhost/moodle/admin/settings.php?section=frontpagesettings", "body": {"section": "frontpagesettings", "action": "save-settings", "sesskey": "iAGAr0AdOw", "return": "", "s__fullname": "e-Learning STT NF", "s__shortname": "elena", "s__summary": "<p>&lt;script&gt;alert(\"hai cantik\")&lt;/script&gt;</p>", "s__frontpage": ["6", "none", "none", "none", "none"], "s__frontpageloggedin": ["6", "none", "none", "none", "none", "none"], "s__maxcategorydepth": "2", "s__frontpagecourselimit": "200", "s__numsections": "1", "s__newsitems": "3", "s__commentsperpage": "15", "s__defaultfrontpageroleid": "8", "submitted_at": "2025-04-22T06:50:21.752Z"}}}
+2025-04-22 13:50:21,350 - INFO - {"timestamp": "2025-04-22T13:50:21.350776", "ip": "::1", "input": "{\"method\": \"POST\", \"url\": \"http://localhost/moodle/admin/settings.php?section=frontpagesettings\", \"body\": {\"section\": \"frontpagesettings\", \"action\": \"save-settings\", \"sesskey\": \"iAGAr0AdOw\", \"return\": \"\", \"s__fullname\": \"e-Learning STT NF\", \"s__shortname\": \"elena\", \"s__summary\": \"<p>&lt;script&gt;alert(\\\"hai cantik\\\")&lt;/script&gt;</p>\", \"s__frontpage\": [\"6\", \"none\", \"none\", \"none\", \"none\"], \"s__frontpageloggedin\": [\"6\", \"none\", \"none\", \"none\", \"none\", \"none\"], \"s__maxcategorydepth\": \"2\", \"s__frontpagecourselimit\": \"200\", \"s__numsections\": \"1\", \"s__newsitems\": \"3\", \"s__commentsperpage\": \"15\", \"s__defaultfrontpageroleid\": \"8\", \"submitted_at\": \"2025-04-22T06:50:21.752Z\"}}"}
+2025-04-22 13:50:21,519 - INFO - {"timestamp": "2025-04-22T13:50:21.350776", "prediction": "XSS"}
+2025-04-22 13:50:21,520 - INFO - {"prediction": "XSS"}
+2025-04-22 13:50:22,643 - INFO - {"timestamp": "22/04/2025 13:50:23.046", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/settings.php?section=frontpagesettings", "body": "section=frontpagesettings"}}
+2025-04-22 13:50:22,644 - INFO - {"timestamp": "2025-04-22T13:50:22.644346", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/admin/settings.php?section=frontpagesettings\", \"body\": \"section=frontpagesettings\"}"}
+2025-04-22 13:50:22,824 - INFO - {"timestamp": "2025-04-22T13:50:22.644346", "prediction": "XSS"}
+2025-04-22 13:50:22,825 - INFO - {"prediction": "XSS"}
+2025-04-22 13:51:30,513 - INFO - {"timestamp": "22/04/2025 13:51:30.986", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php", "body": ""}}
+2025-04-22 13:51:30,514 - INFO - {"timestamp": "2025-04-22T13:51:30.514840", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/admin/search.php\", \"body\": \"\"}"}
+2025-04-22 13:51:30,841 - INFO - {"timestamp": "2025-04-22T13:51:30.514840", "prediction": "XSS"}
+2025-04-22 13:51:30,841 - INFO - {"prediction": "XSS"}
+2025-04-22 13:51:43,072 - INFO - {"timestamp": "22/04/2025 13:51:43.499", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=normal", "body": "query=normal"}}
+2025-04-22 13:51:43,074 - INFO - {"timestamp": "2025-04-22T13:51:43.074164", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/admin/search.php?query=normal\", \"body\": \"query=normal\"}"}
+2025-04-22 13:51:43,150 - INFO - {"timestamp": "2025-04-22T13:51:43.074164", "prediction": "XSS"}
+2025-04-22 13:51:43,150 - INFO - {"prediction": "XSS"}
+2025-04-22 13:51:47,110 - INFO - {"timestamp": "22/04/2025 13:51:47.081", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=normal", "body": "query=normal"}}
+2025-04-22 13:51:47,111 - INFO - {"timestamp": "2025-04-22T13:51:47.111194", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/admin/search.php?query=normal\", \"body\": \"query=normal\"}"}
+2025-04-22 13:51:47,340 - INFO - {"timestamp": "2025-04-22T13:51:47.111194", "cache": "hit", "prediction": "XSS"}
+2025-04-22 13:51:47,342 - INFO - {"prediction": "XSS"}
+2025-04-22 13:51:52,275 - INFO - {"timestamp": "22/04/2025 13:51:52.732", "ip": "::1", "input": {"method": "GET", "url": "/moodle/my/", "body": ""}}
+2025-04-22 13:51:52,276 - INFO - {"timestamp": "2025-04-22T13:51:52.276806", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/my/\", \"body\": \"\"}"}
+2025-04-22 13:51:52,345 - INFO - {"timestamp": "2025-04-22T13:51:52.276806", "prediction": "XSS"}
+2025-04-22 13:51:52,346 - INFO - {"prediction": "XSS"}
+2025-04-22 13:53:23,387 - INFO - {"timestamp": "22/04/2025 13:53:23.608", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-22 13:53:23,387 - INFO - {"timestamp": "2025-04-22T13:53:23.387644", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/?redirect=0\", \"body\": \"redirect=0\"}"}
+2025-04-22 13:53:24,152 - INFO - {"timestamp": "2025-04-22T13:53:23.387644", "prediction": "XSS"}
+2025-04-22 13:53:24,154 - INFO - {"prediction": "XSS"}
+2025-04-22 13:56:22,336 - INFO - {"timestamp": "22/04/2025 13:56:22.787", "ip": "::1", "input": {"method": "GET", "url": "/moodle/my/", "body": ""}}
+2025-04-22 13:56:22,336 - INFO - {"timestamp": "2025-04-22T13:56:22.336775", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/my/\", \"body\": \"\"}"}
+2025-04-22 13:56:22,378 - INFO - {"timestamp": "2025-04-22T13:56:22.336775", "prediction": "XSS"}
+2025-04-22 13:56:22,379 - INFO - {"prediction": "XSS"}
+2025-04-22 13:56:38,522 - INFO - {"timestamp": "22/04/2025 13:56:38.981", "ip": "::1", "input": {"method": "GET", "url": "/moodle/my/index.php", "body": ""}}
+2025-04-22 13:56:38,523 - INFO - {"timestamp": "2025-04-22T13:56:38.523625", "ip": "::1", "input": "{\"method\": \"GET\", \"url\": \"/moodle/my/index.php\", \"body\": \"\"}"}
+2025-04-22 13:56:38,574 - INFO - {"timestamp": "2025-04-22T13:56:38.523625", "prediction": "XSS"}
+2025-04-22 13:56:38,575 - INFO - {"prediction": "XSS"}
+2025-04-22 13:56:47,331 - INFO - {"timestamp": "22/04/2025 13:56:47.777", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=iAGAr0AdOw&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"}}
+2025-04-22 13:56:47,331 - INFO - {"timestamp": "2025-04-22T13:56:47.331078", "ip": "::1", "input": "{\"method\": \"POST\", \"url\": \"/moodle/lib/ajax/service.php?sesskey=iAGAr0AdOw&info=core_get_fragment\", \"body\": \"[{\\\"index\\\":0,\\\"methodname\\\":\\\"core_get_fragment\\\",\\\"args\\\":{\\\"component\\\":\\\"calendar\\\",\\\"callback\\\":\\\"event_form\\\",\\\"contextid\\\":2,\\\"args\\\":[{\\\"name\\\":\\\"courseid\\\",\\\"value\\\":1}]}}]\"}"}
+2025-04-22 13:56:47,413 - INFO - {"timestamp": "2025-04-22T13:56:47.331078", "prediction": "XSS"}
+2025-04-22 13:56:47,413 - INFO - {"prediction": "XSS"}
+2025-04-22 13:56:57,846 - INFO - {"timestamp": "22/04/2025 13:56:58.313", "ip": "::1", "input": {"method": "POST", "url": "http://localhost/moodle/my/index.php", "body": {"id": "0", "userid": "2", "modulename": "", "instance": "0", "visible": "1", "sesskey": "iAGAr0AdOw", "_qf__core_calendar_local_event_forms_create": "1", "mform_showmore_id_general": "0", "name": "test", "timestart": {"day": "22", "month": "4", "year": "2025", "hour": "13", "minute": "56"}, "eventtype": "user", "description": {"text": "", "format": "1", "itemid": "850127490"}, "location": "", "duration": "0", "submitted_at": "2025-04-22T06:56:58.001Z"}}}
+2025-04-22 13:56:57,846 - INFO - {"timestamp": "2025-04-22T13:56:57.846772", "ip": "::1", "input": "{\"method\": \"POST\", \"url\": \"http://localhost/moodle/my/index.php\", \"body\": {\"id\": \"0\", \"userid\": \"2\", \"modulename\": \"\", \"instance\": \"0\", \"visible\": \"1\", \"sesskey\": \"iAGAr0AdOw\", \"_qf__core_calendar_local_event_forms_create\": \"1\", \"mform_showmore_id_general\": \"0\", \"name\": \"test\", \"timestart\": {\"day\": \"22\", \"month\": \"4\", \"year\": \"2025\", \"hour\": \"13\", \"minute\": \"56\"}, \"eventtype\": \"user\", \"description\": {\"text\": \"\", \"format\": \"1\", \"itemid\": \"850127490\"}, \"location\": \"\", \"duration\": \"0\", \"submitted_at\": \"2025-04-22T06:56:58.001Z\"}}"}
+2025-04-22 13:56:57,876 - INFO - {"timestamp": "2025-04-22T13:56:57.846772", "prediction": "XSS"}
+2025-04-22 13:56:57,876 - INFO - {"prediction": "XSS"}
+2025-04-22 14:09:38,856 - INFO - Memproses: {"timestamp": "22/04/2025 14:09:39.315", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php", "body": ""}}
+2025-04-22 14:09:38,857 - INFO - {"timestamp": "2025-04-22T14:09:38.857358", "ip": "::1", "input": "GET /moodle/admin/search.php"}
+2025-04-22 14:09:38,913 - INFO - {"timestamp": "2025-04-22T14:09:38.857358", "prediction": "Normal"}
+2025-04-22 14:09:38,913 - INFO - {"prediction": "Normal"}
+2025-04-22 14:10:16,430 - INFO - Memproses: {"timestamp": "22/04/2025 14:10:16.892", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%3Cscript%3Ealert%28%22aku+Jawa%22%29%3C%2Fscript%3E", "body": "query=<script>alert(\"aku Jawa\")</script>"}}
+2025-04-22 14:10:16,431 - INFO - {"timestamp": "2025-04-22T14:10:16.431453", "ip": "::1", "input": "GET /moodle/admin/search.php?query=%3Cscript%3Ealert%28%22aku+Jawa%22%29%3C%2Fscript%3E query=<script>alert(\"aku Jawa\")</script>"}
+2025-04-22 14:10:16,498 - INFO - {"timestamp": "2025-04-22T14:10:16.431453", "prediction": "XSS"}
+2025-04-22 14:10:16,500 - INFO - {"prediction": "XSS"}
+2025-04-22 14:11:57,336 - INFO - Memproses: {"timestamp": "22/04/2025 14:11:57.814", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=aku+admin+kau+rakyat", "body": "query=aku admin kau rakyat"}}
+2025-04-22 14:11:57,336 - INFO - {"timestamp": "2025-04-22T14:11:57.336370", "ip": "::1", "input": "GET /moodle/admin/search.php?query=aku+admin+kau+rakyat query=aku admin kau rakyat"}
+2025-04-22 14:11:57,371 - INFO - {"timestamp": "2025-04-22T14:11:57.336370", "prediction": "Normal"}
+2025-04-22 14:11:57,371 - INFO - {"prediction": "Normal"}
+2025-04-22 14:13:03,738 - INFO - Memproses: {"timestamp": "22/04/2025 14:13:04.190", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%27SELECT++*+FROM+dontol%27", "body": "query='SELECT  * FROM dontol'"}}
+2025-04-22 14:13:03,739 - INFO - {"timestamp": "2025-04-22T14:13:03.739356", "ip": "::1", "input": "GET /moodle/admin/search.php?query=%27SELECT++*+FROM+dontol%27 query='SELECT  * FROM dontol'"}
+2025-04-22 14:13:03,803 - INFO - {"timestamp": "2025-04-22T14:13:03.739356", "prediction": "Normal"}
+2025-04-22 14:13:03,804 - INFO - {"prediction": "Normal"}
+2025-04-22 14:14:55,461 - INFO - Memproses: {"timestamp": "22/04/2025 14:14:55.916", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%22SELECT+*+FROM+dontol+WHERE+username+%3D+%27%22+%2B+user_input%C2%A0%2B%C2%A0%22%27%22", "body": "query=\"SELECT * FROM dontol WHERE username = '\" + user_input\u00a0+\u00a0\"'\""}}
+2025-04-22 14:14:55,462 - INFO - {"timestamp": "2025-04-22T14:14:55.462080", "ip": "::1", "input": "GET /moodle/admin/search.php?query=%22SELECT+*+FROM+dontol+WHERE+username+%3D+%27%22+%2B+user_input%C2%A0%2B%C2%A0%22%27%22 query=\"SELECT * FROM dontol WHERE username = '\" + user_input\u00a0+\u00a0\"'\""}
+2025-04-22 14:14:55,542 - INFO - {"timestamp": "2025-04-22T14:14:55.462080", "prediction": "Normal"}
+2025-04-22 14:14:55,543 - INFO - {"prediction": "Normal"}
+2025-04-22 14:15:04,278 - INFO - Memproses: {"timestamp": "22/04/2025 14:15:04.740", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%27+OR+%271%27%3D%271", "body": "query=' OR '1'='1"}}
+2025-04-22 14:15:04,278 - INFO - {"timestamp": "2025-04-22T14:15:04.278908", "ip": "::1", "input": "GET /moodle/admin/search.php?query=%27+OR+%271%27%3D%271 query=' OR '1'='1"}
+2025-04-22 14:15:04,314 - INFO - {"timestamp": "2025-04-22T14:15:04.278908", "prediction": "Normal"}
+2025-04-22 14:15:04,315 - INFO - {"prediction": "Normal"}
+2025-04-22 14:15:18,137 - INFO - Memproses: {"timestamp": "22/04/2025 14:15:18.604", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27", "body": "query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}}
+2025-04-22 14:15:18,139 - INFO - {"timestamp": "2025-04-22T14:15:18.138453", "ip": "::1", "input": "GET /moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27 query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}
+2025-04-22 14:15:18,201 - INFO - {"timestamp": "2025-04-22T14:15:18.138453", "prediction": "Normal"}
+2025-04-22 14:15:18,203 - INFO - {"prediction": "Normal"}
+2025-04-22 14:26:15,471 - INFO - {"timestamp": "22/04/2025 14:26:15.942", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27", "body": "query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}}
+2025-04-22 14:26:15,471 - INFO - {"timestamp": "2025-04-22T14:26:15.471668", "ip": "::1", "input": "GET /moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27 query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}
+2025-04-22 14:26:15,582 - INFO - {"timestamp": "2025-04-22T14:26:15.471668", "prediction": "Normal"}
+2025-04-22 14:26:15,582 - INFO - {"prediction": "Normal"}
+2025-04-22 14:26:30,976 - INFO - {"timestamp": "22/04/2025 14:26:31.439", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27", "body": "query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}}
+2025-04-22 14:26:30,976 - INFO - {"timestamp": "2025-04-22T14:26:30.976112", "ip": "::1", "input": "GET /moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27 query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}
+2025-04-22 14:26:31,016 - INFO - {"timestamp": "2025-04-22T14:26:30.976112", "cache": "hit", "prediction": "Normal"}
+2025-04-22 14:26:31,018 - INFO - {"prediction": "Normal"}
+2025-04-22 14:26:44,790 - INFO - {"timestamp": "22/04/2025 14:26:45.256", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%27+OR+%271%27%3D%271", "body": "query=' OR '1'='1"}}
+2025-04-22 14:26:44,791 - INFO - {"timestamp": "2025-04-22T14:26:44.791571", "ip": "::1", "input": "GET /moodle/admin/search.php?query=%27+OR+%271%27%3D%271 query=' OR '1'='1"}
+2025-04-22 14:26:44,878 - INFO - {"timestamp": "2025-04-22T14:26:44.791571", "prediction": "Normal"}
+2025-04-22 14:26:44,880 - INFO - {"prediction": "Normal"}
+2025-04-22 14:32:45,196 - INFO - {"timestamp": "22/04/2025 14:32:45.666", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27", "body": "query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}}
+2025-04-22 14:32:45,198 - INFO - {"timestamp": "2025-04-22T14:32:45.198002", "ip": "::1", "input": "GET /moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271%27 query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1'"}
+2025-04-22 14:32:45,281 - INFO - {"timestamp": "2025-04-22T14:32:45.198002", "prediction": "Normal"}
+2025-04-22 14:32:45,282 - INFO - {"prediction": "Normal"}
+2025-04-22 14:33:37,601 - INFO - {"timestamp": "22/04/2025 14:33:38.063", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%3Cscript%3Econsole.log%28%22anjay%22%29%3C%2Fscript%3E", "body": "query=<script>console.log(\"anjay\")</script>"}}
+2025-04-22 14:33:37,601 - INFO - {"timestamp": "2025-04-22T14:33:37.601711", "ip": "::1", "input": "GET /moodle/admin/search.php?query=%3Cscript%3Econsole.log%28%22anjay%22%29%3C%2Fscript%3E query=<script>console.log(\"anjay\")</script>"}
+2025-04-22 14:33:37,651 - INFO - {"timestamp": "2025-04-22T14:33:37.601711", "prediction": "XSS"}
+2025-04-22 14:33:37,651 - INFO - {"prediction": "XSS"}
