@@ -4,7 +4,6 @@ import redis
 import joblib
 import hashlib
 import datetime
-import re
 from flask import current_app
 
 # Load model and vectorizer from environment variables or default paths
