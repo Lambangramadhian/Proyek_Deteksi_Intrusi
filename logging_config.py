@@ -8,17 +8,17 @@ def setup_logging(app):
     log_dir = 'logs'
     os.makedirs(log_dir, exist_ok=True)  # Buat folder logs/ jika belum ada
 
-    # Set up the rotating file handler
+    # Mengatur penangan file yang berulang-ulang
     log_path = os.path.join(log_dir, 'intrusion_detection.log')
     handler = RotatingFileHandler(log_path, maxBytes=10_000_000, backupCount=5)
     handler.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
-    # Clear existing handlers to avoid duplicate logs
+    # Hapus penangan yang ada untuk menghindari duplikasi log
     if app.logger.hasHandlers():
         app.logger.handlers.clear()
 
-    # Set up the logger to use the handler
+    # Mengatur pencatat untuk menggunakan handler
     app.logger.addHandler(handler)
     app.logger.setLevel(logging.INFO)

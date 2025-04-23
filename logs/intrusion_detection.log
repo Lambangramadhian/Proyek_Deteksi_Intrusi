@@ -2200,3 +2200,145 @@
 2025-04-22 14:33:37,601 - INFO - {"timestamp": "2025-04-22T14:33:37.601711", "ip": "::1", "input": "GET /moodle/admin/search.php?query=%3Cscript%3Econsole.log%28%22anjay%22%29%3C%2Fscript%3E query=<script>console.log(\"anjay\")</script>"}
 2025-04-22 14:33:37,651 - INFO - {"timestamp": "2025-04-22T14:33:37.601711", "prediction": "XSS"}
 2025-04-22 14:33:37,651 - INFO - {"prediction": "XSS"}
+2025-04-23 13:50:31,293 - INFO - {"timestamp": "23/04/2025 13:50:33.145", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%22SELECT+*+FROM+dontol+WHERE+username+%3D+%27%22+%2B+user_input%C2%A0%2B%C2%A0%22%27%22", "body": "query=\"SELECT * FROM dontol WHERE username = '\" + user_input\u00a0+\u00a0\"'\""}}
+2025-04-23 13:50:31,298 - INFO - [2025-04-23T13:50:31.297423] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=%22SELECT+*+FROM+dontol+WHERE+username+%3D+%27%22+%2B+user_input%C2%A0%2B%C2%A0%22%27%22",
+    "body": "query=\"SELECT * FROM dontol WHERE username = '\" + user_input + \"'\""
+}
+2025-04-23 13:50:31,718 - INFO - [2025-04-23T13:50:31.297423] Prediksi: Normal
+2025-04-23 13:50:31,719 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-23 13:50:31,721 - INFO - {"prediction": "Normal"}
+2025-04-23 13:50:53,405 - INFO - {"timestamp": "23/04/2025 13:50:55.222", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%27+OR+%271%27%3D%271", "body": "query=' OR '1'='1"}}
+2025-04-23 13:50:53,407 - INFO - [2025-04-23T13:50:53.407418] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=%27+OR+%271%27%3D%271",
+    "body": "query=' OR '1'='1"
+}
+2025-04-23 13:50:53,566 - INFO - [2025-04-23T13:50:53.407418] Prediksi: Normal
+2025-04-23 13:50:53,568 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-23 13:50:53,568 - INFO - {"prediction": "Normal"}
+2025-04-23 13:51:12,536 - INFO - {"timestamp": "23/04/2025 13:51:04.839", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271", "body": "query=SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1"}}
+2025-04-23 13:51:12,537 - INFO - [2025-04-23T13:51:12.537375] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271",
+    "body": "query=SELECT * FROM dontol WHERE username = '' OR '1'='1"
+}
+2025-04-23 13:51:14,333 - INFO - [2025-04-23T13:51:12.537375] Prediksi: Normal
+2025-04-23 13:51:14,335 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-23 13:51:14,335 - INFO - {"prediction": "Normal"}
+2025-04-23 13:51:14,928 - INFO - {"timestamp": "23/04/2025 13:51:08.019", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-23 13:51:14,929 - INFO - [2025-04-23T13:51:14.929896] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-23 13:51:15,013 - INFO - [2025-04-23T13:51:14.929896] Prediksi: XSS
+2025-04-23 13:51:15,014 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-23 13:51:15,016 - INFO - {"prediction": "XSS"}
+2025-04-23 13:51:15,017 - INFO - {"timestamp": "23/04/2025 13:51:15.655", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-23 13:51:15,018 - INFO - [2025-04-23T13:51:15.018376] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-23 13:51:15,031 - INFO - [2025-04-23T13:51:15.018376] Prediksi: XSS
+2025-04-23 13:51:15,032 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-23 13:51:15,033 - INFO - {"prediction": "XSS"}
+2025-04-23 13:51:19,828 - INFO - {"timestamp": "23/04/2025 13:51:21.717", "ip": "::1", "input": {"method": "GET", "url": "/moodle/my/", "body": ""}}
+2025-04-23 13:51:19,831 - INFO - [2025-04-23T13:51:19.830214] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-04-23 13:51:20,041 - INFO - [2025-04-23T13:51:19.830214] Prediksi: XSS
+2025-04-23 13:51:20,042 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-23 13:51:20,043 - INFO - {"prediction": "XSS"}
+2025-04-23 13:51:26,388 - INFO - {"timestamp": "23/04/2025 13:51:28.234", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=fT2PbDLBUZ&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"}}
+2025-04-23 13:51:26,391 - INFO - [2025-04-23T13:51:26.390498] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=fT2PbDLBUZ&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-23 13:51:26,476 - INFO - [2025-04-23T13:51:26.390498] Prediksi: Normal
+2025-04-23 13:51:26,478 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-23 13:51:26,479 - INFO - {"prediction": "Normal"}
+2025-04-23 13:51:37,521 - INFO - {"timestamp": "23/04/2025 13:51:35.348", "ip": "::1", "input": {"method": "POST", "url": "http://localhost/moodle/my/", "body": {"id": "0", "userid": "2", "modulename": "", "instance": "0", "visible": "1", "sesskey": "fT2PbDLBUZ", "_qf__core_calendar_local_event_forms_create": "1", "mform_showmore_id_general": "0", "name": "SELECT * FROM dontol WHERE username = '' OR\u00a0'1'='1", "timestart": {"day": "23", "month": "4", "year": "2025", "hour": "13", "minute": "51"}, "eventtype": "user", "description": {"text": "", "format": "1", "itemid": "875792409"}, "location": "", "duration": "0", "submitted_at": "2025-04-23T06:51:35.278Z"}}}
+2025-04-23 13:51:37,524 - INFO - [2025-04-23T13:51:37.523332] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "fT2PbDLBUZ",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "SELECT * FROM dontol WHERE username = '' OR '1'='1",
+        "timestart": {
+            "day": "23",
+            "month": "4",
+            "year": "2025",
+            "hour": "13",
+            "minute": "51"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "875792409"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-23T06:51:35.278Z"
+    }
+}
+2025-04-23 13:51:42,975 - INFO - [2025-04-23T13:51:37.523332] Prediksi: Normal
+2025-04-23 13:51:42,977 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-23 13:51:42,978 - INFO - {"prediction": "Normal"}
+2025-04-23 13:51:52,312 - INFO - {"timestamp": "23/04/2025 13:51:53.602", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=fT2PbDLBUZ&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"}}
+2025-04-23 13:51:52,314 - INFO - [2025-04-23T13:51:52.313833] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=fT2PbDLBUZ&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-23 13:51:53,615 - INFO - [2025-04-23T13:51:52.313833] Prediksi: Normal
+2025-04-23 13:51:53,617 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-23 13:51:53,619 - INFO - {"prediction": "Normal"}
+2025-04-23 13:51:55,596 - INFO - {"timestamp": "23/04/2025 13:51:57.473", "ip": "::1", "input": {"method": "POST", "url": "http://localhost/moodle/my/", "body": {"id": "0", "userid": "2", "modulename": "", "instance": "0", "visible": "1", "sesskey": "fT2PbDLBUZ", "_qf__core_calendar_local_event_forms_create": "1", "mform_showmore_id_general": "0", "name": "' OR '1'='1", "timestart": {"day": "23", "month": "4", "year": "2025", "hour": "13", "minute": "51"}, "eventtype": "user", "description": {"text": "", "format": "1", "itemid": "163255747"}, "location": "", "duration": "0", "submitted_at": "2025-04-23T06:51:57.251Z"}}}
+2025-04-23 13:51:55,599 - INFO - [2025-04-23T13:51:55.598395] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "fT2PbDLBUZ",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "' OR '1'='1",
+        "timestart": {
+            "day": "23",
+            "month": "4",
+            "year": "2025",
+            "hour": "13",
+            "minute": "51"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "163255747"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-23T06:51:57.251Z"
+    }
+}
+2025-04-23 13:51:55,771 - INFO - [2025-04-23T13:51:55.598395] Prediksi: Normal
+2025-04-23 13:51:55,772 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-23 13:51:55,774 - INFO - {"prediction": "Normal"}
