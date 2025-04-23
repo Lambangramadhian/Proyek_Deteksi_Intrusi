@@ -24,63 +24,52 @@ def get_cache_key(input_text):
     return f"prediction:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
 def make_prediction(method, url, body, client_ip="Tidak Diketahui"):
-    """Fungsi untuk memproses prediksi berdasarkan method, url, dan body."""
+    """Fungsi untuk memproses prediksi berdasarkan input yang diterima."""
     try:
         timestamp = datetime.datetime.now().isoformat()
-
-        # Gabungkan menjadi satu string sesuai format
-        parts = [method.strip(), url.strip()]
+        
+        # Bangun input_text
         if isinstance(body, dict):
-            parts.append(json.dumps(body, ensure_ascii=False))
-        elif isinstance(body, str):
-            parts.append(body.strip())
+            body_str = json.dumps(body, ensure_ascii=False)
+        else:
+            body_str = str(body).strip()
 
-        # Jika body tidak ada, gunakan string kosong
-        input_text = " ".join(parts).strip()
+        # Format body untuk menghindari karakter khusus
+        input_text = f"{method.strip()} {url.strip()} {body_str}".strip()
 
-        # Debug langsung ke konsol
-        print("[DEBUG] Final input_text:", input_text)
+        # Format payload log JSON (indented)
+        structured_payload = {
+            "method": method,
+            "url": url,
+            "body": body
+        }
 
-        # Logging input
-        current_app.logger.info(json.dumps({
-            "timestamp": timestamp,
-            "ip": client_ip,
-            "input": input_text
-        }))
+        # Log gaya manusia
+        readable_json = json.dumps(structured_payload, indent=4, ensure_ascii=False)
+        current_app.logger.info(f"[{timestamp}] IP: {client_ip} | User-Agent: Tidak Diketahui | Input: {readable_json}")
 
-        # Validasi input
-        if not input_text:
-            return {"error": "Payload diperlukan"}
-
-        # Redis: check cache
+        # Cache
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
         if hasil_cache:
-            current_app.logger.info(json.dumps({
-                "timestamp": timestamp,
-                "cache": "hit",
-                "prediction": hasil_cache
-            }))
+            current_app.logger.info(f"[{timestamp}] Prediksi: {hasil_cache}")
+            current_app.logger.info(f"Hasil prediksi: {{'prediction': '{hasil_cache}'}}")
             return {"prediction": hasil_cache}
 
-        # Vectorize + Predict
-        input_vec = vectorizer.transform([input_text])
-        pred = model.predict(input_vec)[0]
-
-        # Map label ke nama
+        # Model
+        vectorized = vectorizer.transform([input_text])
+        prediction = model.predict(vectorized)[0]
         label_map = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
-        label = label_map.get(pred, "Tidak Diketahui")
+        label = label_map.get(prediction, "Tidak Diketahui")
 
-        # Simpan hasil prediksi ke Redis dengan waktu kedaluwarsa 60 detik
+        # Cache hasil prediksi
         redis_client.setex(cache_key, 60, label)
 
-        # Logging hasil prediksi
-        current_app.logger.info(json.dumps({
-            "timestamp": timestamp,
-            "prediction": label
-        }))
+        # Log hasil prediksi
+        current_app.logger.info(f"[{timestamp}] Prediksi: {label}")
+        current_app.logger.info(f"Hasil prediksi: {{'prediction': '{label}'}}")
         return {"prediction": label}
-
+    
     # Menangani kesalahan koneksi Redis
     except Exception as e:
         current_app.logger.error(json.dumps({
