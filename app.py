@@ -9,7 +9,6 @@ from app_factory import create_app
 from predict import make_prediction
 from rq import Queue
 from rq.job import Job
-from redis.exceptions import TimeoutError
 
 # Koneksi Redis dinamis berdasarkan env
 redis_host = os.getenv("REDIS_HOST", "localhost")
