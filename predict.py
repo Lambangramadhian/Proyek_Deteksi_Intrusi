@@ -58,7 +58,7 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui"):
         # Model
         vectorized = vectorizer.transform([input_text])
         prediction = model.predict(vectorized)[0]
-        label_map = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
+        label_map = {0: "Normal", 1: "XSS", 2: "SQLi"}
         label = label_map.get(prediction, "Tidak Diketahui")
 
         # Cache hasil prediksi
