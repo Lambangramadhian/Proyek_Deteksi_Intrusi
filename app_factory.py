@@ -1,6 +1,6 @@
-from flask import Flask
 import os
 import redis
+from flask import Flask
 from logging_config import setup_logging
 
 def create_app():

@@ -1,4 +1,3 @@
-# predict.py
 import os
 import json
 import redis
