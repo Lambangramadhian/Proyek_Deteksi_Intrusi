@@ -19,7 +19,7 @@ redis_client = redis.StrictRedis(
 )
 
 def get_cache_key(input_text):
-    """Generate a unique cache key based on the input text."""
+    """Menghasilkan kunci cache yang unik berdasarkan teks masukan."""
     return f"prediction:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
 def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tidak Diketahui"):
@@ -27,6 +27,7 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tid
     try:
         timestamp = datetime.datetime.now().isoformat()
 
+        # Validasi input
         if isinstance(body, dict):
             body_str = json.dumps(body, ensure_ascii=False)
         else:
@@ -41,6 +42,8 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tid
             "body": body
         }
 
+        # Menggunakan json.dumps untuk memastikan format JSON yang benar
+        # dan menghindari karakter non-ASCII
         readable_json = json.dumps(structured_payload, indent=4, ensure_ascii=False)
 
         # LOG: Input diterima
@@ -48,6 +51,7 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tid
             f"[{timestamp}] IP: {client_ip} | User-ID: {user_id} | Input: {readable_json}"
         )
 
+        # Cek apakah input_text kosong
         if not input_text:
             return {"error": "Payload diperlukan"}
 
@@ -63,6 +67,7 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tid
         input_vectorized = vectorizer.transform([input_text])
         prediction = model.predict(input_vectorized)[0]
 
+        # LOG: Prediksi model
         label_map = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
         label = label_map.get(prediction, "Tidak Diketahui")
 
@@ -73,8 +78,10 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tid
         current_app.logger.info(f"[{timestamp}] Prediksi: {label}")
         current_app.logger.info(f"Hasil prediksi: {{'prediction': '{label}'}}")
 
+        # Kembalikan hasil prediksi
         return {"prediction": label}
 
+    # LOG: Kesalahan saat memproses pesan Redis
     except Exception as e:
         current_app.logger.error(json.dumps({
             "timestamp": datetime.datetime.now().isoformat(),

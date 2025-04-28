@@ -28,6 +28,7 @@ class WorkerWithoutSignals(SimpleWorker):
     def _install_signal_handlers(self): pass
 
     def teardown(self, *args, **kwargs):
+        """Menghindari error saat teardown worker."""
         try:
             super().teardown(*args, **kwargs)
         except redis.exceptions.ConnectionError:
@@ -44,6 +45,10 @@ def start_worker():
                 worker.death_penalty_class = DummyDeathPenalty
                 worker.work(with_scheduler=False)
 
+        # Jika Redis tidak dapat terhubung, tunggu dan coba lagi
+        except redis.exceptions.TimeoutError as e:
+            print(f"[Worker] Redis TimeoutError: {e}. Coba lagi dalam 5 detik...")
+            time.sleep(5)
         except redis.exceptions.ConnectionError as e:
             print(f"[Worker] Redis ConnectionError: {e}. Coba lagi dalam 5 detik...")
             time.sleep(5)

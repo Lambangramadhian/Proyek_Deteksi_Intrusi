@@ -67,24 +67,29 @@ def subscribe_to_logs(app):
     """Berlangganan ke Redis channel dan memproses payload log dengan rapi."""
     processed_messages = set()
 
+    # Menggunakan Redis PubSub untuk berlangganan ke channel 'moodle_logs'
     while True:
         try:
             pubsub = redis_connection.pubsub()
             pubsub.subscribe('moodle_logs')
             print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
 
+            # Mengatur timeout untuk PubSub
             last_ping = time.time()
 
+            # Loop untuk mendengarkan pesan dari Redis PubSub
             for message in pubsub.listen():
                 if message['type'] == 'message':
                     try:
                         data = json.loads(message['data'])
 
+                        # Menghindari pemrosesan pesan yang sama
                         message_id = data.get('timestamp')
                         if message_id in processed_messages:
                             continue
                         processed_messages.add(message_id)
 
+                        # Mendapatkan informasi dari payload
                         ip = data.get('ip_address') or data.get('ip') or '-'
                         user_id = str(data.get('user_id') or data.get('userid') or '-')
                         payload = data.get('payloadData', {})
@@ -92,6 +97,7 @@ def subscribe_to_logs(app):
                         url = payload.get('url', '')
                         body = payload.get('body', '')
 
+                        # Validasi input
                         with app.app_context():
                             # Log readable JSON
                             structured_payload = {
@@ -101,10 +107,12 @@ def subscribe_to_logs(app):
                             }
                             readable_json = json.dumps(structured_payload, indent=4, ensure_ascii=False)
 
+                            # LOG: Input diterima
                             current_app.logger.info(
                                 f"[{message_id}] IP: {ip} | User-ID: {user_id} | Input: {readable_json}"
                             )
 
+                            # Memproses prediksi
                             hasil_prediksi = make_prediction(
                                 method=method,
                                 url=url,
@@ -113,8 +121,10 @@ def subscribe_to_logs(app):
                                 user_id=user_id
                             )
 
+                            # LOG: Hasil prediksi
                             current_app.logger.info(f"Hasil prediksi: {hasil_prediksi}")
 
+                    # LOG: Kesalahan saat memproses pesan Redis
                     except Exception as e:
                         with app.app_context():
                             current_app.logger.error(json.dumps({
@@ -122,10 +132,12 @@ def subscribe_to_logs(app):
                                 "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                             }))
 
+                # Menghindari pemrosesan pesan yang sama
                 if time.time() - last_ping > 60:
                     redis_connection.ping()
                     last_ping = time.time()
 
+        # Mengatasi kesalahan koneksi Redis
         except TimeoutError:
             print("[Subscribe] Redis TimeoutError: Menghubungkan kembali...")
             time.sleep(5)
