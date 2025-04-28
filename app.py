@@ -64,54 +64,57 @@ def task_status(task_id):
     return jsonify({"status": "sedang diproses"}), 202
 
 def subscribe_to_logs(app):
-    """Fungsi untuk berlangganan ke Redis PubSub dan memproses pesan dari channel 'moodle_logs'."""
+    """Berlangganan ke Redis channel dan memproses payload log dengan rapi."""
     processed_messages = set()
 
-    # Mengatur timeout untuk Redis PubSub
     while True:
         try:
             pubsub = redis_connection.pubsub()
             pubsub.subscribe('moodle_logs')
             print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
+
             last_ping = time.time()
 
-            # Menggunakan set untuk menyimpan ID pesan yang sudah diproses
             for message in pubsub.listen():
                 if message['type'] == 'message':
                     try:
                         data = json.loads(message['data'])
+
                         message_id = data.get('timestamp')
                         if message_id in processed_messages:
                             continue
                         processed_messages.add(message_id)
 
-                        # Mendapatkan informasi dari data yang diterima
-                        ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
+                        ip = data.get('ip_address') or data.get('ip') or '-'
+                        user_id = str(data.get('user_id') or data.get('userid') or '-')
                         payload = data.get('payloadData', {})
                         method = payload.get('method', '')
                         url = payload.get('url', '')
                         body = payload.get('body', '')
 
-                        # Validasi input
                         with app.app_context():
-                            current_app.logger.info(json.dumps({
-                                "timestamp": message_id,
-                                "ip": ip,
-                                "input": payload
-                            }))
+                            # Log readable JSON
+                            structured_payload = {
+                                "method": method,
+                                "url": url,
+                                "body": body
+                            }
+                            readable_json = json.dumps(structured_payload, indent=4, ensure_ascii=False)
 
-                            # Melakukan prediksi menggunakan fungsi make_prediction
+                            current_app.logger.info(
+                                f"[{message_id}] IP: {ip} | User-ID: {user_id} | Input: {readable_json}"
+                            )
+
                             hasil_prediksi = make_prediction(
                                 method=method,
                                 url=url,
                                 body=body,
-                                client_ip=ip
+                                client_ip=ip,
+                                user_id=user_id
                             )
 
-                            # Menyimpan hasil prediksi ke Redis
-                            current_app.logger.info(json.dumps(hasil_prediksi))
+                            current_app.logger.info(f"Hasil prediksi: {hasil_prediksi}")
 
-                    # Menghindari kesalahan saat memproses pesan Redis
                     except Exception as e:
                         with app.app_context():
                             current_app.logger.error(json.dumps({
@@ -119,21 +122,17 @@ def subscribe_to_logs(app):
                                 "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                             }))
 
-                # Menghindari kesalahan saat berlangganan ke Redis PubSub
                 if time.time() - last_ping > 60:
                     redis_connection.ping()
                     last_ping = time.time()
 
-        # Menghindari kesalahan saat berlangganan ke Redis PubSub
         except TimeoutError:
-            print("Redis TimeoutError: Menghubungkan kembali ke Redis...")
-            pubsub.close()
+            print("[Subscribe] Redis TimeoutError: Menghubungkan kembali...")
+            time.sleep(5)
             continue
-
-        # Menghindari kesalahan saat berlangganan ke Redis PubSub
-        except TimeoutError:
-            print("Redis TimeoutError: Menghubungkan kembali ke Redis...")
-            pubsub.close()
+        except redis.exceptions.ConnectionError as e:
+            print(f"[Subscribe] Redis ConnectionError: {str(e)}. Retry 5s...")
+            time.sleep(5)
             continue
 
 # Menjalankan worker RQ di thread terpisah

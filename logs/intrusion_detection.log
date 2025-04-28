@@ -2342,3 +2342,333 @@
 2025-04-23 13:51:55,771 - INFO - [2025-04-23T13:51:55.598395] Prediksi: Normal
 2025-04-23 13:51:55,772 - INFO - Hasil prediksi: {'prediction': 'Normal'}
 2025-04-23 13:51:55,774 - INFO - {"prediction": "Normal"}
+2025-04-28 08:47:46,808 - INFO - {"timestamp": "28/04/2025 08:47:49.218", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 08:47:46,809 - INFO - [2025-04-28T08:47:46.809263] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 08:47:49,621 - INFO - [2025-04-28T08:47:46.809263] Prediksi: Normal
+2025-04-28 08:47:49,622 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 08:47:49,622 - INFO - {"prediction": "Normal"}
+2025-04-28 08:50:30,331 - INFO - {"timestamp": "28/04/2025 08:50:32.736", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php", "body": ""}}
+2025-04-28 08:50:30,331 - INFO - [2025-04-28T08:50:30.331759] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-04-28 08:50:30,632 - INFO - [2025-04-28T08:50:30.331759] Prediksi: Normal
+2025-04-28 08:50:30,632 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 08:50:31,410 - INFO - {"prediction": "Normal"}
+2025-04-28 08:50:52,793 - INFO - {"timestamp": "28/04/2025 08:50:54.969", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%22SELECT+*+FROM+user+WHERE+username+%3D+%27%22+%2B+user_input+%2B+%22%27%22", "body": "query=\"SELECT * FROM user WHERE username = '\" + user_input + \"'\""}}
+2025-04-28 08:50:52,794 - INFO - [2025-04-28T08:50:52.794041] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=%22SELECT+*+FROM+user+WHERE+username+%3D+%27%22+%2B+user_input+%2B+%22%27%22",
+    "body": "query=\"SELECT * FROM user WHERE username = '\" + user_input + \"'\""
+}
+2025-04-28 08:50:53,418 - INFO - [2025-04-28T08:50:52.794041] Prediksi: Normal
+2025-04-28 08:50:53,419 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 08:50:53,419 - INFO - {"prediction": "Normal"}
+2025-04-28 08:52:03,414 - INFO - {"timestamp": "28/04/2025 08:52:05.805", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/search.php?query=%3Cscript%3Ealert%28%22anjay%22%29%3C%2Fscript%3E", "body": "query=<script>alert(\"anjay\")</script>"}}
+2025-04-28 08:52:03,414 - INFO - [2025-04-28T08:52:03.414876] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=%3Cscript%3Ealert%28%22anjay%22%29%3C%2Fscript%3E",
+    "body": "query=<script>alert(\"anjay\")</script>"
+}
+2025-04-28 08:52:03,831 - INFO - [2025-04-28T08:52:03.414876] Prediksi: XSS
+2025-04-28 08:52:03,831 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 08:52:03,831 - INFO - {"prediction": "XSS"}
+2025-04-28 08:52:49,889 - INFO - {"timestamp": "28/04/2025 08:52:52.242", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-28 08:52:49,890 - INFO - [2025-04-28T08:52:49.890490] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-28 08:52:50,208 - INFO - [2025-04-28T08:52:49.890490] Prediksi: XSS
+2025-04-28 08:52:50,208 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 08:52:50,208 - INFO - {"prediction": "XSS"}
+2025-04-28 08:53:10,435 - INFO - {"timestamp": "28/04/2025 08:53:12.793", "ip": "::1", "input": {"method": "GET", "url": "/moodle/course/view.php?id=6", "body": "id=6"}}
+2025-04-28 08:53:10,435 - INFO - [2025-04-28T08:53:10.435937] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 08:53:10,864 - INFO - [2025-04-28T08:53:10.435937] Prediksi: XSS
+2025-04-28 08:53:10,865 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 08:53:10,865 - INFO - {"prediction": "XSS"}
+2025-04-28 08:53:17,683 - INFO - {"timestamp": "28/04/2025 08:53:20.057", "ip": "::1", "input": {"method": "GET", "url": "/moodle/mod/assign/view.php?id=15", "body": "id=15"}}
+2025-04-28 08:53:17,683 - INFO - [2025-04-28T08:53:17.683740] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=15",
+    "body": "id=15"
+}
+2025-04-28 08:53:18,022 - INFO - [2025-04-28T08:53:17.683740] Prediksi: XSS
+2025-04-28 08:53:18,022 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 08:53:18,022 - INFO - {"prediction": "XSS"}
+2025-04-28 08:53:21,570 - INFO - {"timestamp": "28/04/2025 08:53:23.940", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 08:53:21,571 - INFO - [2025-04-28T08:53:21.571211] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 08:53:21,960 - INFO - [2025-04-28T08:53:21.571211] Prediksi: Normal
+2025-04-28 08:53:21,960 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 08:53:21,961 - INFO - {"prediction": "Normal"}
+2025-04-28 08:56:17,399 - INFO - {"timestamp": "28/04/2025 08:56:19.854", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 08:56:17,399 - INFO - [2025-04-28T08:56:17.399755] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 08:56:17,735 - INFO - [2025-04-28T08:56:17.399755] Prediksi: Normal
+2025-04-28 08:56:17,736 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 08:56:17,737 - INFO - {"prediction": "Normal"}
+2025-04-28 08:57:34,635 - INFO - {"timestamp": "28/04/2025 08:57:37.082", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 08:57:34,635 - INFO - [2025-04-28T08:57:34.635385] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 08:57:34,684 - INFO - [2025-04-28T08:57:34.635385] Prediksi: Normal
+2025-04-28 08:57:34,685 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 08:57:34,685 - INFO - {"prediction": "Normal"}
+2025-04-28 09:31:19,560 - INFO - {"timestamp": "28/04/2025 09:31:21.386", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-28 09:31:19,560 - INFO - [2025-04-28T09:31:19.560150] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-28 09:31:20,730 - INFO - [2025-04-28T09:31:19.560150] Prediksi: XSS
+2025-04-28 09:31:20,730 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:31:20,731 - INFO - {"prediction": "XSS"}
+2025-04-28 09:31:33,601 - INFO - {"timestamp": "28/04/2025 09:31:35.820", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/settings.php?section=frontpagesettings", "body": "section=frontpagesettings"}}
+2025-04-28 09:31:33,602 - INFO - [2025-04-28T09:31:33.602473] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-04-28 09:31:35,893 - INFO - [2025-04-28T09:31:33.602473] Prediksi: SQLi
+2025-04-28 09:31:35,894 - INFO - Hasil prediksi: {'prediction': 'SQLi'}
+2025-04-28 09:31:35,894 - INFO - {"prediction": "SQLi"}
+2025-04-28 09:32:08,823 - INFO - {"timestamp": "28/04/2025 09:32:11.109", "ip": "::1", "input": {"method": "POST", "url": "http://localhost/moodle/admin/settings.php?section=frontpagesettings", "body": {"section": "frontpagesettings", "action": "save-settings", "sesskey": "ycVXMxmqWK", "return": "", "s__fullname": "e-Learning STT NF", "s__shortname": "elena", "s__summary": "<p>&lt;script&gt;alert(\"hai cantik\")&lt;/script&gt;</p>", "s__frontpage": ["6", "none", "none", "none", "none"], "s__frontpageloggedin": ["6", "none", "none", "none", "none", "none"], "s__maxcategorydepth": "2", "s__frontpagecourselimit": "200", "s__numsections": "1", "s__newsitems": "3", "s__commentsperpage": "15", "s__defaultfrontpageroleid": "8", "submitted_at": "2025-04-28T02:32:11.060Z"}}}
+2025-04-28 09:32:08,824 - INFO - [2025-04-28T09:32:08.824761] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/settings.php?section=frontpagesettings",
+    "body": {
+        "section": "frontpagesettings",
+        "action": "save-settings",
+        "sesskey": "ycVXMxmqWK",
+        "return": "",
+        "s__fullname": "e-Learning STT NF",
+        "s__shortname": "elena",
+        "s__summary": "<p>&lt;script&gt;alert(\"hai cantik\")&lt;/script&gt;</p>",
+        "s__frontpage": [
+            "6",
+            "none",
+            "none",
+            "none",
+            "none"
+        ],
+        "s__frontpageloggedin": [
+            "6",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+        ],
+        "s__maxcategorydepth": "2",
+        "s__frontpagecourselimit": "200",
+        "s__numsections": "1",
+        "s__newsitems": "3",
+        "s__commentsperpage": "15",
+        "s__defaultfrontpageroleid": "8",
+        "submitted_at": "2025-04-28T02:32:11.060Z"
+    }
+}
+2025-04-28 09:32:09,390 - INFO - [2025-04-28T09:32:08.824761] Prediksi: XSS
+2025-04-28 09:32:09,390 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:32:09,391 - INFO - {"prediction": "XSS"}
+2025-04-28 09:32:11,190 - INFO - {"timestamp": "28/04/2025 09:32:13.300", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/settings.php?section=frontpagesettings", "body": "section=frontpagesettings"}}
+2025-04-28 09:32:11,190 - INFO - [2025-04-28T09:32:11.190774] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-04-28 09:32:11,692 - INFO - [2025-04-28T09:32:11.190774] Prediksi: SQLi
+2025-04-28 09:32:11,692 - INFO - Hasil prediksi: {'prediction': 'SQLi'}
+2025-04-28 09:32:11,692 - INFO - {"prediction": "SQLi"}
+2025-04-28 09:35:09,838 - INFO - {"timestamp": "28/04/2025 09:35:11.701", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-28 09:35:09,838 - INFO - [2025-04-28T09:35:09.838611] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-28 09:35:10,981 - INFO - [2025-04-28T09:35:09.838611] Prediksi: XSS
+2025-04-28 09:35:10,982 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:35:10,982 - INFO - {"prediction": "XSS"}
+2025-04-28 09:43:20,005 - INFO - {"timestamp": "28/04/2025 09:43:22.238", "ip": "::1", "input": {"method": "GET", "url": "/moodle/course/view.php?id=6", "body": "id=6"}}
+2025-04-28 09:43:20,006 - INFO - [2025-04-28T09:43:20.005271] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 09:43:20,653 - INFO - [2025-04-28T09:43:20.005271] Prediksi: XSS
+2025-04-28 09:43:20,653 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:43:20,654 - INFO - {"prediction": "XSS"}
+2025-04-28 09:43:24,987 - INFO - {"timestamp": "28/04/2025 09:43:27.273", "ip": "::1", "input": {"method": "GET", "url": "/moodle/mod/assign/view.php?id=15", "body": "id=15"}}
+2025-04-28 09:43:24,987 - INFO - [2025-04-28T09:43:24.987748] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=15",
+    "body": "id=15"
+}
+2025-04-28 09:43:25,368 - INFO - [2025-04-28T09:43:24.987748] Prediksi: XSS
+2025-04-28 09:43:25,369 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:43:25,369 - INFO - {"prediction": "XSS"}
+2025-04-28 09:43:29,554 - INFO - {"timestamp": "28/04/2025 09:43:31.905", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 09:43:29,555 - INFO - [2025-04-28T09:43:29.555869] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 09:43:29,804 - INFO - [2025-04-28T09:43:29.555869] Prediksi: Normal
+2025-04-28 09:43:29,804 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 09:43:29,805 - INFO - {"prediction": "Normal"}
+2025-04-28 09:54:42,742 - INFO - {"timestamp": "28/04/2025 09:54:45.154", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 09:54:42,743 - INFO - [2025-04-28T09:54:42.743435] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 09:54:42,997 - INFO - [2025-04-28T09:54:42.743435] Prediksi: Normal
+2025-04-28 09:54:42,998 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 09:54:42,999 - INFO - {"prediction": "Normal"}
+2025-04-28 09:55:06,882 - INFO - {"timestamp": "28/04/2025 09:55:09.314", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 09:55:06,882 - INFO - [2025-04-28T09:55:06.882411] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 09:55:06,941 - INFO - [2025-04-28T09:55:06.882411] Prediksi: Normal
+2025-04-28 09:55:06,942 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 09:55:06,943 - INFO - {"prediction": "Normal"}
+2025-04-28 09:55:21,394 - INFO - {"timestamp": "28/04/2025 09:55:23.820", "ip": "::1", "input": {"method": "GET", "url": "/moodle/course/view.php?id=6", "body": "id=6"}}
+2025-04-28 09:55:21,394 - INFO - [2025-04-28T09:55:21.394974] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 09:55:21,527 - INFO - [2025-04-28T09:55:21.394974] Prediksi: XSS
+2025-04-28 09:55:21,527 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:55:21,527 - INFO - {"prediction": "XSS"}
+2025-04-28 09:55:25,301 - INFO - {"timestamp": "28/04/2025 09:55:27.586", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-28 09:55:25,302 - INFO - [2025-04-28T09:55:25.302326] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-28 09:55:25,706 - INFO - [2025-04-28T09:55:25.302326] Prediksi: XSS
+2025-04-28 09:55:25,706 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:55:25,707 - INFO - {"prediction": "XSS"}
+2025-04-28 09:55:34,589 - INFO - {"timestamp": "28/04/2025 09:55:36.994", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/settings.php?section=frontpagesettings", "body": "section=frontpagesettings"}}
+2025-04-28 09:55:34,591 - INFO - [2025-04-28T09:55:34.591008] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-04-28 09:55:34,776 - INFO - [2025-04-28T09:55:34.591008] Prediksi: SQLi
+2025-04-28 09:55:34,777 - INFO - Hasil prediksi: {'prediction': 'SQLi'}
+2025-04-28 09:55:34,778 - INFO - {"prediction": "SQLi"}
+2025-04-28 09:55:45,726 - INFO - {"timestamp": "28/04/2025 09:55:48.173", "ip": "::1", "input": {"method": "POST", "url": "http://localhost/moodle/admin/settings.php?section=frontpagesettings", "body": {"section": "frontpagesettings", "action": "save-settings", "sesskey": "ycVXMxmqWK", "return": "", "s__fullname": "e-Learning STT NF", "s__shortname": "elena", "s__summary": "<p>&lt;script&gt;alert(\"hai cantik\")&lt;/script&gt;</p>", "s__frontpage": ["6", "none", "none", "none", "none"], "s__frontpageloggedin": ["6", "none", "none", "none", "none", "none"], "s__maxcategorydepth": "2", "s__frontpagecourselimit": "200", "s__numsections": "1", "s__newsitems": "3", "s__commentsperpage": "15", "s__defaultfrontpageroleid": "8", "submitted_at": "2025-04-28T02:55:48.122Z"}}}
+2025-04-28 09:55:45,726 - INFO - [2025-04-28T09:55:45.726890] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/settings.php?section=frontpagesettings",
+    "body": {
+        "section": "frontpagesettings",
+        "action": "save-settings",
+        "sesskey": "ycVXMxmqWK",
+        "return": "",
+        "s__fullname": "e-Learning STT NF",
+        "s__shortname": "elena",
+        "s__summary": "<p>&lt;script&gt;alert(\"hai cantik\")&lt;/script&gt;</p>",
+        "s__frontpage": [
+            "6",
+            "none",
+            "none",
+            "none",
+            "none"
+        ],
+        "s__frontpageloggedin": [
+            "6",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+        ],
+        "s__maxcategorydepth": "2",
+        "s__frontpagecourselimit": "200",
+        "s__numsections": "1",
+        "s__newsitems": "3",
+        "s__commentsperpage": "15",
+        "s__defaultfrontpageroleid": "8",
+        "submitted_at": "2025-04-28T02:55:48.122Z"
+    }
+}
+2025-04-28 09:55:45,902 - INFO - [2025-04-28T09:55:45.726890] Prediksi: XSS
+2025-04-28 09:55:45,903 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:55:45,903 - INFO - {"prediction": "XSS"}
+2025-04-28 09:55:47,928 - INFO - {"timestamp": "28/04/2025 09:55:50.375", "ip": "::1", "input": {"method": "GET", "url": "/moodle/admin/settings.php?section=frontpagesettings", "body": "section=frontpagesettings"}}
+2025-04-28 09:55:47,929 - INFO - [2025-04-28T09:55:47.928345] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-04-28 09:55:48,175 - INFO - [2025-04-28T09:55:47.928345] Prediksi: SQLi
+2025-04-28 09:55:48,175 - INFO - Hasil prediksi: {'prediction': 'SQLi'}
+2025-04-28 09:55:48,176 - INFO - {"prediction": "SQLi"}
+2025-04-28 09:56:13,828 - INFO - {"timestamp": "28/04/2025 09:56:16.261", "ip": "::1", "input": {"method": "GET", "url": "/moodle/?redirect=0", "body": "redirect=0"}}
+2025-04-28 09:56:13,830 - INFO - [2025-04-28T09:56:13.829103] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-28 09:56:13,876 - INFO - [2025-04-28T09:56:13.829103] Prediksi: XSS
+2025-04-28 09:56:13,877 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:56:13,877 - INFO - {"prediction": "XSS"}
+2025-04-28 09:56:16,523 - INFO - {"timestamp": "28/04/2025 09:56:18.956", "ip": "::1", "input": {"method": "GET", "url": "/moodle/course/view.php?id=6", "body": "id=6"}}
+2025-04-28 09:56:16,524 - INFO - [2025-04-28T09:56:16.524527] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 09:56:16,622 - INFO - [2025-04-28T09:56:16.524527] Prediksi: XSS
+2025-04-28 09:56:16,623 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:56:16,623 - INFO - {"prediction": "XSS"}
+2025-04-28 09:56:25,688 - INFO - {"timestamp": "28/04/2025 09:56:28.057", "ip": "::1", "input": {"method": "GET", "url": "/moodle/course/view.php?id=6", "body": "id=6"}}
+2025-04-28 09:56:25,688 - INFO - [2025-04-28T09:56:25.688507] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 09:56:26,080 - INFO - [2025-04-28T09:56:25.688507] Prediksi: XSS
+2025-04-28 09:56:26,081 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:56:26,082 - INFO - {"prediction": "XSS"}
+2025-04-28 09:56:27,705 - INFO - {"timestamp": "28/04/2025 09:56:30.134", "ip": "::1", "input": {"method": "GET", "url": "/moodle/mod/assign/view.php?id=15", "body": "id=15"}}
+2025-04-28 09:56:27,706 - INFO - [2025-04-28T09:56:27.706867] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=15",
+    "body": "id=15"
+}
+2025-04-28 09:56:27,817 - INFO - [2025-04-28T09:56:27.706867] Prediksi: XSS
+2025-04-28 09:56:27,818 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 09:56:27,818 - INFO - {"prediction": "XSS"}
+2025-04-28 09:56:31,002 - INFO - {"timestamp": "28/04/2025 09:56:33.431", "ip": "::1", "input": {"method": "POST", "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment", "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"}}
+2025-04-28 09:56:31,002 - INFO - [2025-04-28T09:56:31.002236] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 09:56:31,192 - INFO - [2025-04-28T09:56:31.002236] Prediksi: Normal
+2025-04-28 09:56:31,193 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 09:56:31,194 - INFO - {"prediction": "Normal"}
