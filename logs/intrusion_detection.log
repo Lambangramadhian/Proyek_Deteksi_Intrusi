@@ -2849,3 +2849,120 @@
 2025-04-28 10:51:26,755 - INFO - [2025-04-28T10:51:26.739376] Prediksi: Normal
 2025-04-28 10:51:26,755 - INFO - Hasil prediksi: {'prediction': 'Normal'}
 2025-04-28 10:51:26,756 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:00:40,401 - INFO - [28/04/2025 11:00:43.504] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:00:40,401 - INFO - [2025-04-28T11:00:40.401674] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:00:40,538 - INFO - [2025-04-28T11:00:40.401674] Prediksi: Normal
+2025-04-28 11:00:40,538 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:00:40,538 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:01:08,365 - INFO - [28/04/2025 11:01:11.481] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:01:08,366 - INFO - [2025-04-28T11:01:08.366967] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:01:08,403 - INFO - [2025-04-28T11:01:08.366967] Prediksi: Normal
+2025-04-28 11:01:08,404 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:01:08,404 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:11:25,233 - INFO - [28/04/2025 11:11:28.357] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:11:25,233 - INFO - [2025-04-28T11:11:25.233688] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:11:25,349 - INFO - [2025-04-28T11:11:25.233688] Prediksi: Normal
+2025-04-28 11:11:25,349 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:11:25,349 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:11:46,890 - INFO - [28/04/2025 11:11:49.905] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:11:46,891 - INFO - [2025-04-28T11:11:46.890434] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:11:46,899 - INFO - [2025-04-28T11:11:46.890434] Prediksi: Normal
+2025-04-28 11:11:46,899 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:11:46,900 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:12:12,376 - INFO - [28/04/2025 11:12:15.516] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:12:12,377 - INFO - [2025-04-28T11:12:12.377164] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=ycVXMxmqWK&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"mod_assign\",\"callback\":\"gradingpanel\",\"contextid\":\"35\",\"args\":[{\"name\":\"userid\",\"value\":2},{\"name\":\"attemptnumber\",\"value\":-1},{\"name\":\"jsonformdata\",\"value\":\"\\\"\\\"\"}]}}]"
+}
+2025-04-28 11:12:12,389 - INFO - [2025-04-28T11:12:12.377164] Prediksi: Normal
+2025-04-28 11:12:12,390 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:12:12,390 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-28 11:12:25,303 - INFO - [28/04/2025 11:12:28.294] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 11:12:25,303 - INFO - [2025-04-28T11:12:25.303666] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 11:12:25,394 - INFO - [2025-04-28T11:12:25.303666] Prediksi: XSS
+2025-04-28 11:12:25,394 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 11:12:25,394 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 11:12:29,118 - INFO - [28/04/2025 11:12:32.240] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-28 11:12:29,119 - INFO - [2025-04-28T11:12:29.118092] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-28 11:12:29,205 - INFO - [2025-04-28T11:12:29.118092] Prediksi: XSS
+2025-04-28 11:12:29,205 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 11:12:29,205 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 11:12:33,106 - INFO - [28/04/2025 11:12:36.014] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 11:12:33,107 - INFO - [2025-04-28T11:12:33.106731] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 11:12:33,130 - INFO - [2025-04-28T11:12:33.106731] Prediksi: XSS
+2025-04-28 11:12:33,130 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 11:12:33,131 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 11:12:37,711 - INFO - [28/04/2025 11:12:40.826] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 11:12:37,711 - INFO - [2025-04-28T11:12:37.711258] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-04-28 11:12:37,776 - INFO - [2025-04-28T11:12:37.711258] Prediksi: XSS
+2025-04-28 11:12:37,776 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-28 11:12:37,777 - INFO - Hasil prediksi: {'prediction': 'XSS'}

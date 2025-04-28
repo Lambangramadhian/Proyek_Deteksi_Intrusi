@@ -3,6 +3,7 @@ import threading
 import time
 import json
 import redis
+import datetime
 from flask import request, jsonify, current_app
 from app_factory import create_app
 from predict import make_prediction
@@ -64,55 +65,45 @@ def task_status(task_id):
     return jsonify({"status": "sedang diproses"}), 202
 
 def subscribe_to_logs(app):
-    """Berlangganan ke Redis channel dan memproses payload log dengan rapi."""
+    """Subscribe ke Redis channel dan proses payload."""
     processed_messages = set()
 
-    # Menggunakan Redis PubSub untuk berlangganan ke channel 'moodle_logs'
     while True:
         try:
             pubsub = redis_connection.pubsub()
             pubsub.subscribe('moodle_logs')
-            print(f"Berlangganan ke channel 'moodle_logs' pada thread: {threading.current_thread().name}")
+            print(f"[Subscribe] Berlangganan ke 'moodle_logs' pada thread: {threading.current_thread().name}")
 
-            # Mengatur timeout untuk PubSub
             last_ping = time.time()
 
-            # Loop untuk mendengarkan pesan dari Redis PubSub
             for message in pubsub.listen():
                 if message['type'] == 'message':
                     try:
                         data = json.loads(message['data'])
-
-                        # Menghindari pemrosesan pesan yang sama
                         message_id = data.get('timestamp')
                         if message_id in processed_messages:
                             continue
                         processed_messages.add(message_id)
 
-                        # Mendapatkan informasi dari payload
-                        ip = data.get('ip_address') or data.get('ip') or '-'
-                        user_id = str(data.get('user_id') or data.get('userid') or '-')
+                        ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
+                        user_id = data.get('user_id') or data.get('userid') or 'Tidak Diketahui'
                         payload = data.get('payloadData', {})
                         method = payload.get('method', '')
                         url = payload.get('url', '')
                         body = payload.get('body', '')
 
-                        # Validasi input
                         with app.app_context():
-                            # Log readable JSON
-                            structured_payload = {
+                            # Rapi format log payload
+                            readable_json = json.dumps({
                                 "method": method,
                                 "url": url,
                                 "body": body
-                            }
-                            readable_json = json.dumps(structured_payload, indent=4, ensure_ascii=False)
+                            }, indent=4, ensure_ascii=False)
 
-                            # LOG: Input diterima
-                            current_app.logger.info(
-                                f"[{message_id}] IP: {ip} | User-ID: {user_id} | Input: {readable_json}"
-                            )
+                            # Log input satu kali saja
+                            current_app.logger.info(f"[{message_id}] IP: {ip} | User-ID: {user_id} | Input: {readable_json}")
 
-                            # Memproses prediksi
+                            # Panggil prediksi
                             hasil_prediksi = make_prediction(
                                 method=method,
                                 url=url,
@@ -121,31 +112,21 @@ def subscribe_to_logs(app):
                                 user_id=user_id
                             )
 
-                            # LOG: Hasil prediksi
-                            current_app.logger.info(f"Hasil prediksi: {hasil_prediksi}")
-
-                    # LOG: Kesalahan saat memproses pesan Redis
                     except Exception as e:
                         with app.app_context():
                             current_app.logger.error(json.dumps({
-                                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                                "timestamp": datetime.datetime.now().isoformat(),
                                 "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                             }))
 
-                # Menghindari pemrosesan pesan yang sama
                 if time.time() - last_ping > 60:
                     redis_connection.ping()
                     last_ping = time.time()
 
-        # Mengatasi kesalahan koneksi Redis
-        except TimeoutError:
-            print("[Subscribe] Redis TimeoutError: Menghubungkan kembali...")
-            time.sleep(5)
-            continue
         except redis.exceptions.ConnectionError as e:
-            print(f"[Subscribe] Redis ConnectionError: {str(e)}. Retry 5s...")
+            print(f"[Subscribe] Redis ConnectionError: {e}. Retry 5s...")
+            pubsub.close()
             time.sleep(5)
-            continue
 
 # Menjalankan worker RQ di thread terpisah
 if __name__ == "__main__":

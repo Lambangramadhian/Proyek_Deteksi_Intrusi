@@ -1,3 +1,4 @@
+# predict.py
 import os
 import json
 import redis
@@ -6,11 +7,11 @@ import hashlib
 import datetime
 from flask import current_app
 
-# Load model dan vectorizer dari environment atau default
+# Load model dan vectorizer
 model = joblib.load(os.getenv("MODEL_PATH", "model/random_forest_web_ids.pkl"))
 vectorizer = joblib.load(os.getenv("VECTORIZER_PATH", "model/tfidf_vectorizer.pkl"))
 
-# Koneksi Redis
+# Redis client
 redis_client = redis.StrictRedis(
     host=os.getenv("REDIS_HOST", "localhost"),
     port=int(os.getenv("REDIS_PORT", 6379)),
@@ -18,16 +19,16 @@ redis_client = redis.StrictRedis(
     decode_responses=True
 )
 
-def get_cache_key(input_text):
-    """Menghasilkan kunci cache yang unik berdasarkan teks masukan."""
+def get_cache_key(input_text: str) -> str:
+    """Generate cache key from input text."""
     return f"prediction:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
-def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tidak Diketahui"):
-    """Memproses prediksi dan mencatat hasilnya dengan format log terstruktur."""
+def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketahui", user_id: str = "Tidak Diketahui") -> dict:
+    """Predict input based on method, URL, and body."""
     try:
         timestamp = datetime.datetime.now().isoformat()
 
-        # Validasi input
+        # Format body
         if isinstance(body, dict):
             body_str = json.dumps(body, ensure_ascii=False)
         else:
@@ -35,27 +36,10 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tid
 
         input_text = f"{method.strip()} {url.strip()} {body_str}".strip()
 
-        # Format JSON untuk log
-        structured_payload = {
-            "method": method,
-            "url": url,
-            "body": body
-        }
-
-        # Menggunakan json.dumps untuk memastikan format JSON yang benar
-        # dan menghindari karakter non-ASCII
-        readable_json = json.dumps(structured_payload, indent=4, ensure_ascii=False)
-
-        # LOG: Input diterima
-        current_app.logger.info(
-            f"[{timestamp}] IP: {client_ip} | User-ID: {user_id} | Input: {readable_json}"
-        )
-
-        # Cek apakah input_text kosong
         if not input_text:
             return {"error": "Payload diperlukan"}
 
-        # Cek di Redis Cache
+        # Check Redis cache
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
         if hasil_cache:
@@ -63,25 +47,22 @@ def make_prediction(method, url, body, client_ip="Tidak Diketahui", user_id="Tid
             current_app.logger.info(f"Hasil prediksi: {{'prediction': '{hasil_cache}'}}")
             return {"prediction": hasil_cache}
 
-        # Vektorisasi & Prediksi
-        input_vectorized = vectorizer.transform([input_text])
-        prediction = model.predict(input_vectorized)[0]
+        # Vectorize and predict
+        vectorized = vectorizer.transform([input_text])
+        prediction = model.predict(vectorized)[0]
 
-        # LOG: Prediksi model
         label_map = {0: "Normal", 1: "XSS", 2: "SQL Injection"}
         label = label_map.get(prediction, "Tidak Diketahui")
 
-        # Simpan hasil prediksi ke Redis
+        # Cache prediction
         redis_client.setex(cache_key, 60, label)
 
-        # LOG: Hasil prediksi
+        # Log prediction
         current_app.logger.info(f"[{timestamp}] Prediksi: {label}")
         current_app.logger.info(f"Hasil prediksi: {{'prediction': '{label}'}}")
 
-        # Kembalikan hasil prediksi
         return {"prediction": label}
 
-    # LOG: Kesalahan saat memproses pesan Redis
     except Exception as e:
         current_app.logger.error(json.dumps({
             "timestamp": datetime.datetime.now().isoformat(),
