@@ -3515,3 +3515,155 @@
 }
 2025-04-29 09:41:30,536 - INFO - [2025-04-29T09:41:30.093238] Prediksi: XSS
 2025-04-29 09:41:30,536 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 10:04:05,239 - INFO - [29/04/2025 10:04:03.818] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 10:04:05,913 - INFO - [2025-04-29T10:04:05.239354] Prediksi: Normal
+2025-04-29 10:04:05,913 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 10:04:15,084 - INFO - [29/04/2025 10:04:16.258] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normal",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "10",
+            "minute": "4"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "380870958"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T03:04:16.206Z"
+    }
+}
+2025-04-29 10:04:15,167 - INFO - [2025-04-29T10:04:15.084137] Prediksi: XSS
+2025-04-29 10:04:15,167 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 10:05:23,853 - INFO - [29/04/2025 10:05:24.286] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-04-29 10:05:23,854 - ERROR - {"timestamp": "2025-04-29T10:05:23.854582", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:13:59,130 - INFO - [29/04/2025 11:14:00.317] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=SELECT+*+FROM+USER+WHERE+ID+%3D+1",
+    "body": "query=SELECT * FROM USER WHERE ID = 1"
+}
+2025-04-29 11:13:59,131 - ERROR - {"timestamp": "2025-04-29T11:13:59.131665", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:14:14,872 - INFO - [29/04/2025 11:14:16.031] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-04-29 11:14:14,872 - ERROR - {"timestamp": "2025-04-29T11:14:14.872760", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:14:21,945 - INFO - [29/04/2025 11:14:23.110] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=gradessettings",
+    "body": "section=gradessettings"
+}
+2025-04-29 11:14:21,945 - ERROR - {"timestamp": "2025-04-29T11:14:21.945070", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:14:40,859 - INFO - [29/04/2025 11:14:42.047] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/settings.php?section=gradessettings",
+    "body": {
+        "section": "gradessettings",
+        "action": "save-settings",
+        "sesskey": "RDkJC9ODYD",
+        "return": "",
+        "s__gradebookroles": {
+            "xxxxx": "1",
+            "5": "1"
+        },
+        "s__grade_profilereport": "user",
+        "s__grade_aggregationposition": "1",
+        "s__grade_includescalesinaggregation": "1",
+        "s__grade_hiddenasdate": "0",
+        "s__gradepublishing": "0",
+        "s__grade_export_exportfeedback": "0",
+        "s__grade_export_displaytype": "1",
+        "s__grade_export_decimalpoints": "2",
+        "s__grade_export_userprofilefields": "firstname,lastname,idnumber,institution,department,email",
+        "s__grade_export_customprofilefields": "",
+        "s__recovergradesdefault": "0",
+        "s__gradeexport": {
+            "xxxxx": "1"
+        },
+        "s__gradeexport_default": "ods",
+        "s__unlimitedgrades": "0",
+        "s__grade_report_showmin": "1",
+        "s__gradepointmax": "100",
+        "s__gradepointdefault": "100",
+        "s__grade_minmaxtouse": "1",
+        "s__grade_mygrades_report": "overview",
+        "s__gradereport_mygradeurl": "xxxxxxxxxxxx",
+        "submitted_at": "2025-04-29T04:14:42.007Z"
+    }
+}
+2025-04-29 11:14:40,859 - ERROR - {"timestamp": "2025-04-29T11:14:40.859081", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:14:41,895 - INFO - [29/04/2025 11:14:43.061] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=gradessettings",
+    "body": "section=gradessettings"
+}
+2025-04-29 11:14:41,895 - ERROR - {"timestamp": "2025-04-29T11:14:41.895352", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:14:59,460 - INFO - [29/04/2025 11:15:00.649] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/settings.php?section=gradessettings",
+    "body": {
+        "section": "gradessettings",
+        "action": "save-settings",
+        "sesskey": "RDkJC9ODYD",
+        "return": "",
+        "s__gradebookroles": {
+            "xxxxx": "1",
+            "5": "1"
+        },
+        "s__grade_profilereport": "user",
+        "s__grade_aggregationposition": "1",
+        "s__grade_includescalesinaggregation": "1",
+        "s__grade_hiddenasdate": "0",
+        "s__gradepublishing": "0",
+        "s__grade_export_exportfeedback": "0",
+        "s__grade_export_displaytype": "1",
+        "s__grade_export_decimalpoints": "2",
+        "s__grade_export_userprofilefields": "firstname,lastname,idnumber,institution,department,email",
+        "s__grade_export_customprofilefields": "",
+        "s__recovergradesdefault": "0",
+        "s__gradeexport": {
+            "xxxxx": "1"
+        },
+        "s__gradeexport_default": "ods",
+        "s__unlimitedgrades": "0",
+        "s__grade_report_showmin": "1",
+        "s__gradepointmax": "100",
+        "s__gradepointdefault": "100",
+        "s__grade_minmaxtouse": "1",
+        "s__grade_mygrades_report": "overview",
+        "s__gradereport_mygradeurl": "",
+        "submitted_at": "2025-04-29T04:15:00.584Z"
+    }
+}
+2025-04-29 11:14:59,460 - ERROR - {"timestamp": "2025-04-29T11:14:59.460142", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:15:00,760 - INFO - [29/04/2025 11:15:01.928] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=gradessettings",
+    "body": "section=gradessettings"
+}
+2025-04-29 11:15:00,760 - ERROR - {"timestamp": "2025-04-29T11:15:00.760203", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
