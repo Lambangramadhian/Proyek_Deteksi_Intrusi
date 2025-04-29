@@ -48,6 +48,8 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
 
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
+        
+        # (SETELAH input diproses dan cache dicek)
         if hasil_cache:
             current_app.logger.info(f"[{timestamp}] Prediksi: {hasil_cache}")
             current_app.logger.info(f"Hasil prediksi: {{'prediction': '{hasil_cache}'}}")
@@ -61,6 +63,7 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
 
         redis_client.setex(cache_key, 60, label)
 
+        # Setelah prediksi model
         current_app.logger.info(f"[{timestamp}] Prediksi: {label}")
         current_app.logger.info(f"Hasil prediksi: {{'prediction': '{label}'}}")
 
