@@ -3685,3 +3685,151 @@
 }
 2025-04-29 11:46:52,361 - INFO - [2025-04-29T11:46:51.859714] Prediksi: Normal
 2025-04-29 11:46:52,361 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 11:56:52,630 - INFO - [29/04/2025 11:56:53.818] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=normal",
+    "body": "query=normal"
+}
+2025-04-29 11:56:52,630 - INFO - [2025-04-29T11:56:52.630477] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=normal",
+    "body": "query=normal"
+}
+2025-04-29 11:56:53,065 - INFO - [2025-04-29T11:56:52.630477] Prediksi: Normal
+2025-04-29 11:56:53,065 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 11:57:10,513 - INFO - [29/04/2025 11:57:11.703] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-04-29 11:57:10,513 - INFO - [2025-04-29T11:57:10.513545] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-04-29 11:57:10,612 - INFO - [2025-04-29T11:57:10.513545] Prediksi: Normal
+2025-04-29 11:57:10,613 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 11:57:19,700 - INFO - [29/04/2025 11:57:20.869] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=gradeitemsettings",
+    "body": "section=gradeitemsettings"
+}
+2025-04-29 11:57:19,700 - INFO - [2025-04-29T11:57:19.700119] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=gradeitemsettings",
+    "body": "section=gradeitemsettings"
+}
+2025-04-29 11:57:19,764 - INFO - [2025-04-29T11:57:19.700119] Prediksi: SQL Injection
+2025-04-29 11:57:19,764 - INFO - Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-04-29 11:57:28,165 - INFO - [29/04/2025 11:57:29.327] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=normal",
+    "body": "query=normal"
+}
+2025-04-29 11:57:28,165 - INFO - [2025-04-29T11:57:28.165669] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=normal",
+    "body": "query=normal"
+}
+2025-04-29 11:57:28,192 - INFO - [2025-04-29T11:57:28.165669] Prediksi: Normal
+2025-04-29 11:57:28,192 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 11:57:34,236 - INFO - [29/04/2025 11:57:35.407] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-29 11:57:34,236 - INFO - [2025-04-29T11:57:34.236121] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-04-29 11:57:34,315 - INFO - [2025-04-29T11:57:34.236121] Prediksi: XSS
+2025-04-29 11:57:34,315 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 11:57:39,470 - INFO - [29/04/2025 11:57:40.641] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-04-29 11:57:39,470 - INFO - [2025-04-29T11:57:39.470592] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-04-29 11:57:39,512 - INFO - [2025-04-29T11:57:39.470592] Prediksi: XSS
+2025-04-29 11:57:39,512 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 11:57:42,349 - INFO - [29/04/2025 11:57:43.515] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 11:57:42,349 - INFO - [2025-04-29T11:57:42.349748] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 11:57:42,403 - INFO - [2025-04-29T11:57:42.349748] Prediksi: Normal
+2025-04-29 11:57:42,403 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 11:57:47,392 - INFO - [29/04/2025 11:57:48.554] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normal",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "11",
+            "minute": "57"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "111615411"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T04:57:48.504Z"
+    }
+}
+2025-04-29 11:57:47,392 - INFO - [2025-04-29T11:57:47.392078] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normal",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "11",
+            "minute": "57"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "111615411"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T04:57:48.504Z"
+    }
+}
+2025-04-29 11:57:47,454 - INFO - [2025-04-29T11:57:47.392078] Prediksi: XSS
+2025-04-29 11:57:47,454 - INFO - Hasil prediksi: {'prediction': 'XSS'}

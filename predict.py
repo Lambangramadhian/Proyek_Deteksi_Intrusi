@@ -41,7 +41,7 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
         }
         formatted_input = json.dumps(structured_log, indent=4, ensure_ascii=False)
 
-        current_app.logger.info(f"[{timestamp}] IP: {client_ip} | User-ID: {user_id} | Input: {formatted_input}")
+        # current_app.logger.info(f"[{timestamp}] IP: {client_ip} | User-ID: {user_id} | Input: {formatted_input}")
 
         if not input_text:
             return {"error": "Payload diperlukan"}
