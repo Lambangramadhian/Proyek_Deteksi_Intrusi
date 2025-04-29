@@ -3667,3 +3667,9 @@
     "body": "section=gradessettings"
 }
 2025-04-29 11:15:00,760 - ERROR - {"timestamp": "2025-04-29T11:15:00.760203", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
+2025-04-29 11:36:11,124 - INFO - [29/04/2025 11:36:12.292] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=normal",
+    "body": "query=normal"
+}
+2025-04-29 11:36:11,124 - ERROR - {"timestamp": "2025-04-29T11:36:11.124011", "error": "Kesalahan saat memproses pesan Redis: make_prediction() got an unexpected keyword argument 'user_id'"}
