@@ -3256,3 +3256,262 @@
 }
 2025-04-28 14:29:14,125 - INFO - [2025-04-28T14:29:14.101722] Prediksi: XSS
 2025-04-28 14:29:14,125 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 09:32:50,498 - INFO - [29/04/2025 09:32:51.687] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/login/index.php",
+    "body": {
+        "logintoken": "qWBsIuVRVZGGhBKlQUxWe5zV7W2WxWAy",
+        "username": "admin",
+        "password": "Admin#1234",
+        "submitted_at": "2025-04-29T02:32:51.442Z"
+    }
+}
+2025-04-29 09:32:53,175 - INFO - [2025-04-29T09:32:50.499767] Prediksi: XSS
+2025-04-29 09:32:53,175 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 09:33:03,932 - INFO - [29/04/2025 09:33:05.107] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-04-29 09:33:03,983 - INFO - [2025-04-29T09:33:03.932116] Prediksi: XSS
+2025-04-29 09:33:03,983 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 09:33:26,141 - INFO - [29/04/2025 09:33:27.304] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 09:33:26,175 - INFO - [2025-04-29T09:33:26.141090] Prediksi: Normal
+2025-04-29 09:33:26,175 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 09:33:42,910 - INFO - [29/04/2025 09:33:44.043] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normal#1",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "9",
+            "minute": "33"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "21392395"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T02:33:43.994Z"
+    }
+}
+2025-04-29 09:33:43,076 - INFO - [2025-04-29T09:33:42.910909] Prediksi: XSS
+2025-04-29 09:33:43,076 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 09:33:55,395 - INFO - [29/04/2025 09:33:56.583] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 09:33:55,421 - INFO - [2025-04-29T09:33:55.395567] Prediksi: Normal
+2025-04-29 09:33:55,421 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 09:34:05,221 - INFO - [29/04/2025 09:34:05.842] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normal",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "9",
+            "minute": "33"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "674735255"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T02:34:05.801Z"
+    }
+}
+2025-04-29 09:34:05,546 - INFO - [2025-04-29T09:34:05.221184] Prediksi: XSS
+2025-04-29 09:34:05,546 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 09:36:37,512 - INFO - [29/04/2025 09:36:38.370] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 09:36:37,874 - INFO - [2025-04-29T09:36:37.512825] Prediksi: Normal
+2025-04-29 09:36:37,874 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 09:37:02,504 - INFO - [29/04/2025 09:37:02.813] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "'SELECT * FROM USER WHERE ID =1'",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "9",
+            "minute": "36"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "446274286"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T02:37:02.755Z"
+    }
+}
+2025-04-29 09:37:03,162 - INFO - [2025-04-29T09:37:02.504595] Prediksi: Normal
+2025-04-29 09:37:03,162 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 09:37:27,515 - INFO - [29/04/2025 09:37:28.644] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 09:37:27,546 - INFO - [2025-04-29T09:37:27.516751] Prediksi: Normal
+2025-04-29 09:37:27,547 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 09:37:33,587 - INFO - [29/04/2025 09:37:34.297] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normal",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "9",
+            "minute": "37"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "130751330"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T02:37:34.263Z"
+    }
+}
+2025-04-29 09:37:33,618 - INFO - [2025-04-29T09:37:33.587441] Prediksi: XSS
+2025-04-29 09:37:33,618 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 09:37:45,252 - INFO - [29/04/2025 09:37:46.085] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 09:37:45,469 - INFO - [2025-04-29T09:37:45.252030] Prediksi: Normal
+2025-04-29 09:37:45,470 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 09:37:58,292 - INFO - [29/04/2025 09:37:58.088] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "'normal'",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "9",
+            "minute": "37"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "297798339"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T02:37:58.048Z"
+    }
+}
+2025-04-29 09:38:01,289 - INFO - [2025-04-29T09:37:58.292381] Prediksi: XSS
+2025-04-29 09:38:01,289 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-04-29 09:40:58,982 - INFO - [29/04/2025 09:41:00.164] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "/moodle/lib/ajax/service.php?sesskey=RDkJC9ODYD&info=core_get_fragment",
+    "body": "[{\"index\":0,\"methodname\":\"core_get_fragment\",\"args\":{\"component\":\"calendar\",\"callback\":\"event_form\",\"contextid\":2,\"args\":[{\"name\":\"courseid\",\"value\":1}]}}]"
+}
+2025-04-29 09:40:59,036 - INFO - [2025-04-29T09:40:58.982172] Prediksi: Normal
+2025-04-29 09:40:59,036 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-04-29 09:41:30,093 - INFO - [29/04/2025 09:41:31.233] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "RDkJC9ODYD",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "<script>alert(\"hai sipaling cript\")</script>",
+        "timestart": {
+            "day": "29",
+            "month": "4",
+            "year": "2025",
+            "hour": "9",
+            "minute": "41"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "271161570"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-04-29T02:41:31.192Z"
+    }
+}
+2025-04-29 09:41:30,536 - INFO - [2025-04-29T09:41:30.093238] Prediksi: XSS
+2025-04-29 09:41:30,536 - INFO - Hasil prediksi: {'prediction': 'XSS'}
