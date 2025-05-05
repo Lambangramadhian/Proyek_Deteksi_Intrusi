@@ -6,11 +6,11 @@ import hashlib
 import datetime
 from flask import current_app
 
-# Load model dan vectorizer dari environment variables atau default
+# Load model dan vectorizer
 model = joblib.load(os.getenv("MODEL_PATH", "model/random_forest_web_ids.pkl"))
 vectorizer = joblib.load(os.getenv("VECTORIZER_PATH", "model/tfidf_vectorizer.pkl"))
 
-# Redis Client
+# Redis client setup
 redis_client = redis.StrictRedis(
     host=os.getenv("REDIS_HOST", "localhost"),
     port=int(os.getenv("REDIS_PORT", 6379)),
@@ -19,13 +19,13 @@ redis_client = redis.StrictRedis(
 )
 
 def get_cache_key(input_text: str) -> str:
-    """Buat cache key dari input_text."""
     return f"prediction:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
 def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketahui", user_id: str = "Tidak Diketahui") -> dict:
     try:
         timestamp = datetime.datetime.now().isoformat()
 
+        # Buat input_text dari semua komponen
         parts = [method.strip(), url.strip()]
         if isinstance(body, dict):
             parts.append(json.dumps(body, separators=(',', ':'), ensure_ascii=False))
@@ -41,20 +41,20 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
         }
         formatted_input = json.dumps(structured_log, indent=4, ensure_ascii=False)
 
-        # current_app.logger.info(f"[{timestamp}] IP: {client_ip} | User-ID: {user_id} | Input: {formatted_input}")
+        current_app.logger.info(f"[{timestamp}] IP: {client_ip} | User-ID: {user_id} | Input: {formatted_input}")
 
         if not input_text:
             return {"error": "Payload diperlukan"}
 
+        # Cek cache prediksi
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
-        
-        # (SETELAH input diproses dan cache dicek)
         if hasil_cache:
             current_app.logger.info(f"[{timestamp}] Prediksi: {hasil_cache}")
             current_app.logger.info(f"Hasil prediksi: {{'prediction': '{hasil_cache}'}}")
             return {"prediction": hasil_cache}
 
+        # Prediksi
         input_vector = vectorizer.transform([input_text])
         pred = model.predict(input_vector)[0]
 
@@ -63,7 +63,6 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
 
         redis_client.setex(cache_key, 60, label)
 
-        # Setelah prediksi model
         current_app.logger.info(f"[{timestamp}] Prediksi: {label}")
         current_app.logger.info(f"Hasil prediksi: {{'prediction': '{label}'}}")
 
