@@ -21,13 +21,24 @@ def get_cache_key(input_text: str) -> str:
     return f"prediction:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
 
+def flatten_dict(d, parent_key='', sep='||'):
+    items = []
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
 def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketahui", user_id: str = "Tidak Diketahui") -> dict:
     try:
         now = datetime.datetime.now()
         timestamp_str = now.strftime("[%d/%m/%Y %H:%M:%S]")
 
         if isinstance(body, dict):
-            body_string = json.dumps(body, separators=(',', ':'), ensure_ascii=False)
+            flat_body = flatten_dict(body)
+            body_string = " ".join(f"{k}={v}" for k, v in flat_body.items())
         elif isinstance(body, str):
             body_string = body.strip()
         else:
@@ -35,13 +46,22 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
 
         input_text = f"{method.strip()} {url.strip()} {body_string}".strip()
 
+        structured_log = {
+            "method": method,
+            "url": url,
+            "body": body
+        }
+        formatted_input = json.dumps(structured_log, indent=4, ensure_ascii=False)
+
+        current_app.logger.info(f"{timestamp_str} IP: {client_ip} | User-ID: {user_id} | Input: {formatted_input}")
+
         if not input_text:
             return {"error": "Payload diperlukan"}
 
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
         if hasil_cache:
-            _log_prediction(timestamp_str, client_ip, user_id, method, url, body, hasil_cache)
+            current_app.logger.info(f"{timestamp_str} Prediksi (cache): {hasil_cache}")
             return {"prediction": hasil_cache}
 
         input_vector = vectorizer.transform([input_text])
@@ -51,8 +71,8 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
         label = label_map.get(pred, "Tidak Diketahui")
 
         redis_client.setex(cache_key, 60, label)
-        _log_prediction(timestamp_str, client_ip, user_id, method, url, body, label)
 
+        current_app.logger.info(f"{timestamp_str} Prediksi: {label}")
         return {"prediction": label}
 
     except Exception as e:
@@ -62,15 +82,3 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
             "error": str(e)
         }))
         return {"error": "Kesalahan server internal"}
-
-
-def _log_prediction(timestamp_str, ip, user_id, method, url, body, label):
-    formatted_input = json.dumps({
-        "method": method,
-        "url": url,
-        "body": body
-    }, indent=4, ensure_ascii=False)
-
-    current_app.logger.info(f"{timestamp_str} IP: {ip} | User-ID: {user_id} | Input: {formatted_input}")
-    current_app.logger.info(f"{timestamp_str} Prediksi: {label}")
-    current_app.logger.info(f"{timestamp_str} Hasil prediksi: {{'prediction': '{label}'}}")

