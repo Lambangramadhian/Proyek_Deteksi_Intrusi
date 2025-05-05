@@ -6,11 +6,9 @@ import hashlib
 import datetime
 from flask import current_app
 
-# Load model dan vectorizer
 model = joblib.load(os.getenv("MODEL_PATH", "model/random_forest_web_ids.pkl"))
 vectorizer = joblib.load(os.getenv("VECTORIZER_PATH", "model/tfidf_vectorizer.pkl"))
 
-# Redis client setup
 redis_client = redis.StrictRedis(
     host=os.getenv("REDIS_HOST", "localhost"),
     port=int(os.getenv("REDIS_PORT", 6379)),
@@ -25,14 +23,14 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
     try:
         timestamp = datetime.datetime.now().isoformat()
 
-        # Buat input_text dari semua komponen
-        parts = [method.strip(), url.strip()]
         if isinstance(body, dict):
-            parts.append(json.dumps(body, separators=(',', ':'), ensure_ascii=False))
+            body_string = json.dumps(body, separators=(',', ':'), ensure_ascii=False)
         elif isinstance(body, str):
-            parts.append(body.strip())
+            body_string = body.strip()
+        else:
+            body_string = ""
 
-        input_text = " ".join(parts).strip()
+        input_text = f"{method.strip()} {url.strip()} {body_string}".strip()
 
         structured_log = {
             "method": method,
@@ -46,7 +44,6 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
         if not input_text:
             return {"error": "Payload diperlukan"}
 
-        # Cek cache prediksi
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
         if hasil_cache:
@@ -54,7 +51,6 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
             current_app.logger.info(f"Hasil prediksi: {{'prediction': '{hasil_cache}'}}")
             return {"prediction": hasil_cache}
 
-        # Prediksi
         input_vector = vectorizer.transform([input_text])
         pred = model.predict(input_vector)[0]
 

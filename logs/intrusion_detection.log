@@ -5589,3 +5589,1669 @@
 }
 2025-05-05 08:48:21,226 - INFO - [2025-05-05T08:48:21.033880] Prediksi: Normal
 2025-05-05 08:48:21,226 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:55:55,382 - INFO - [05/05/2025 08:55:58.210] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-05-05 08:55:55,383 - INFO - [2025-05-05T08:55:55.383844] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-05-05 08:55:55,465 - INFO - [2025-05-05T08:55:55.383844] Prediksi: Normal
+2025-05-05 08:55:55,465 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:55:57,104 - INFO - [05/05/2025 08:55:59.742] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=6",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=6",
+        "context": "33",
+        "submitted_at": "2025-05-05T01:55:59.385Z"
+    }
+}
+2025-05-05 08:55:57,105 - INFO - [2025-05-05T08:55:57.104620] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=6",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=6",
+        "context": "33",
+        "submitted_at": "2025-05-05T01:55:59.385Z"
+    }
+}
+2025-05-05 08:55:57,263 - INFO - [2025-05-05T08:55:57.104620] Prediksi: Normal
+2025-05-05 08:55:57,263 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:56:00,581 - INFO - [05/05/2025 08:56:03.420] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-05 08:56:00,581 - INFO - [2025-05-05T08:56:00.581435] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-05 08:56:00,719 - INFO - [2025-05-05T08:56:00.581435] Prediksi: Normal
+2025-05-05 08:56:00,719 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:56:01,534 - INFO - [05/05/2025 08:56:04.271] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/?redirect=0",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/?redirect=0",
+        "context": "2",
+        "submitted_at": "2025-05-05T01:56:04.245Z"
+    }
+}
+2025-05-05 08:56:01,536 - INFO - [2025-05-05T08:56:01.536027] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/?redirect=0",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/?redirect=0",
+        "context": "2",
+        "submitted_at": "2025-05-05T01:56:04.245Z"
+    }
+}
+2025-05-05 08:56:01,987 - INFO - [2025-05-05T08:56:01.536027] Prediksi: Normal
+2025-05-05 08:56:01,987 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:56:01,988 - INFO - [05/05/2025 08:56:04.282] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/?redirect=0",
+    "body": {
+        "category": "1",
+        "returnto": "topcat",
+        "submitted_at": "2025-05-05T01:56:04.247Z"
+    }
+}
+2025-05-05 08:56:01,989 - INFO - [2025-05-05T08:56:01.989991] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/?redirect=0",
+    "body": {
+        "category": "1",
+        "returnto": "topcat",
+        "submitted_at": "2025-05-05T01:56:04.247Z"
+    }
+}
+2025-05-05 08:56:02,824 - INFO - [2025-05-05T08:56:01.989991] Prediksi: Normal
+2025-05-05 08:56:02,825 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:56:05,547 - INFO - [05/05/2025 08:56:08.211] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-05-05 08:56:05,547 - INFO - [2025-05-05T08:56:05.547673] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-05-05 08:56:05,942 - INFO - [2025-05-05T08:56:05.547673] Prediksi: Normal
+2025-05-05 08:56:05,942 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:56:08,621 - INFO - [05/05/2025 08:56:11.478] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:56:11.426Z"
+    }
+}
+2025-05-05 08:56:08,621 - INFO - [2025-05-05T08:56:08.621095] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:56:11.426Z"
+    }
+}
+2025-05-05 08:56:08,916 - INFO - [2025-05-05T08:56:08.621095] Prediksi: Normal
+2025-05-05 08:56:08,916 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:56:08,917 - INFO - [05/05/2025 08:56:11.496] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php",
+    "body": {
+        "query": "",
+        "submitted_at": "2025-05-05T01:56:11.434Z"
+    }
+}
+2025-05-05 08:56:08,917 - INFO - [2025-05-05T08:56:08.917411] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php",
+    "body": {
+        "query": "",
+        "submitted_at": "2025-05-05T01:56:11.434Z"
+    }
+}
+2025-05-05 08:56:09,197 - INFO - [2025-05-05T08:56:08.917411] Prediksi: Normal
+2025-05-05 08:56:09,197 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:56:52,665 - INFO - [05/05/2025 08:56:55.531] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=OR+1%3D1",
+    "body": "query=OR 1=1"
+}
+2025-05-05 08:56:52,665 - INFO - [2025-05-05T08:56:52.665782] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=OR+1%3D1",
+    "body": "query=OR 1=1"
+}
+2025-05-05 08:56:52,722 - INFO - [2025-05-05T08:56:52.665782] Prediksi: XSS
+2025-05-05 08:56:52,722 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-05-05 08:56:57,439 - INFO - [05/05/2025 08:57:00.296] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=OR 1=1",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query=OR 1=1",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:57:00.264Z"
+    }
+}
+2025-05-05 08:56:57,440 - INFO - [2025-05-05T08:56:57.439549] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=OR 1=1",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query=OR 1=1",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:57:00.264Z"
+    }
+}
+2025-05-05 08:56:57,605 - INFO - [2025-05-05T08:56:57.439549] Prediksi: XSS
+2025-05-05 08:56:57,605 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-05-05 08:56:57,673 - INFO - [05/05/2025 08:57:00.310] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=OR+1%3D1",
+    "body": {
+        "query": "OR 1=1",
+        "submitted_at": "2025-05-05T01:57:00.264Z"
+    }
+}
+2025-05-05 08:56:57,673 - INFO - [2025-05-05T08:56:57.673143] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=OR+1%3D1",
+    "body": {
+        "query": "OR 1=1",
+        "submitted_at": "2025-05-05T01:57:00.264Z"
+    }
+}
+2025-05-05 08:56:57,804 - INFO - [2025-05-05T08:56:57.673143] Prediksi: XSS
+2025-05-05 08:56:57,804 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-05-05 08:56:57,805 - INFO - [05/05/2025 08:57:00.324] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=OR+1%3D1",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "action": "save-settings",
+        "submitted_at": "2025-05-05T01:57:00.265Z"
+    }
+}
+2025-05-05 08:56:57,805 - INFO - [2025-05-05T08:56:57.805535] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=OR+1%3D1",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "action": "save-settings",
+        "submitted_at": "2025-05-05T01:57:00.265Z"
+    }
+}
+2025-05-05 08:56:57,901 - INFO - [2025-05-05T08:56:57.805535] Prediksi: XSS
+2025-05-05 08:56:57,901 - INFO - Hasil prediksi: {'prediction': 'XSS'}
+2025-05-05 08:57:57,233 - INFO - [05/05/2025 08:57:59.892] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=%3Cscript%3Ealert%28%27Selamat%21+Anda+telah+menjadi+korban+serangan+XSS%21%27%29%3B%3C%2Fscript%3E",
+    "body": "query=<script>alert('Selamat! Anda telah menjadi korban serangan XSS!');</script>"
+}
+2025-05-05 08:57:57,234 - INFO - [2025-05-05T08:57:57.233146] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=%3Cscript%3Ealert%28%27Selamat%21+Anda+telah+menjadi+korban+serangan+XSS%21%27%29%3B%3C%2Fscript%3E",
+    "body": "query=<script>alert('Selamat! Anda telah menjadi korban serangan XSS!');</script>"
+}
+2025-05-05 08:57:57,289 - INFO - [2025-05-05T08:57:57.233146] Prediksi: SQL Injection
+2025-05-05 08:57:57,289 - INFO - Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-05-05 08:58:00,440 - INFO - [05/05/2025 08:58:03.292] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=%3Cscript%3Ealert%28%27Selamat%21+Anda+telah+menjadi+korban+serangan+XSS%21%27%29%3B%3C%2Fscript%3E",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "action": "save-settings",
+        "submitted_at": "2025-05-05T01:58:03.260Z"
+    }
+}
+2025-05-05 08:58:02,496 - INFO - [2025-05-05T08:58:02.496263] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=%3Cscript%3Ealert%28%27Selamat%21+Anda+telah+menjadi+korban+serangan+XSS%21%27%29%3B%3C%2Fscript%3E",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "action": "save-settings",
+        "submitted_at": "2025-05-05T01:58:03.260Z"
+    }
+}
+2025-05-05 08:58:02,596 - INFO - [2025-05-05T08:58:02.496263] Prediksi: SQL Injection
+2025-05-05 08:58:02,596 - INFO - Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-05-05 08:58:02,603 - INFO - [05/05/2025 08:58:03.303] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=%3Cscript%3Ealert%28%27Selamat%21+Anda+telah+menjadi+korban+serangan+XSS%21%27%29%3B%3C%2Fscript%3E",
+    "body": {
+        "query": "alert('Selamat! Anda telah menjadi korban serangan XSS!');",
+        "submitted_at": "2025-05-05T01:58:03.259Z"
+    }
+}
+2025-05-05 08:58:02,603 - INFO - [2025-05-05T08:58:02.603345] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=%3Cscript%3Ealert%28%27Selamat%21+Anda+telah+menjadi+korban+serangan+XSS%21%27%29%3B%3C%2Fscript%3E",
+    "body": {
+        "query": "alert('Selamat! Anda telah menjadi korban serangan XSS!');",
+        "submitted_at": "2025-05-05T01:58:03.259Z"
+    }
+}
+2025-05-05 08:58:02,621 - INFO - [2025-05-05T08:58:02.603345] Prediksi: SQL Injection
+2025-05-05 08:58:02,622 - INFO - Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-05-05 08:58:02,622 - INFO - [05/05/2025 08:58:03.313] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=alert('Selamat! Anda telah menjadi korban serangan XSS!');",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query=alert('Selamat! Anda telah menjadi korban serangan XSS!');",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:58:03.258Z"
+    }
+}
+2025-05-05 08:58:02,622 - INFO - [2025-05-05T08:58:02.622047] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=alert('Selamat! Anda telah menjadi korban serangan XSS!');",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query=alert('Selamat! Anda telah menjadi korban serangan XSS!');",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:58:03.258Z"
+    }
+}
+2025-05-05 08:58:02,645 - INFO - [2025-05-05T08:58:02.622047] Prediksi: SQL Injection
+2025-05-05 08:58:02,645 - INFO - Hasil prediksi: {'prediction': 'SQL Injection'}
+2025-05-05 08:58:27,318 - INFO - [05/05/2025 08:58:30.152] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/courses.php",
+    "body": ""
+}
+2025-05-05 08:58:27,319 - INFO - [2025-05-05T08:58:27.319118] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/courses.php",
+    "body": ""
+}
+2025-05-05 08:58:27,452 - INFO - [2025-05-05T08:58:27.319118] Prediksi: Normal
+2025-05-05 08:58:27,452 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:27,883 - INFO - [05/05/2025 08:58:30.734] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:58:30.707Z"
+    }
+}
+2025-05-05 08:58:27,884 - INFO - [2025-05-05T08:58:27.883680] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:58:30.707Z"
+    }
+}
+2025-05-05 08:58:28,075 - INFO - [2025-05-05T08:58:27.883680] Prediksi: Normal
+2025-05-05 08:58:28,075 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:28,075 - INFO - [05/05/2025 08:58:30.745] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:30.708Z"
+    }
+}
+2025-05-05 08:58:28,076 - INFO - [2025-05-05T08:58:28.076241] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:30.708Z"
+    }
+}
+2025-05-05 08:58:28,283 - INFO - [2025-05-05T08:58:28.076241] Prediksi: Normal
+2025-05-05 08:58:28,283 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:28,284 - INFO - [05/05/2025 08:58:30.757] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:30.709Z"
+    }
+}
+2025-05-05 08:58:28,284 - INFO - [2025-05-05T08:58:28.284859] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:30.709Z"
+    }
+}
+2025-05-05 08:58:28,483 - INFO - [2025-05-05T08:58:28.284859] Prediksi: Normal
+2025-05-05 08:58:28,483 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:30,125 - INFO - [05/05/2025 08:58:32.934] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=7",
+    "body": "id=7"
+}
+2025-05-05 08:58:30,125 - INFO - [2025-05-05T08:58:30.125578] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=7",
+    "body": "id=7"
+}
+2025-05-05 08:58:30,337 - INFO - [2025-05-05T08:58:30.125578] Prediksi: Normal
+2025-05-05 08:58:30,337 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:30,699 - INFO - [05/05/2025 08:58:33.565] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=7",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=7",
+        "context": "37",
+        "submitted_at": "2025-05-05T01:58:33.503Z"
+    }
+}
+2025-05-05 08:58:30,700 - INFO - [2025-05-05T08:58:30.700914] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=7",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=7",
+        "context": "37",
+        "submitted_at": "2025-05-05T01:58:33.503Z"
+    }
+}
+2025-05-05 08:58:30,756 - INFO - [2025-05-05T08:58:30.700914] Prediksi: Normal
+2025-05-05 08:58:30,756 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:35,386 - INFO - [05/05/2025 08:58:38.224] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:58:38.182Z"
+    }
+}
+2025-05-05 08:58:35,387 - INFO - [2025-05-05T08:58:35.387196] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T01:58:38.182Z"
+    }
+}
+2025-05-05 08:58:35,656 - INFO - [2025-05-05T08:58:35.387196] Prediksi: Normal
+2025-05-05 08:58:35,656 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:35,657 - INFO - [05/05/2025 08:58:38.236] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:38.183Z"
+    }
+}
+2025-05-05 08:58:35,657 - INFO - [2025-05-05T08:58:35.657102] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:38.183Z"
+    }
+}
+2025-05-05 08:58:35,949 - INFO - [2025-05-05T08:58:35.657102] Prediksi: Normal
+2025-05-05 08:58:35,949 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:35,950 - INFO - [05/05/2025 08:58:38.251] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:38.184Z"
+    }
+}
+2025-05-05 08:58:35,950 - INFO - [2025-05-05T08:58:35.950797] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T01:58:38.184Z"
+    }
+}
+2025-05-05 08:58:36,103 - INFO - [2025-05-05T08:58:35.950797] Prediksi: Normal
+2025-05-05 08:58:36,103 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:38,631 - INFO - [05/05/2025 08:58:41.493] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-05-05 08:58:38,632 - INFO - [2025-05-05T08:58:38.632537] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-05-05 08:58:38,932 - INFO - [2025-05-05T08:58:38.632537] Prediksi: Normal
+2025-05-05 08:58:38,932 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:39,241 - INFO - [05/05/2025 08:58:42.073] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=6",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=6",
+        "context": "33",
+        "submitted_at": "2025-05-05T01:58:41.999Z"
+    }
+}
+2025-05-05 08:58:39,241 - INFO - [2025-05-05T08:58:39.241222] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=6",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=6",
+        "context": "33",
+        "submitted_at": "2025-05-05T01:58:41.999Z"
+    }
+}
+2025-05-05 08:58:39,545 - INFO - [2025-05-05T08:58:39.241222] Prediksi: Normal
+2025-05-05 08:58:39,545 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:40,981 - INFO - [05/05/2025 08:58:43.774] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=15",
+    "body": "id=15"
+}
+2025-05-05 08:58:40,981 - INFO - [2025-05-05T08:58:40.981397] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=15",
+    "body": "id=15"
+}
+2025-05-05 08:58:41,083 - INFO - [2025-05-05T08:58:40.981397] Prediksi: Normal
+2025-05-05 08:58:41,084 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:41,479 - INFO - [05/05/2025 08:58:44.271] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+        "context": "35",
+        "submitted_at": "2025-05-05T01:58:44.179Z"
+    }
+}
+2025-05-05 08:58:41,480 - INFO - [2025-05-05T08:58:41.480872] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+        "context": "35",
+        "submitted_at": "2025-05-05T01:58:44.179Z"
+    }
+}
+2025-05-05 08:58:41,577 - INFO - [2025-05-05T08:58:41.480872] Prediksi: Normal
+2025-05-05 08:58:41,578 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:41,578 - INFO - [05/05/2025 08:58:44.288] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T01:58:44.180Z"
+    }
+}
+2025-05-05 08:58:41,578 - INFO - [2025-05-05T08:58:41.578531] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T01:58:44.180Z"
+    }
+}
+2025-05-05 08:58:41,774 - INFO - [2025-05-05T08:58:41.578531] Prediksi: Normal
+2025-05-05 08:58:41,774 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:41,774 - INFO - [05/05/2025 08:58:44.299] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T01:58:44.181Z"
+    }
+}
+2025-05-05 08:58:41,774 - INFO - [2025-05-05T08:58:41.774492] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T01:58:44.181Z"
+    }
+}
+2025-05-05 08:58:41,798 - INFO - [2025-05-05T08:58:41.774492] Prediksi: Normal
+2025-05-05 08:58:41,798 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:58:41,798 - INFO - [05/05/2025 08:58:44.314] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T01:58:44.184Z"
+    }
+}
+2025-05-05 08:58:41,799 - INFO - [2025-05-05T08:58:41.799365] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T01:58:44.184Z"
+    }
+}
+2025-05-05 08:58:41,831 - INFO - [2025-05-05T08:58:41.799365] Prediksi: Normal
+2025-05-05 08:58:41,831 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:59:33,018 - INFO - [05/05/2025 08:59:35.892] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+        "context": "35",
+        "submitted_at": "2025-05-05T01:59:35.816Z"
+    }
+}
+2025-05-05 08:59:33,019 - INFO - [2025-05-05T08:59:33.019358] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+        "context": "35",
+        "submitted_at": "2025-05-05T01:59:35.816Z"
+    }
+}
+2025-05-05 08:59:33,040 - INFO - [2025-05-05T08:59:33.019358] Prediksi: Normal
+2025-05-05 08:59:33,040 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:59:33,050 - INFO - [05/05/2025 08:59:35.909] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T01:59:35.820Z"
+    }
+}
+2025-05-05 08:59:33,050 - INFO - [2025-05-05T08:59:33.050240] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T01:59:35.820Z"
+    }
+}
+2025-05-05 08:59:33,085 - INFO - [2025-05-05T08:59:33.050240] Prediksi: Normal
+2025-05-05 08:59:33,085 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:59:33,086 - INFO - [05/05/2025 08:59:35.924] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T01:59:35.818Z"
+    }
+}
+2025-05-05 08:59:33,086 - INFO - [2025-05-05T08:59:33.086334] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T01:59:35.818Z"
+    }
+}
+2025-05-05 08:59:33,108 - INFO - [2025-05-05T08:59:33.086334] Prediksi: Normal
+2025-05-05 08:59:33,108 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 08:59:33,109 - INFO - [05/05/2025 08:59:35.939] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T01:59:35.817Z"
+    }
+}
+2025-05-05 08:59:33,109 - INFO - [2025-05-05T08:59:33.109062] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T01:59:35.817Z"
+    }
+}
+2025-05-05 08:59:33,129 - INFO - [2025-05-05T08:59:33.109062] Prediksi: Normal
+2025-05-05 08:59:33,129 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:13,651 - INFO - [05/05/2025 09:00:16.507] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": "id=15&action=editsubmission"
+}
+2025-05-05 09:00:13,651 - INFO - [2025-05-05T09:00:13.651269] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": "id=15&action=editsubmission"
+}
+2025-05-05 09:00:13,679 - INFO - [2025-05-05T09:00:13.651269] Prediksi: Normal
+2025-05-05 09:00:13,680 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:14,305 - INFO - [05/05/2025 09:00:17.173] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&userid=2&rownum=0&useridlistid=0&action=editsubmission",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&userid=2&rownum=0&useridlistid=0&action=editsubmission",
+        "context": "35",
+        "submitted_at": "2025-05-05T02:00:17.143Z"
+    }
+}
+2025-05-05 09:00:14,306 - INFO - [2025-05-05T09:00:14.305877] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&userid=2&rownum=0&useridlistid=0&action=editsubmission",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&userid=2&rownum=0&useridlistid=0&action=editsubmission",
+        "context": "35",
+        "submitted_at": "2025-05-05T02:00:17.143Z"
+    }
+}
+2025-05-05 09:00:14,341 - INFO - [2025-05-05T09:00:14.305877] Prediksi: Normal
+2025-05-05 09:00:14,342 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:14,366 - INFO - [05/05/2025 09:00:17.240] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:17.145Z"
+    }
+}
+2025-05-05 09:00:14,367 - INFO - [2025-05-05T09:00:14.366257] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:17.145Z"
+    }
+}
+2025-05-05 09:00:14,403 - INFO - [2025-05-05T09:00:14.366257] Prediksi: Normal
+2025-05-05 09:00:14,403 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:14,404 - INFO - [05/05/2025 09:00:17.255] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": {
+        "lastmodified": "1745202970",
+        "id": "15",
+        "userid": "2",
+        "action": "savesubmission",
+        "sesskey": "iCrmDimoF8",
+        "_qf__mod_assign_submission_form": "1",
+        "mform_isexpanded_id_submissionheader": "1",
+        "files_filemanager": "903787141",
+        "submitted_at": "2025-05-05T02:00:17.144Z"
+    }
+}
+2025-05-05 09:00:14,404 - INFO - [2025-05-05T09:00:14.404590] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": {
+        "lastmodified": "1745202970",
+        "id": "15",
+        "userid": "2",
+        "action": "savesubmission",
+        "sesskey": "iCrmDimoF8",
+        "_qf__mod_assign_submission_form": "1",
+        "mform_isexpanded_id_submissionheader": "1",
+        "files_filemanager": "903787141",
+        "submitted_at": "2025-05-05T02:00:17.144Z"
+    }
+}
+2025-05-05 09:00:14,435 - INFO - [2025-05-05T09:00:14.404590] Prediksi: Normal
+2025-05-05 09:00:14,435 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:14,787 - INFO - [05/05/2025 09:00:17.659] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:17.569Z"
+    }
+}
+2025-05-05 09:00:14,787 - INFO - [2025-05-05T09:00:14.787515] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&action=editsubmission",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:17.569Z"
+    }
+}
+2025-05-05 09:00:14,814 - INFO - [2025-05-05T09:00:14.787515] Prediksi: Normal
+2025-05-05 09:00:14,815 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:18,472 - INFO - [05/05/2025 09:00:21.344] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+        "context": "35",
+        "submitted_at": "2025-05-05T02:00:21.265Z"
+    }
+}
+2025-05-05 09:00:19,580 - INFO - [2025-05-05T09:00:19.580312] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=15&rownum=0&useridlistid=68181b53aa07a359521980&action",
+        "context": "35",
+        "submitted_at": "2025-05-05T02:00:21.265Z"
+    }
+}
+2025-05-05 09:00:19,622 - INFO - [2025-05-05T09:00:19.580312] Prediksi: Normal
+2025-05-05 09:00:19,622 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:19,623 - INFO - [05/05/2025 09:00:21.367] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T02:00:21.267Z"
+    }
+}
+2025-05-05 09:00:19,623 - INFO - [2025-05-05T09:00:19.623196] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T02:00:21.267Z"
+    }
+}
+2025-05-05 09:00:19,715 - INFO - [2025-05-05T09:00:19.623196] Prediksi: Normal
+2025-05-05 09:00:19,715 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:19,716 - INFO - [05/05/2025 09:00:21.385] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T02:00:21.268Z"
+    }
+}
+2025-05-05 09:00:19,716 - INFO - [2025-05-05T09:00:19.716817] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "id": "15",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T02:00:21.268Z"
+    }
+}
+2025-05-05 09:00:19,755 - INFO - [2025-05-05T09:00:19.716817] Prediksi: Normal
+2025-05-05 09:00:19,755 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:19,755 - INFO - [05/05/2025 09:00:21.397] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:21.269Z"
+    }
+}
+2025-05-05 09:00:19,757 - INFO - [2025-05-05T09:00:19.757062] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=15",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:21.269Z"
+    }
+}
+2025-05-05 09:00:19,791 - INFO - [2025-05-05T09:00:19.757062] Prediksi: Normal
+2025-05-05 09:00:19,792 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:19,792 - INFO - [05/05/2025 09:00:22.077] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-05-05 09:00:19,793 - INFO - [2025-05-05T09:00:19.793923] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=6",
+    "body": "id=6"
+}
+2025-05-05 09:00:19,822 - INFO - [2025-05-05T09:00:19.793923] Prediksi: Normal
+2025-05-05 09:00:19,823 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:19,823 - INFO - [05/05/2025 09:00:22.547] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=6",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=6",
+        "context": "33",
+        "submitted_at": "2025-05-05T02:00:22.487Z"
+    }
+}
+2025-05-05 09:00:19,824 - INFO - [2025-05-05T09:00:19.823256] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=6",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=6",
+        "context": "33",
+        "submitted_at": "2025-05-05T02:00:22.487Z"
+    }
+}
+2025-05-05 09:00:19,864 - INFO - [2025-05-05T09:00:19.823256] Prediksi: Normal
+2025-05-05 09:00:19,866 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:22,602 - INFO - [05/05/2025 09:00:25.440] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:25.403Z"
+    }
+}
+2025-05-05 09:00:22,602 - INFO - [2025-05-05T09:00:22.602492] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:25.403Z"
+    }
+}
+2025-05-05 09:00:22,621 - INFO - [2025-05-05T09:00:22.602492] Prediksi: Normal
+2025-05-05 09:00:22,621 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:22,622 - INFO - [05/05/2025 09:00:25.453] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T02:00:25.401Z"
+    }
+}
+2025-05-05 09:00:22,622 - INFO - [2025-05-05T09:00:22.622018] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T02:00:25.401Z"
+    }
+}
+2025-05-05 09:00:22,640 - INFO - [2025-05-05T09:00:22.622018] Prediksi: Normal
+2025-05-05 09:00:22,641 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:22,641 - INFO - [05/05/2025 09:00:25.466] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:25.402Z"
+    }
+}
+2025-05-05 09:00:22,642 - INFO - [2025-05-05T09:00:22.642945] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:25.402Z"
+    }
+}
+2025-05-05 09:00:22,669 - INFO - [2025-05-05T09:00:22.642945] Prediksi: Normal
+2025-05-05 09:00:22,669 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:26,443 - INFO - [05/05/2025 09:00:29.296] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=4",
+    "body": "id=4"
+}
+2025-05-05 09:00:26,444 - INFO - [2025-05-05T09:00:26.443111] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=4",
+    "body": "id=4"
+}
+2025-05-05 09:00:26,463 - INFO - [2025-05-05T09:00:26.443111] Prediksi: Normal
+2025-05-05 09:00:26,463 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:27,013 - INFO - [05/05/2025 09:00:29.880] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=4",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=4",
+        "context": "19",
+        "submitted_at": "2025-05-05T02:00:29.808Z"
+    }
+}
+2025-05-05 09:00:27,013 - INFO - [2025-05-05T09:00:27.013767] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=4",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=4",
+        "context": "19",
+        "submitted_at": "2025-05-05T02:00:29.808Z"
+    }
+}
+2025-05-05 09:00:27,067 - INFO - [2025-05-05T09:00:27.013767] Prediksi: Normal
+2025-05-05 09:00:27,068 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:29,734 - INFO - [05/05/2025 09:00:32.591] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=4",
+    "body": "id=4"
+}
+2025-05-05 09:00:29,734 - INFO - [2025-05-05T09:00:29.734865] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/assign/view.php?id=4",
+    "body": "id=4"
+}
+2025-05-05 09:00:29,750 - INFO - [2025-05-05T09:00:29.734865] Prediksi: Normal
+2025-05-05 09:00:29,750 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:30,293 - INFO - [05/05/2025 09:00:33.167] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4&rownum=0&useridlistid=68181bc07c1d4860779670&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=4&rownum=0&useridlistid=68181bc07c1d4860779670&action",
+        "context": "21",
+        "submitted_at": "2025-05-05T02:00:33.066Z"
+    }
+}
+2025-05-05 09:00:30,295 - INFO - [2025-05-05T09:00:30.295180] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4&rownum=0&useridlistid=68181bc07c1d4860779670&action",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/assign/view.php?id=4&rownum=0&useridlistid=68181bc07c1d4860779670&action",
+        "context": "21",
+        "submitted_at": "2025-05-05T02:00:33.066Z"
+    }
+}
+2025-05-05 09:00:30,326 - INFO - [2025-05-05T09:00:30.295180] Prediksi: Normal
+2025-05-05 09:00:30,327 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:30,327 - INFO - [05/05/2025 09:00:33.190] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:33.069Z"
+    }
+}
+2025-05-05 09:00:30,328 - INFO - [2025-05-05T09:00:30.327323] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:33.069Z"
+    }
+}
+2025-05-05 09:00:30,384 - INFO - [2025-05-05T09:00:30.327323] Prediksi: Normal
+2025-05-05 09:00:30,385 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:30,385 - INFO - [05/05/2025 09:00:33.205] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4",
+    "body": {
+        "id": "4",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T02:00:33.068Z"
+    }
+}
+2025-05-05 09:00:30,386 - INFO - [2025-05-05T09:00:30.386508] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4",
+    "body": {
+        "id": "4",
+        "action": "removesubmissionconfirm",
+        "submitted_at": "2025-05-05T02:00:33.068Z"
+    }
+}
+2025-05-05 09:00:30,422 - INFO - [2025-05-05T09:00:30.386508] Prediksi: Normal
+2025-05-05 09:00:30,423 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:30,424 - INFO - [05/05/2025 09:00:33.222] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4",
+    "body": {
+        "id": "4",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T02:00:33.067Z"
+    }
+}
+2025-05-05 09:00:30,425 - INFO - [2025-05-05T09:00:30.425765] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/assign/view.php?id=4",
+    "body": {
+        "id": "4",
+        "action": "editsubmission",
+        "submitted_at": "2025-05-05T02:00:33.067Z"
+    }
+}
+2025-05-05 09:00:30,446 - INFO - [2025-05-05T09:00:30.425765] Prediksi: Normal
+2025-05-05 09:00:30,447 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:32,743 - INFO - [05/05/2025 09:00:35.608] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=4",
+    "body": "id=4"
+}
+2025-05-05 09:00:32,743 - INFO - [2025-05-05T09:00:32.743303] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=4",
+    "body": "id=4"
+}
+2025-05-05 09:00:32,769 - INFO - [2025-05-05T09:00:32.743303] Prediksi: Normal
+2025-05-05 09:00:32,769 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:33,376 - INFO - [05/05/2025 09:00:36.246] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=4",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=4",
+        "context": "19",
+        "submitted_at": "2025-05-05T02:00:36.172Z"
+    }
+}
+2025-05-05 09:00:33,376 - INFO - [2025-05-05T09:00:33.376065] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=4",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=4",
+        "context": "19",
+        "submitted_at": "2025-05-05T02:00:36.172Z"
+    }
+}
+2025-05-05 09:00:33,427 - INFO - [2025-05-05T09:00:33.376065] Prediksi: Normal
+2025-05-05 09:00:33,427 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:35,476 - INFO - [05/05/2025 09:00:38.345] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:38.194Z"
+    }
+}
+2025-05-05 09:00:35,477 - INFO - [2025-05-05T09:00:35.477533] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:38.194Z"
+    }
+}
+2025-05-05 09:00:35,504 - INFO - [2025-05-05T09:00:35.477533] Prediksi: Normal
+2025-05-05 09:00:35,504 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:35,504 - INFO - [05/05/2025 09:00:38.370] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:38.195Z"
+    }
+}
+2025-05-05 09:00:35,505 - INFO - [2025-05-05T09:00:35.505537] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T02:00:38.195Z"
+    }
+}
+2025-05-05 09:00:35,529 - INFO - [2025-05-05T09:00:35.505537] Prediksi: Normal
+2025-05-05 09:00:35,531 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:35,532 - INFO - [05/05/2025 09:00:38.384] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T02:00:38.193Z"
+    }
+}
+2025-05-05 09:00:35,533 - INFO - [2025-05-05T09:00:35.533087] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T02:00:38.193Z"
+    }
+}
+2025-05-05 09:00:35,552 - INFO - [2025-05-05T09:00:35.533087] Prediksi: Normal
+2025-05-05 09:00:35,552 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:38,276 - INFO - [05/05/2025 09:00:41.151] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=5",
+    "body": "id=5"
+}
+2025-05-05 09:00:38,276 - INFO - [2025-05-05T09:00:38.276823] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/course/view.php?id=5",
+    "body": "id=5"
+}
+2025-05-05 09:00:38,294 - INFO - [2025-05-05T09:00:38.276823] Prediksi: Normal
+2025-05-05 09:00:38,294 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:39,403 - INFO - [05/05/2025 09:00:42.254] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=5",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=5",
+        "context": "23",
+        "submitted_at": "2025-05-05T02:00:42.142Z"
+    }
+}
+2025-05-05 09:00:39,404 - INFO - [2025-05-05T09:00:39.404843] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/course/view.php?id=5",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/course/view.php?id=5",
+        "context": "23",
+        "submitted_at": "2025-05-05T02:00:42.142Z"
+    }
+}
+2025-05-05 09:00:39,428 - INFO - [2025-05-05T09:00:39.404843] Prediksi: Normal
+2025-05-05 09:00:39,429 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:43,200 - INFO - [05/05/2025 09:00:46.073] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/view.php?id=13",
+    "body": "id=13"
+}
+2025-05-05 09:00:43,200 - INFO - [2025-05-05T09:00:43.200082] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/view.php?id=13",
+    "body": "id=13"
+}
+2025-05-05 09:00:43,218 - INFO - [2025-05-05T09:00:43.200082] Prediksi: Normal
+2025-05-05 09:00:43,218 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:44,163 - INFO - [05/05/2025 09:00:47.035] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/view.php?id=13",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:00:46.935Z"
+    }
+}
+2025-05-05 09:00:44,164 - INFO - [2025-05-05T09:00:44.164032] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/view.php?id=13",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:00:46.935Z"
+    }
+}
+2025-05-05 09:00:44,201 - INFO - [2025-05-05T09:00:44.164032] Prediksi: Normal
+2025-05-05 09:00:44,202 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:44,202 - INFO - [05/05/2025 09:00:47.053] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:00:46.937Z"
+    }
+}
+2025-05-05 09:00:44,202 - INFO - [2025-05-05T09:00:44.202177] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:00:46.937Z"
+    }
+}
+2025-05-05 09:00:44,236 - INFO - [2025-05-05T09:00:44.202177] Prediksi: Normal
+2025-05-05 09:00:44,237 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:44,237 - INFO - [05/05/2025 09:00:47.069] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:46.938Z"
+    }
+}
+2025-05-05 09:00:44,237 - INFO - [2025-05-05T09:00:44.237095] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:46.938Z"
+    }
+}
+2025-05-05 09:00:44,300 - INFO - [2025-05-05T09:00:44.237095] Prediksi: Normal
+2025-05-05 09:00:44,301 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:47,813 - INFO - [05/05/2025 09:00:50.686] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:00:50.639Z"
+    }
+}
+2025-05-05 09:00:47,814 - INFO - [2025-05-05T09:00:47.814400] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/view.php?id=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:00:50.639Z"
+    }
+}
+2025-05-05 09:00:47,850 - INFO - [2025-05-05T09:00:47.814400] Prediksi: Normal
+2025-05-05 09:00:47,850 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:48,633 - INFO - [05/05/2025 09:00:51.489] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": "attempt=3&cmid=13"
+}
+2025-05-05 09:00:48,633 - INFO - [2025-05-05T09:00:48.633473] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": "attempt=3&cmid=13"
+}
+2025-05-05 09:00:48,668 - INFO - [2025-05-05T09:00:48.633473] Prediksi: Normal
+2025-05-05 09:00:48,669 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:49,396 - INFO - [05/05/2025 09:00:52.230] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:00:52.139Z"
+    }
+}
+2025-05-05 09:00:49,396 - INFO - [2025-05-05T09:00:49.396575] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:00:52.139Z"
+    }
+}
+2025-05-05 09:00:49,430 - INFO - [2025-05-05T09:00:49.396575] Prediksi: Normal
+2025-05-05 09:00:49,430 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:49,430 - INFO - [05/05/2025 09:00:52.283] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "forcenew": "1",
+        "submitted_at": "2025-05-05T02:00:52.140Z"
+    }
+}
+2025-05-05 09:00:49,430 - INFO - [2025-05-05T09:00:49.430832] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "forcenew": "1",
+        "submitted_at": "2025-05-05T02:00:52.140Z"
+    }
+}
+2025-05-05 09:00:49,458 - INFO - [2025-05-05T09:00:49.430832] Prediksi: Normal
+2025-05-05 09:00:49,458 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:49,459 - INFO - [05/05/2025 09:00:52.303] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "q3:1_:flagged": "0",
+        "q3:1_:sequencecheck": "1",
+        "q3:1_answer": "",
+        "q3:1_answerformat": "1",
+        "attempt": "3",
+        "thispage": "0",
+        "nextpage": "-1",
+        "timeup": "0",
+        "sesskey": "iCrmDimoF8",
+        "mdlscrollto": "",
+        "slots": "1",
+        "submitted_at": "2025-05-05T02:00:52.141Z"
+    }
+}
+2025-05-05 09:00:49,459 - INFO - [2025-05-05T09:00:49.459883] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "q3:1_:flagged": "0",
+        "q3:1_:sequencecheck": "1",
+        "q3:1_answer": "",
+        "q3:1_answerformat": "1",
+        "attempt": "3",
+        "thispage": "0",
+        "nextpage": "-1",
+        "timeup": "0",
+        "sesskey": "iCrmDimoF8",
+        "mdlscrollto": "",
+        "slots": "1",
+        "submitted_at": "2025-05-05T02:00:52.141Z"
+    }
+}
+2025-05-05 09:00:49,486 - INFO - [2025-05-05T09:00:49.459883] Prediksi: Normal
+2025-05-05 09:00:49,486 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:00:49,487 - INFO - [05/05/2025 09:00:52.316] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:52.143Z"
+    }
+}
+2025-05-05 09:00:49,488 - INFO - [2025-05-05T09:00:49.488633] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:00:52.143Z"
+    }
+}
+2025-05-05 09:00:49,506 - INFO - [2025-05-05T09:00:49.488633] Prediksi: Normal
+2025-05-05 09:00:49,507 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:11,829 - INFO - [05/05/2025 09:01:14.702] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "q3:1_:flagged": "0",
+        "q3:1_:sequencecheck": "1",
+        "q3:1_answer": "<p>aaaaaaaaaaaaaaa</p>",
+        "q3:1_answerformat": "1",
+        "attempt": "3",
+        "thispage": "0",
+        "nextpage": "-1",
+        "timeup": "0",
+        "sesskey": "iCrmDimoF8",
+        "mdlscrollto": "",
+        "slots": "1",
+        "submitted_at": "2025-05-05T02:01:14.657Z"
+    }
+}
+2025-05-05 09:01:11,829 - INFO - [2025-05-05T09:01:11.829515] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=3&cmid=13",
+    "body": {
+        "q3:1_:flagged": "0",
+        "q3:1_:sequencecheck": "1",
+        "q3:1_answer": "<p>aaaaaaaaaaaaaaa</p>",
+        "q3:1_answerformat": "1",
+        "attempt": "3",
+        "thispage": "0",
+        "nextpage": "-1",
+        "timeup": "0",
+        "sesskey": "iCrmDimoF8",
+        "mdlscrollto": "",
+        "slots": "1",
+        "submitted_at": "2025-05-05T02:01:14.657Z"
+    }
+}
+2025-05-05 09:01:11,864 - INFO - [2025-05-05T09:01:11.829515] Prediksi: Normal
+2025-05-05 09:01:11,864 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:12,083 - INFO - [05/05/2025 09:01:14.956] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": "attempt=3&cmid=13"
+}
+2025-05-05 09:01:12,083 - INFO - [2025-05-05T09:01:12.083132] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": "attempt=3&cmid=13"
+}
+2025-05-05 09:01:12,101 - INFO - [2025-05-05T09:01:12.083132] Prediksi: Normal
+2025-05-05 09:01:12,102 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:12,608 - INFO - [05/05/2025 09:01:15.482] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:01:15.398Z"
+    }
+}
+2025-05-05 09:01:12,608 - INFO - [2025-05-05T09:01:12.608501] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:01:15.398Z"
+    }
+}
+2025-05-05 09:01:12,661 - INFO - [2025-05-05T09:01:12.608501] Prediksi: Normal
+2025-05-05 09:01:12,661 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:12,661 - INFO - [05/05/2025 09:01:15.502] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/summary.php?attempt=3",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:01:15.394Z"
+    }
+}
+2025-05-05 09:01:12,662 - INFO - [2025-05-05T09:01:12.662271] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/summary.php?attempt=3",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:01:15.394Z"
+    }
+}
+2025-05-05 09:01:12,687 - INFO - [2025-05-05T09:01:12.662271] Prediksi: Normal
+2025-05-05 09:01:12,687 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:12,688 - INFO - [05/05/2025 09:01:15.521] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": {
+        "attempt": "3",
+        "finishattempt": "1",
+        "timeup": "0",
+        "slots": "",
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:01:15.397Z"
+    }
+}
+2025-05-05 09:01:12,688 - INFO - [2025-05-05T09:01:12.688905] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": {
+        "attempt": "3",
+        "finishattempt": "1",
+        "timeup": "0",
+        "slots": "",
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:01:15.397Z"
+    }
+}
+2025-05-05 09:01:12,713 - INFO - [2025-05-05T09:01:12.688905] Prediksi: Normal
+2025-05-05 09:01:12,713 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:12,714 - INFO - [05/05/2025 09:01:15.541] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": {
+        "attempt": "3",
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:01:15.395Z"
+    }
+}
+2025-05-05 09:01:12,714 - INFO - [2025-05-05T09:01:12.714205] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/summary.php?attempt=3&cmid=13",
+    "body": {
+        "attempt": "3",
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:01:15.395Z"
+    }
+}
+2025-05-05 09:01:12,742 - INFO - [2025-05-05T09:01:12.714205] Prediksi: Normal
+2025-05-05 09:01:12,742 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:16,192 - INFO - [05/05/2025 09:01:19.065] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": "attempt=3&cmid=13"
+}
+2025-05-05 09:01:16,192 - INFO - [2025-05-05T09:01:16.192185] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": "attempt=3&cmid=13"
+}
+2025-05-05 09:01:16,211 - INFO - [2025-05-05T09:01:16.192185] Prediksi: Normal
+2025-05-05 09:01:16,211 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:16,792 - INFO - [05/05/2025 09:01:19.653] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "forcenew": "1",
+        "submitted_at": "2025-05-05T02:01:19.566Z"
+    }
+}
+2025-05-05 09:01:16,792 - INFO - [2025-05-05T09:01:16.792892] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "cmid": "13",
+        "sesskey": "iCrmDimoF8",
+        "forcenew": "1",
+        "submitted_at": "2025-05-05T02:01:19.566Z"
+    }
+}
+2025-05-05 09:01:16,814 - INFO - [2025-05-05T09:01:16.792892] Prediksi: Normal
+2025-05-05 09:01:16,814 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:16,815 - INFO - [05/05/2025 09:01:19.674] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:01:19.565Z"
+    }
+}
+2025-05-05 09:01:16,815 - INFO - [2025-05-05T09:01:16.815810] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "setmode": "on",
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+        "context": "31",
+        "submitted_at": "2025-05-05T02:01:19.565Z"
+    }
+}
+2025-05-05 09:01:16,839 - INFO - [2025-05-05T09:01:16.815810] Prediksi: Normal
+2025-05-05 09:01:16,839 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:16,839 - INFO - [05/05/2025 09:01:19.686] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "q3:1_:flagged": "0",
+        "q3:1_:sequencecheck": "3",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:01:19.567Z"
+    }
+}
+2025-05-05 09:01:16,840 - INFO - [2025-05-05T09:01:16.840429] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "q3:1_:flagged": "0",
+        "q3:1_:sequencecheck": "3",
+        "sesskey": "iCrmDimoF8",
+        "submitted_at": "2025-05-05T02:01:19.567Z"
+    }
+}
+2025-05-05 09:01:16,870 - INFO - [2025-05-05T09:01:16.840429] Prediksi: Normal
+2025-05-05 09:01:16,870 - INFO - Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 09:01:16,870 - INFO - [05/05/2025 09:01:19.697] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:01:19.568Z"
+    }
+}
+2025-05-05 09:01:16,871 - INFO - [2025-05-05T09:01:16.871085] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/mod/quiz/review.php?attempt=3&cmid=13",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "jump": "",
+        "submitted_at": "2025-05-05T02:01:19.568Z"
+    }
+}
+2025-05-05 09:01:16,897 - INFO - [2025-05-05T09:01:16.871085] Prediksi: Normal
+2025-05-05 09:01:16,897 - INFO - Hasil prediksi: {'prediction': 'Normal'}
