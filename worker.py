@@ -1,9 +1,12 @@
+# Import library standar dan eksternal
 import os
 import time
 import redis
 from rq import Queue
 from rq.worker import SimpleWorker
 from rq.timeouts import BaseDeathPenalty
+
+# Import dari modul internal
 from app_factory import create_app
 
 # Konfigurasi Redis dari environment

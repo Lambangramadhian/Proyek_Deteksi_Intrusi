@@ -1,3 +1,4 @@
+# Import library standar dan eksternal
 import json
 import time
 import redis
@@ -6,94 +7,90 @@ from flask import Flask, request, jsonify, current_app
 from multiprocessing import Process
 from rq import Queue
 from rq.job import Job
+
+# Import dari modul internal
 from app_factory import create_app
 from predict import make_prediction
 
-# Inisialisasi aplikasi Flask dan koneksi Redis melalui fungsi factory
+# Inisialisasi aplikasi Flask dan koneksi Redis
 app, redis_connection = create_app()
 
-# Membuat antrean Redis Queue untuk eksekusi background task
+# Membuat antrean Redis Queue untuk task asynchronous
 task_queue = Queue(connection=redis_connection)
 
-# Endpoint utama (root) hanya untuk pengecekan awal service
+# Endpoint GET root sebagai penanda bahwa API aktif
 @app.route("/", methods=["GET"])
 def home():
-    """Endpoint utama untuk pengecekan awal service."""
     return "Selamat datang di API Deteksi Intrusi"
 
-# Endpoint favicon agar tidak menghasilkan error di browser
+# Endpoint favicon agar tidak menghasilkan error saat diakses oleh browser
 @app.route("/favicon.ico")
 def favicon():
-    """Endpoint untuk favicon agar tidak menghasilkan error di browser."""
     return "", 204
 
-# Endpoint POST untuk menerima input payload dan mengirimnya ke antrean prediksi
+# Endpoint utama untuk menerima permintaan prediksi
 @app.route("/predict", methods=["POST"])
 def predict():
-    """Endpoint untuk menerima input payload dan mengirimnya ke antrean prediksi."""
-    data = request.get_json()  # Mengambil data dari body permintaan
-    payload = data.get("payload", {})  # Mengambil isi dari key 'payload'
-    method = payload.get("method", "")  # Ekstrak method HTTP dari payload
-    url = payload.get("url", "")        # Ekstrak URL dari payload
-    body = payload.get("body", "")      # Ekstrak body dari payload
-    client_ip = request.remote_addr     # Mendapatkan alamat IP dari klien
+    data = request.get_json()                        # Ambil data JSON dari request body
+    payload = data.get("payload", {})                # Ambil bagian payload
+    method = payload.get("method", "")               # Ambil method HTTP (misalnya GET, POST)
+    url = payload.get("url", "")                     # Ambil URL target
+    body = payload.get("body", "")                   # Ambil body permintaan
+    client_ip = request.remote_addr                  # Ambil IP klien dari permintaan
 
-    # Validasi wajib: method dan URL tidak boleh kosong
+    # Validasi: method dan url harus disediakan
     if not method or not url:
         return jsonify({"error": "Method dan URL diperlukan"}), 400
 
-    # Menambahkan tugas ke Redis Queue agar diproses di background
+    # Masukkan tugas ke antrean untuk diproses secara asynchronous
     task = task_queue.enqueue(
         make_prediction, method, url, body, client_ip, None, job_timeout=None
     )
 
-    # Mengembalikan ID task agar klien bisa cek status nanti
+    # Kembalikan ID task sebagai response
     return jsonify({"task_id": task.id, "message": "Tugas prediksi dimulai"}), 202
 
-# Endpoint untuk mengecek status dari task prediksi berdasarkan task_id
+# Endpoint untuk mengecek status dari sebuah task berdasarkan ID
 @app.route("/task-status/<task_id>", methods=["GET"])
 def task_status(task_id):
-    """Endpoint untuk mengecek status dari task prediksi berdasarkan task_id."""
-    task: Job = task_queue.fetch_job(task_id)  # Mengambil job dari Redis Queue
+    task: Job = task_queue.fetch_job(task_id)        # Ambil job berdasarkan ID
     if task is None:
         return jsonify({"error": "Tugas tidak ditemukan"}), 404
     if task.is_finished:
         return jsonify({"status": "selesai", "hasil": task.result}), 200
     elif task.is_failed:
         return jsonify({"status": "gagal", "error": str(task.exc_info)}), 500
-    return jsonify({"status": "sedang diproses"}), 202  # Jika belum selesai
+    return jsonify({"status": "sedang diproses"}), 202
 
-# Fungsi subscriber untuk mendengarkan channel Redis dan memproses payload dari sana
+# Fungsi subscriber untuk mendengarkan log dari Redis
 def subscribe_to_logs():
-    """Fungsi untuk mendengarkan channel Redis dan memproses pesan yang diterima."""
+    """Berlangganan ke Redis dan log payload secara terstruktur tanpa field 'source'."""
     app, redis_connection = create_app()
-    processed_messages = set()  # Untuk menghindari duplikasi proses pesan
+    processed_messages = set()  # Simpan ID pesan yang sudah diproses
 
-    # Menggunakan Redis Pub/Sub untuk mendengarkan channel 'moodle_logs'
+    # Inisialisasi Redis PubSub
     with app.app_context():
         while True:
             try:
                 pubsub = redis_connection.pubsub()
-                pubsub.subscribe('moodle_logs')  # Subskripsi ke channel 'moodle_logs'
+                pubsub.subscribe('moodle_logs')  # Subskripsi ke channel Redis
                 print(f"[Subscribe] Berlangganan ke 'moodle_logs'")
-
-                # Ping Redis setiap 60 detik untuk menjaga koneksi tetap aktif
                 last_ping = time.time()
 
-                # Loop untuk mendengarkan pesan masuk dari Redis
-                for message in pubsub.listen():  # Mendengarkan pesan masuk
+                # Loop untuk mendengarkan setiap pesan baru dari channel Redis
+                for message in pubsub.listen():
                     if message['type'] != 'message':
                         continue
 
-                    # Jika pesan yang diterima adalah tipe 'message', proses data JSON
+                    # Cek apakah pesan sudah diproses sebelumnya
                     try:
-                        data = json.loads(message['data'])  # Parsing data JSON
+                        data = json.loads(message['data'])  # Parse JSON
                         message_id = data.get('timestamp')
                         if message_id in processed_messages:
                             continue  # Lewati jika sudah diproses
                         processed_messages.add(message_id)
 
-                        # Ambil info IP, user ID, dan payload (method, url, body)
+                        # Ambil informasi penting dari payload
                         ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
                         user_id = data.get('user_id') or data.get('userid') or 'Tidak Diketahui'
                         payload = data.get('payloadData', {})
@@ -101,18 +98,22 @@ def subscribe_to_logs():
                         url = payload.get('url', '')
                         body = payload.get('body', '')
 
-                        # Logging input dari Redis
+                        # Konversi body ke string jika berbentuk dictionary
+                        body_str = body if isinstance(body, str) else " ".join(
+                            f"{k}={v}" for k, v in body.items()
+                        )
+
+                        # Buat log terstruktur
                         log_payload = {
                             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                             "level": "INFO",
-                            "source": "RedisSubscriber",
                             "ip": ip,
                             "user_id": user_id,
-                            "payload": f"{method} {url} {body}".strip()
+                            "payload": f"{method} {url} {body_str}".strip()
                         }
                         current_app.logger.info(json.dumps(log_payload))
 
-                        # Langsung jalankan prediksi (sinkron)
+                        # Jalankan prediksi langsung (sinkron, bukan lewat queue)
                         make_prediction(
                             method=method,
                             url=url,
@@ -121,41 +122,43 @@ def subscribe_to_logs():
                             user_id=user_id
                         )
 
-                    # Jika terjadi kesalahan saat memproses pesan
+                    # Log jika tidak ada payload yang ditemukan
                     except Exception as e:
-                        # Logging error jika terjadi kegagalan parsing/prediksi
+                        # Logging jika terjadi error saat parsing atau prediksi
                         error_ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                         current_app.logger.error(json.dumps({
                             "timestamp": error_ts,
                             "level": "ERROR",
-                            "source": "RedisSubscriber",
+                            "ip": "N/A",
+                            "user_id": "N/A",
                             "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                         }))
 
-                    # Ping Redis setiap 60 detik untuk menjaga koneksi tetap aktif
+                    # Ping Redis setiap 60 detik agar koneksi tidak timeout
                     if time.time() - last_ping > 60:
                         redis_connection.ping()
                         last_ping = time.time()
 
-            # Handle kesalahan koneksi Redis
+            # Tangani kesalahan koneksi Redis
             except redis.exceptions.ConnectionError as e:
-                print(f"[Subscribe] Kesalahan Koneksi Redis: {e}. Mencoba ulang dalam 5 detik...")
+                # Retry jika koneksi Redis terputus
+                print(f"[Subscribe] Redis Connection Error: {e}. Retry dalam 5 detik...")
                 time.sleep(5)
 
-# Entry point utama ketika file dijalankan langsung
+# Entry point utama saat aplikasi dijalankan
 if __name__ == "__main__":
     from worker import start_worker
 
-    # Jalankan 3 worker RQ secara paralel
+    # Jalankan 3 proses worker untuk menangani task dari antrean
     for i in range(3):
         p = Process(target=start_worker, name=f"WorkerProcess-{i+1}")
         p.daemon = True
         p.start()
 
-    # Jalankan proses subscriber untuk mendengarkan Redis
+    # Jalankan proses subscriber Redis untuk monitoring log
     subscriber_proc = Process(target=subscribe_to_logs, name="SubscriberProcess")
     subscriber_proc.daemon = True
     subscriber_proc.start()
 
-    # Jalankan server Flask
+    # Jalankan aplikasi Flask di host 0.0.0.0 pada port 5000
     app.run(host="0.0.0.0", port=5000, debug=False)

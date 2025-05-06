@@ -1,3 +1,4 @@
+# Import library standar dan eksternal
 import os
 import json
 import redis
