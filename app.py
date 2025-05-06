@@ -62,8 +62,8 @@ def subscribe_to_logs(app):
     processed_messages = set()
 
     while True:
+        pubsub = redis_connection.pubsub()
         try:
-            pubsub = redis_connection.pubsub()
             pubsub.subscribe('moodle_logs')
             print(f"[Subscribe] Berlangganan ke 'moodle_logs' pada thread: {threading.current_thread().name}")
 
@@ -104,13 +104,24 @@ def subscribe_to_logs(app):
                         }))
 
                 if time.time() - last_ping > 60:
-                    redis_connection.ping()
-                    last_ping = time.time()
+                    try:
+                        redis_connection.ping()
+                        last_ping = time.time()
+                    except redis.exceptions.ConnectionError as ping_err:
+                        print(f"[Subscribe] Redis ping gagal: {ping_err}")
+                        break  # keluar dari for loop, kembali ke while True (reconnect)
 
-        except redis.exceptions.ConnectionError as e:
-            print(f"[Subscribe] Redis ConnectionError: {e}. Retry 5s...")
-            pubsub.close()
+        except redis.exceptions.TimeoutError as timeout_err:
+            print(f"[Subscribe] Redis TimeoutError: {timeout_err}. Mencoba kembali dalam 5 detik...")
             time.sleep(5)
+
+        except redis.exceptions.ConnectionError as conn_err:
+            print(f"[Subscribe] Redis ConnectionError: {conn_err}. Mencoba kembali dalam 5 detik...")
+            time.sleep(5)
+
+        finally:
+            pubsub.close()
+
 
 
 if __name__ == "__main__":

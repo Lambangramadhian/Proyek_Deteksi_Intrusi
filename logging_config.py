@@ -15,15 +15,9 @@ def setup_logging(app):
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     file_handler.setFormatter(formatter)
 
-    # Opsional: juga tampilkan log di console
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-    console_handler.setLevel(logging.INFO)
-
     # Hindari duplikasi handler
     if app.logger.hasHandlers():
         app.logger.handlers.clear()
 
     app.logger.addHandler(file_handler)
-    app.logger.addHandler(console_handler)
     app.logger.setLevel(logging.INFO)

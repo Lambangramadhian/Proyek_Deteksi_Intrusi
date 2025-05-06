@@ -9652,3 +9652,49 @@ c
     }
 }
 2025-05-05 11:57:43,772 - INFO - [05/05/2025 11:57:43] Prediksi: Normal
+2025-05-06 08:28:11,624 - INFO - [06/05/2025 08:28:11] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/calendar/view.php?view=day&time=1746378000&course=1",
+    "body": "view=day&time=1746378000&course=1"
+}
+2025-05-06 08:28:11,772 - INFO - [06/05/2025 08:28:11] Prediksi: Normal
+2025-05-06 08:28:14,648 - INFO - [06/05/2025 08:28:14] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/calendar/view.php?view=day&time=1746378000",
+    "body": {
+        "sesskey": "WGqM4z8dht",
+        "pageurl": "http://localhost/moodle/calendar/view.php?view=day&time=1746378000",
+        "context": "1",
+        "submitted_at": "2025-05-06T01:28:14.775Z"
+    }
+}
+2025-05-06 08:28:14,747 - INFO - [06/05/2025 08:28:14] Prediksi: Normal
+2025-05-06 08:30:43,484 - INFO - [06/05/2025 08:30:43] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/index.php",
+    "body": {
+        "sesskey": "WGqM4z8dht",
+        "pageurl": "http://localhost/moodle/my/index.php",
+        "context": "5",
+        "submitted_at": "2025-05-06T01:30:33.944Z"
+    }
+}
+2025-05-06 08:30:43,519 - INFO - [06/05/2025 08:30:43] Prediksi: Normal
+2025-05-06 08:44:23,540 - INFO - [06/05/2025 08:44:23] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-06 08:44:23,617 - INFO - [06/05/2025 08:44:23] Prediksi: Normal
+2025-05-06 08:44:59,280 - INFO - [06/05/2025 08:44:59] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-06 08:44:59,284 - INFO - [06/05/2025 08:44:59] Prediksi (cache): Normal
+2025-05-06 08:45:05,014 - INFO - [06/05/2025 08:45:05] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-05-06 08:45:05,042 - INFO - [06/05/2025 08:45:05] Prediksi: Normal
