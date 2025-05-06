@@ -62,7 +62,6 @@ def subscribe_to_logs():
     app, redis_connection = create_app()
     processed_messages = set()
 
-    # Inisialisasi koneksi Redis
     with app.app_context():
         while True:
             try:
@@ -70,13 +69,12 @@ def subscribe_to_logs():
                 pubsub.subscribe('moodle_logs')
                 print(f"[Subscribe] Berlangganan ke 'moodle_logs'")
 
-                # Mengatur waktu ping terakhir
                 last_ping = time.time()
 
-                # Perulangan untuk mendengarkan pesan dari Redis
                 for message in pubsub.listen():
                     if message['type'] != 'message':
                         continue
+
                     try:
                         data = json.loads(message['data'])
                         message_id = data.get('timestamp')
@@ -84,7 +82,6 @@ def subscribe_to_logs():
                             continue
                         processed_messages.add(message_id)
 
-                        # Mengambil data dari pesan Redis
                         ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
                         user_id = data.get('user_id') or data.get('userid') or 'Tidak Diketahui'
                         payload = data.get('payloadData', {})
@@ -92,7 +89,17 @@ def subscribe_to_logs():
                         url = payload.get('url', '')
                         body = payload.get('body', '')
 
-                        # Memanggil fungsi prediksi
+                        # Logging penerimaan data dari Redis (opsional)
+                        log_payload = {
+                            "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            "level": "INFO",
+                            "source": "RedisSubscriber",
+                            "ip": ip,
+                            "user_id": user_id,
+                            "payload": f"{method} {url} {body}".strip()
+                        }
+                        current_app.logger.info(json.dumps(log_payload))
+
                         make_prediction(
                             method=method,
                             url=url,
@@ -101,23 +108,21 @@ def subscribe_to_logs():
                             user_id=user_id
                         )
 
-                    # Penanganan kesalahan saat mendekode JSON
                     except Exception as e:
-                        error_ts = datetime.datetime.now().strftime("[%d/%m/%Y %H:%M:%S]")
+                        error_ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                         current_app.logger.error(json.dumps({
                             "timestamp": error_ts,
+                            "level": "ERROR",
+                            "source": "RedisSubscriber",
                             "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                         }))
 
-                    # Memeriksa apakah koneksi Redis masih aktif
                     if time.time() - last_ping > 60:
                         redis_connection.ping()
                         last_ping = time.time()
 
-            # Penanganan kesalahan koneksi Redis
             except redis.exceptions.ConnectionError as e:
                 print(f"[Subscribe] Kesalahan Koneksi Redis: {e}. Mencoba ulang dalam 5 detik...")
-                pubsub.close()
                 time.sleep(5)
 
 # Fungsi utama untuk menjalankan aplikasi Flask dan worker RQ
