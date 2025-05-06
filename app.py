@@ -7,6 +7,7 @@ from flask import Flask, request, jsonify, current_app
 from multiprocessing import Process
 from rq import Queue
 from rq.job import Job
+from multiprocessing import current_process
 
 # Import dari modul internal
 from app_factory import create_app
@@ -104,14 +105,16 @@ def subscribe_to_logs():
                         )
 
                         # Buat log terstruktur
-                        log_payload = {
+                        worker_log_payload = {
                             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                             "level": "INFO",
+                            "worker": current_process().name,
                             "ip": ip,
                             "user_id": user_id,
                             "payload": f"{method} {url} {body_str}".strip()
                         }
-                        current_app.logger.info(json.dumps(log_payload))
+                        current_app.logger.info(json.dumps(worker_log_payload))
+
 
                         # Jalankan prediksi langsung (sinkron, bukan lewat queue)
                         make_prediction(
