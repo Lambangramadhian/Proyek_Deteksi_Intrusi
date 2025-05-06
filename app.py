@@ -1,5 +1,3 @@
-# Import library bawaan dan eksternal yang dibutuhkan
-import os
 import json
 import time
 import redis
@@ -20,16 +18,19 @@ task_queue = Queue(connection=redis_connection)
 # Endpoint utama (root) hanya untuk pengecekan awal service
 @app.route("/", methods=["GET"])
 def home():
+    """Endpoint utama untuk pengecekan awal service."""
     return "Selamat datang di API Deteksi Intrusi"
 
 # Endpoint favicon agar tidak menghasilkan error di browser
 @app.route("/favicon.ico")
 def favicon():
+    """Endpoint untuk favicon agar tidak menghasilkan error di browser."""
     return "", 204
 
 # Endpoint POST untuk menerima input payload dan mengirimnya ke antrean prediksi
 @app.route("/predict", methods=["POST"])
 def predict():
+    """Endpoint untuk menerima input payload dan mengirimnya ke antrean prediksi."""
     data = request.get_json()  # Mengambil data dari body permintaan
     payload = data.get("payload", {})  # Mengambil isi dari key 'payload'
     method = payload.get("method", "")  # Ekstrak method HTTP dari payload
@@ -52,6 +53,7 @@ def predict():
 # Endpoint untuk mengecek status dari task prediksi berdasarkan task_id
 @app.route("/task-status/<task_id>", methods=["GET"])
 def task_status(task_id):
+    """Endpoint untuk mengecek status dari task prediksi berdasarkan task_id."""
     task: Job = task_queue.fetch_job(task_id)  # Mengambil job dari Redis Queue
     if task is None:
         return jsonify({"error": "Tugas tidak ditemukan"}), 404
@@ -63,9 +65,11 @@ def task_status(task_id):
 
 # Fungsi subscriber untuk mendengarkan channel Redis dan memproses payload dari sana
 def subscribe_to_logs():
+    """Fungsi untuk mendengarkan channel Redis dan memproses pesan yang diterima."""
     app, redis_connection = create_app()
     processed_messages = set()  # Untuk menghindari duplikasi proses pesan
 
+    # Menggunakan Redis Pub/Sub untuk mendengarkan channel 'moodle_logs'
     with app.app_context():
         while True:
             try:
@@ -73,12 +77,15 @@ def subscribe_to_logs():
                 pubsub.subscribe('moodle_logs')  # Subskripsi ke channel 'moodle_logs'
                 print(f"[Subscribe] Berlangganan ke 'moodle_logs'")
 
+                # Ping Redis setiap 60 detik untuk menjaga koneksi tetap aktif
                 last_ping = time.time()
 
+                # Loop untuk mendengarkan pesan masuk dari Redis
                 for message in pubsub.listen():  # Mendengarkan pesan masuk
                     if message['type'] != 'message':
                         continue
 
+                    # Jika pesan yang diterima adalah tipe 'message', proses data JSON
                     try:
                         data = json.loads(message['data'])  # Parsing data JSON
                         message_id = data.get('timestamp')
@@ -114,6 +121,7 @@ def subscribe_to_logs():
                             user_id=user_id
                         )
 
+                    # Jika terjadi kesalahan saat memproses pesan
                     except Exception as e:
                         # Logging error jika terjadi kegagalan parsing/prediksi
                         error_ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -129,6 +137,7 @@ def subscribe_to_logs():
                         redis_connection.ping()
                         last_ping = time.time()
 
+            # Handle kesalahan koneksi Redis
             except redis.exceptions.ConnectionError as e:
                 print(f"[Subscribe] Kesalahan Koneksi Redis: {e}. Mencoba ulang dalam 5 detik...")
                 time.sleep(5)

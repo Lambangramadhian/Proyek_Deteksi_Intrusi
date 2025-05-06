@@ -1,4 +1,3 @@
-# Import pustaka yang dibutuhkan
 import os
 import json
 import redis
@@ -82,6 +81,7 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
         cache_key = get_cache_key(input_text)
         hasil_cache = redis_client.get(cache_key)
 
+        # Cek apakah hasil sudah ada di cache
         if hasil_cache:
             # Log jika prediksi diambil dari cache
             log_payload = {
