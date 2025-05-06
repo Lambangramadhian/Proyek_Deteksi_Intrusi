@@ -113,17 +113,23 @@ def subscribe_to_logs():
                             "user_id": user_id,
                             "payload": f"{method} {url} {body_str}".strip()
                         }
-                        current_app.logger.info(json.dumps(worker_log_payload))
 
-
-                        # Jalankan prediksi langsung (sinkron, bukan lewat queue)
-                        make_prediction(
+                        # Langsung jalankan prediksi
+                        result = make_prediction(
                             method=method,
                             url=url,
                             body=body,
                             client_ip=ip,
                             user_id=user_id
                         )
+
+                        # Jika ada hasil prediksi, log ke file
+                        if result.get("prediction"):
+                            worker_log_payload.update({
+                                "prediction": result["prediction"],
+                                "cache_hit": result.get("cache_hit", False)
+                            })
+                            current_app.logger.info(json.dumps(worker_log_payload))
 
                     # Log jika tidak ada payload yang ditemukan
                     except Exception as e:
