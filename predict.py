@@ -122,6 +122,7 @@ def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketah
         current_app.logger.info(json.dumps(log_payload))
         return {"prediction": label}
 
+    # Tangani kesalahan yang mungkin terjadi
     except Exception as e:
         # Tangani error dan log dalam format terstruktur
         current_app.logger.error(json.dumps({
