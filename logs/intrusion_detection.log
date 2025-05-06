@@ -9800,3 +9800,181 @@ c
     "body": ""
 }
 2025-05-06 09:47:19,923 - INFO - [06/05/2025 09:47:19] Prediksi: Normal
+2025-05-06 11:13:42,411 - INFO - [06/05/2025 11:13:42] Worker: SubscriberProcess | IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-06 11:13:45,531 - INFO - [06/05/2025 11:13:42] Worker: SubscriberProcess | Prediksi: Normal
+2025-05-06 11:13:45,621 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/my/",
+    "body": ""
+}
+2025-05-06 11:13:45,668 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | Prediksi: Normal
+2025-05-06 11:13:45,668 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "WGqM4z8dht",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "",
+        "timestart": {
+            "day": "6",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "13"
+        },
+        "eventtype": "user",
+        "categoryid": "1",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "909488654"
+        },
+        "location": "",
+        "duration": "0",
+        "timedurationuntil": {
+            "day": "6",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "13"
+        },
+        "timedurationminutes": "",
+        "repeats": "1",
+        "submitted_at": "2025-05-06T04:13:38.651Z"
+    }
+}
+2025-05-06 11:13:45,735 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | Prediksi: Normal
+2025-05-06 11:13:45,736 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "WGqM4z8dht",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normalnih",
+        "timestart": {
+            "day": "6",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "13"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "909488654"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-06T04:13:44.750Z"
+    }
+}
+2025-05-06 11:13:45,775 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | Prediksi: Normal
+2025-05-06 11:13:45,937 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | IP: ::1 | User-ID: 2 | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/my/",
+    "body": {
+        "id": "0",
+        "userid": "2",
+        "modulename": "",
+        "instance": "0",
+        "visible": "1",
+        "sesskey": "WGqM4z8dht",
+        "_qf__core_calendar_local_event_forms_create": "1",
+        "mform_showmore_id_general": "0",
+        "name": "normalnih",
+        "timestart": {
+            "day": "6",
+            "month": "5",
+            "year": "2025",
+            "hour": "11",
+            "minute": "13"
+        },
+        "eventtype": "user",
+        "description": {
+            "text": "",
+            "format": "1",
+            "itemid": "909488654"
+        },
+        "location": "",
+        "duration": "0",
+        "submitted_at": "2025-05-06T04:13:46.011Z"
+    }
+}
+2025-05-06 11:13:45,971 - INFO - [06/05/2025 11:13:45] Worker: SubscriberProcess | Prediksi: Normal
+2025-05-06 11:30:44,506 - INFO - [06/05/2025 11:30:44] Worker: WorkerProcess-1 | IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php",
+    "body": ""
+}
+2025-05-06 11:30:46,758 - INFO - [06/05/2025 11:30:44] Worker: WorkerProcess-1 | Prediksi: Normal
+2025-05-06 11:31:21,428 - INFO - [06/05/2025 11:31:21] Worker: WorkerProcess-1 | IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/search.php?query=admin",
+    "body": "query=admin"
+}
+2025-05-06 11:31:21,465 - INFO - [06/05/2025 11:31:21] Worker: WorkerProcess-1 | Prediksi: Normal
+2025-05-06 11:31:33,723 - INFO - [06/05/2025 11:31:33] Worker: WorkerProcess-1 | IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/?redirect=0",
+    "body": "redirect=0"
+}
+2025-05-06 11:31:33,744 - INFO - [06/05/2025 11:31:33] Worker: WorkerProcess-1 | Prediksi: Normal
+2025-05-06 11:31:39,123 - INFO - [06/05/2025 11:31:39] Worker: WorkerProcess-1 | IP: ::1 | User-ID: 2 | Input: {
+    "method": "GET",
+    "url": "/moodle/admin/settings.php?section=frontpagesettings",
+    "body": "section=frontpagesettings"
+}
+2025-05-06 11:31:39,164 - INFO - [06/05/2025 11:31:39] Worker: WorkerProcess-1 | Prediksi: Normal
+2025-05-06 11:31:41,281 - INFO - [06/05/2025 11:31:41] Worker: WorkerProcess-1 | IP: ::1 | User-ID: Tidak Diketahui | Input: {
+    "method": "POST",
+    "url": "http://localhost/moodle/admin/settings.php?section=frontpagesettings",
+    "body": {
+        "section": "frontpagesettings",
+        "action": "save-settings",
+        "sesskey": "WGqM4z8dht",
+        "return": "",
+        "s__fullname": "e-Learning STT NF",
+        "s__shortname": "elena",
+        "s__summary": "<p>&lt;script&gt;alert(\"hai cantik\")&lt;/script&gt;</p>",
+        "s__frontpage": [
+            "6",
+            "none",
+            "none",
+            "none",
+            "none"
+        ],
+        "s__frontpageloggedin": [
+            "6",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+        ],
+        "s__maxcategorydepth": "2",
+        "s__frontpagecourselimit": "200",
+        "s__numsections": "1",
+        "s__newsitems": "3",
+        "s__commentsperpage": "15",
+        "s__defaultfrontpageroleid": "8",
+        "submitted_at": "2025-05-06T04:31:41.521Z"
+    }
+}
+2025-05-06 11:31:41,296 - INFO - [06/05/2025 11:31:41] Worker: WorkerProcess-1 | Prediksi: XSS
