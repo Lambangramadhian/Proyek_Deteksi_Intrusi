@@ -3,7 +3,7 @@ import json
 import time
 import redis
 import datetime
-from flask import Flask, request, jsonify, current_app
+from flask import request, jsonify, current_app
 from multiprocessing import Process
 from rq import Queue
 from rq.job import Job
