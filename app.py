@@ -12,6 +12,7 @@ from multiprocessing import current_process
 # Import dari modul internal
 from app_factory import create_app
 from predict import make_prediction
+from worker import start_worker
 
 # Inisialisasi aplikasi Flask dan koneksi Redis
 app, redis_connection = create_app()
@@ -156,7 +157,6 @@ def subscribe_to_logs():
 
 # Entry point utama saat aplikasi dijalankan
 if __name__ == "__main__":
-    from worker import start_worker
 
     # Jalankan 3 proses worker untuk menangani task dari antrean
     for i in range(3):
