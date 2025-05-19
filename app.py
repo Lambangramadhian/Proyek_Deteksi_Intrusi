@@ -124,8 +124,8 @@ def subscribe_to_logs():
                             user_id=user_id
                         )
 
-                        # Jika ada hasil prediksi, log ke file
-                        if result.get("prediction"):
+                        # Jika bukan SubscriberProcess dan ada hasil prediksi, log ke file
+                        if result.get("prediction") and current_process().name != "SubscriberProcess":
                             worker_log_payload.update({
                                 "prediction": result["prediction"],
                                 "cache_hit": result.get("cache_hit", False)
