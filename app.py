@@ -3,6 +3,7 @@ import json
 import time
 import redis
 import datetime
+import urllib.parse
 from flask import request, jsonify, current_app
 from multiprocessing import Process
 from rq import Queue
@@ -64,94 +65,136 @@ def task_status(task_id):
         return jsonify({"status": "gagal", "error": str(task.exc_info)}), 500
     return jsonify({"status": "sedang diproses"}), 202
 
-# Fungsi subscriber untuk mendengarkan log dari Redis
 def subscribe_to_logs():
-    """Berlangganan ke Redis dan log payload secara terstruktur tanpa field 'source'."""
+    """Berlangganan ke Redis channel 'http_logs', parsing log, prediksi dan logging hasilnya."""
     app, redis_connection = create_app()
-    processed_messages = set()  # Simpan ID pesan yang sudah diproses
+    processed_messages = set()
 
-    # Inisialisasi Redis PubSub
+    # Pastikan Redis terhubung
     with app.app_context():
         while True:
             try:
                 pubsub = redis_connection.pubsub()
-                pubsub.subscribe('moodle_logs')  # Subskripsi ke channel Redis
-                print(f"[Subscribe] Berlangganan ke 'moodle_logs'")
+                pubsub.subscribe('http_logs')
+                print("[Subscribe] Berlangganan ke 'http_logs'")
                 last_ping = time.time()
 
-                # Loop untuk mendengarkan setiap pesan baru dari channel Redis
+                # Mulai mendengarkan pesan dari Redis
                 for message in pubsub.listen():
                     if message['type'] != 'message':
                         continue
 
                     # Cek apakah pesan sudah diproses sebelumnya
                     try:
-                        data = json.loads(message['data'])  # Parse JSON
+                        data = json.loads(message['data'])
                         message_id = data.get('timestamp')
                         if message_id in processed_messages:
-                            continue  # Lewati jika sudah diproses
+                            continue
                         processed_messages.add(message_id)
 
-                        # Ambil informasi penting dari payload
+                        # Ambil informasi dari pesan
                         ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
-                        user_id = data.get('user_id') or data.get('userid') or 'Tidak Diketahui'
-                        payload = data.get('payloadData', {})
-                        method = payload.get('method', '')
-                        url = payload.get('url', '')
-                        body = payload.get('body', '')
+                        method = data.get("method", "").upper()
+                        url = urllib.parse.unquote(data.get("url", ""))
+                        status_code = data.get("status_code")
 
-                        # Konversi body ke string jika berbentuk dictionary
-                        body_str = body if isinstance(body, str) else " ".join(
-                            f"{k}={v}" for k, v in body.items()
+                        # Ambil payload
+                        raw_payload = data.get("payloadData") or data.get("payload")
+                        payload_body = {}
+
+                        # Cek apakah payload berupa string atau dictionary
+                        if isinstance(raw_payload, str):
+                            try:
+                                parsed = json.loads(raw_payload)
+                                if isinstance(parsed, list) and len(parsed) > 0:
+                                    full_body = dict(parsed[0])
+                                    args = full_body.pop("args", {})
+                                    full_body.update(args)
+                                    payload_body = full_body
+                                elif isinstance(parsed, dict):
+                                    payload_body = parsed
+                                else:
+                                    payload_body = {"raw": str(parsed)}
+                            except json.JSONDecodeError:
+                                payload_body = {"raw": raw_payload}
+                        elif isinstance(raw_payload, dict):
+                            payload_body = raw_payload
+                        else:
+                            payload_body = {"raw": str(raw_payload)}
+
+                        # Flatten dictionary rekursif
+                        def flatten_dict(d, parent_key='', sep='||'):
+                            items = []
+                            for k, v in d.items():
+                                new_key = f"{parent_key}{sep}{k}" if parent_key else k
+                                if isinstance(v, dict):
+                                    items.extend(flatten_dict(v, new_key, sep=sep).items())
+                                else:
+                                    items.append((new_key, v))
+                            return dict(items)
+
+                        # Flatten payload body untuk logging
+                        flat_body = flatten_dict(payload_body)
+                        flat_body.pop("raw", None)  # hindari duplikasi jika sudah parse
+
+                        # Tambahan parse raw form-urlencoded (logintoken=...&password=...)
+                        raw_value = payload_body.get("raw")
+                        if isinstance(raw_value, str) and "=" in raw_value:
+                            try:
+                                parsed_raw = dict(urllib.parse.parse_qsl(raw_value))
+                                flat_body.update(parsed_raw)
+                            except Exception:
+                                pass
+
+                        # Masking untuk key sensitif
+                        sensitive_keys = ["password", "token", "auth", "key"]
+                        masked_body_str = " ".join(
+                            f"{k}=*****" if any(s in k.lower() for s in sensitive_keys) else f"{k}={v}"
+                            for k, v in flat_body.items()
                         )
 
-                        # Buat log terstruktur
-                        worker_log_payload = {
+                        # Struktur log
+                        log_payload = {
                             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                             "level": "INFO",
                             "worker": current_process().name,
                             "ip": ip,
-                            "user_id": user_id,
-                            "payload": f"{method} {url} {body_str}".strip()
+                            "payload": f"{url} {masked_body_str}".strip()
                         }
 
-                        # Langsung jalankan prediksi
+                        # Lakukan prediksi
                         result = make_prediction(
                             method=method,
                             url=url,
-                            body=body,
+                            body=payload_body,
                             client_ip=ip,
-                            user_id=user_id
+                            status_code=status_code
                         )
 
-                        # Jika bukan SubscriberProcess dan ada hasil prediksi, log ke file
+                        # Tambahkan hasil prediksi ke log jika ada
                         if result.get("prediction") and current_process().name != "SubscriberProcess":
-                            worker_log_payload.update({
+                            log_payload.update({
                                 "prediction": result["prediction"],
                                 "cache_hit": result.get("cache_hit", False)
                             })
-                            current_app.logger.info(json.dumps(worker_log_payload))
+                            current_app.logger.info(json.dumps(log_payload))
 
-                    # Log jika tidak ada payload yang ditemukan
+                    # Jika terjadi kesalahan saat memproses pesan Redis
                     except Exception as e:
-                        # Logging jika terjadi error saat parsing atau prediksi
-                        error_ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                         current_app.logger.error(json.dumps({
-                            "timestamp": error_ts,
+                            "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                             "level": "ERROR",
                             "ip": "N/A",
-                            "user_id": "N/A",
                             "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                         }))
 
-                    # Ping Redis setiap 60 detik agar koneksi tidak timeout
+                    # Pastikan Redis tetap terhubung dengan melakukan ping setiap 60 detik
                     if time.time() - last_ping > 60:
                         redis_connection.ping()
                         last_ping = time.time()
 
             # Tangani kesalahan koneksi Redis
             except redis.exceptions.ConnectionError as e:
-                # Retry jika koneksi Redis terputus
                 print(f"[Subscribe] Redis Connection Error: {e}. Retry dalam 5 detik...")
                 time.sleep(5)
 
