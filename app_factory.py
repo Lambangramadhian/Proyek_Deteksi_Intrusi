@@ -2,6 +2,8 @@
 import os
 import redis
 from flask import Flask
+
+# Import dari modul internal
 from logging_config import setup_logging
 
 def create_app():

@@ -5,6 +5,7 @@ import redis
 from rq import Queue
 from rq.worker import SimpleWorker
 from rq.timeouts import BaseDeathPenalty
+from multiprocessing import current_process
 
 # Import dari modul internal
 from app_factory import create_app
@@ -41,6 +42,7 @@ def start_worker():
     """Worker Redis auto-reconnect saat Redis crash."""
     while True:
         try:
+            print(f"[Worker STARTED] {current_process().name} aktif")
             app, _ = create_app()
             with app.app_context():
                 queue = Queue('default', connection=redis_connection)

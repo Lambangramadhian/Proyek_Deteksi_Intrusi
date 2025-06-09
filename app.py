@@ -4,11 +4,11 @@ import time
 import redis
 import datetime
 import urllib.parse
+import multiprocessing
 from flask import request, jsonify, current_app
-from multiprocessing import Process
+from multiprocessing import Process, current_process
 from rq import Queue
 from rq.job import Job
-from multiprocessing import current_process
 
 # Import dari modul internal
 from app_factory import create_app
@@ -49,6 +49,7 @@ def predict():
     task = task_queue.enqueue(
         make_prediction, method, url, body, client_ip, None, job_timeout=None
     )
+    current_app.logger.info(f"Enqueued task: {task.id}")
 
     # Kembalikan ID task sebagai response
     return jsonify({"task_id": task.id, "message": "Tugas prediksi dimulai"}), 202
@@ -70,7 +71,6 @@ def subscribe_to_logs():
     app, redis_connection = create_app()
     processed_messages = set()
 
-    # Pastikan Redis terhubung
     with app.app_context():
         while True:
             try:
@@ -79,12 +79,10 @@ def subscribe_to_logs():
                 print("[Subscribe] Berlangganan ke 'http_logs'")
                 last_ping = time.time()
 
-                # Mulai mendengarkan pesan dari Redis
                 for message in pubsub.listen():
                     if message['type'] != 'message':
                         continue
 
-                    # Cek apakah pesan sudah diproses sebelumnya
                     try:
                         data = json.loads(message['data'])
                         message_id = data.get('timestamp')
@@ -92,17 +90,14 @@ def subscribe_to_logs():
                             continue
                         processed_messages.add(message_id)
 
-                        # Ambil informasi dari pesan
                         ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
                         method = data.get("method", "").upper()
                         url = urllib.parse.unquote(data.get("url", ""))
                         status_code = data.get("status_code")
 
-                        # Ambil payload
                         raw_payload = data.get("payloadData") or data.get("payload")
                         payload_body = {}
 
-                        # Cek apakah payload berupa string atau dictionary
                         if isinstance(raw_payload, str):
                             try:
                                 parsed = json.loads(raw_payload)
@@ -122,7 +117,6 @@ def subscribe_to_logs():
                         else:
                             payload_body = {"raw": str(raw_payload)}
 
-                        # Flatten dictionary rekursif
                         def flatten_dict(d, parent_key='', sep='||'):
                             items = []
                             for k, v in d.items():
@@ -133,36 +127,43 @@ def subscribe_to_logs():
                                     items.append((new_key, v))
                             return dict(items)
 
-                        # Flatten payload body untuk logging
                         flat_body = flatten_dict(payload_body)
-                        flat_body.pop("raw", None)  # hindari duplikasi jika sudah parse
+                        flat_body.pop("raw", None)  # Hindari duplikasi jika sudah parse
 
-                        # Tambahan parse raw form-urlencoded (logintoken=...&password=...)
+                        # ✅ Decode raw form-urlencoded payload
                         raw_value = payload_body.get("raw")
-                        if isinstance(raw_value, str) and "=" in raw_value:
-                            try:
-                                parsed_raw = dict(urllib.parse.parse_qsl(raw_value))
-                                flat_body.update(parsed_raw)
-                            except Exception:
-                                pass
+                        # Decode + parse raw payload, lalu update flat_body
+                        if isinstance(raw_value, str):
+                            decoded_raw = urllib.parse.unquote_plus(raw_value)
+                            if "=" in decoded_raw:
+                                try:
+                                    parsed_raw = dict(urllib.parse.parse_qsl(decoded_raw))
+                                    flat_body.update(parsed_raw)
+                                except Exception:
+                                    pass
 
-                        # Masking untuk key sensitif
+                            if "=" in decoded_raw:
+                                try:
+                                    parsed_raw = dict(urllib.parse.parse_qsl(decoded_raw))
+                                    flat_body.update(parsed_raw)
+                                except Exception:
+                                    pass
+
+                        # ✅ Masking untuk key sensitif
                         sensitive_keys = ["password", "token", "auth", "key"]
                         masked_body_str = " ".join(
                             f"{k}=*****" if any(s in k.lower() for s in sensitive_keys) else f"{k}={v}"
                             for k, v in flat_body.items()
                         )
 
-                        # Struktur log
                         log_payload = {
                             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                             "level": "INFO",
                             "worker": current_process().name,
                             "ip": ip,
-                            "payload": f"{url} {masked_body_str}".strip()
+                            "payload": f"{method} {url} {masked_body_str}".strip()
                         }
 
-                        # Lakukan prediksi
                         result = make_prediction(
                             method=method,
                             url=url,
@@ -171,15 +172,13 @@ def subscribe_to_logs():
                             status_code=status_code
                         )
 
-                        # Tambahkan hasil prediksi ke log jika ada
-                        if result.get("prediction") and current_process().name != "SubscriberProcess":
+                        if result.get("prediction"):
                             log_payload.update({
                                 "prediction": result["prediction"],
                                 "cache_hit": result.get("cache_hit", False)
                             })
                             current_app.logger.info(json.dumps(log_payload))
 
-                    # Jika terjadi kesalahan saat memproses pesan Redis
                     except Exception as e:
                         current_app.logger.error(json.dumps({
                             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -188,29 +187,41 @@ def subscribe_to_logs():
                             "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                         }))
 
-                    # Pastikan Redis tetap terhubung dengan melakukan ping setiap 60 detik
                     if time.time() - last_ping > 60:
                         redis_connection.ping()
                         last_ping = time.time()
 
-            # Tangani kesalahan koneksi Redis
             except redis.exceptions.ConnectionError as e:
                 print(f"[Subscribe] Redis Connection Error: {e}. Retry dalam 5 detik...")
                 time.sleep(5)
 
-# Entry point utama saat aplikasi dijalankan
-if __name__ == "__main__":
+def run_flask_app():
+    app.run(host="0.0.0.0", port=5000, debug=False)
 
-    # Jalankan 3 proses worker untuk menangani task dari antrean
+if __name__ == "__main__":
     for i in range(3):
         p = Process(target=start_worker, name=f"WorkerProcess-{i+1}")
         p.daemon = True
         p.start()
+        print(f"[BOOT] WorkerProcess-{i+1} started")
 
-    # Jalankan proses subscriber Redis untuk monitoring log
     subscriber_proc = Process(target=subscribe_to_logs, name="SubscriberProcess")
     subscriber_proc.daemon = True
     subscriber_proc.start()
+    print("[BOOT] SubscriberProcess started")
 
-    # Jalankan aplikasi Flask di host 0.0.0.0 pada port 5000
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    flask_proc = Process(target=run_flask_app, name="FlaskProcess")
+    flask_proc.daemon = False
+    flask_proc.start()
+    print("[BOOT] FlaskProcess started")
+
+    # Menunggu proses Flask selesai
+    try:
+        flask_proc.join()
+    except KeyboardInterrupt:
+        print("\n[Main] KeyboardInterrupt diterima, menghentikan proses...")
+        subscriber_proc.terminate()
+        for proc in multiprocessing.active_children():
+            if proc != flask_proc:
+                proc.terminate()
+        flask_proc.terminate()

@@ -7,6 +7,10 @@ import hashlib
 import datetime
 import multiprocessing
 import threading
+import urllib.parse
+from multiprocessing import current_process
+
+# Import dari modul internal
 from flask import current_app
 
 # Buat direktori model jika belum ada
@@ -58,72 +62,71 @@ def flatten_dict(d, parent_key='', sep='||'):
             items.append((new_key, v))
     return dict(items)
 
-def make_prediction(method: str, url: str, body, client_ip: str = "Tidak Diketahui", status_code: int = None) -> dict:
-    """Fungsi untuk melakukan prediksi berdasarkan input yang diberikan."""
+def make_prediction(method, url, body, client_ip, status_code=None):
     try:
+        # Normalisasi method ke uppercase
+        method = method.upper()
         now = datetime.datetime.now()
-        process_name = get_worker_name()
 
-        # Validasi input
-        if method.upper() == "GET":
-            input_text = url.strip()
-        elif method.upper() == "POST":
-            if isinstance(body, dict):
-                flat_body = flatten_dict(body)
-                body_string = " ".join(f"{k}={v}" for k, v in flat_body.items())
-            elif isinstance(body, str):
-                body_string = body.strip()
-            else:
-                body_string = ""
-            input_text = f"{url.strip()} {body_string}".strip()
-        else:
-            input_text = f"{method.strip()} {url.strip()}".strip()
+        # ✅ Handle body string mentah (bukan dict)
+        if isinstance(body, str):
+            try:
+                decoded = urllib.parse.unquote_plus(body)
+                parsed = dict(urllib.parse.parse_qsl(decoded))
+                body = parsed
+            except Exception:
+                body = {"raw": body}
 
-        # Pastikan input tidak kosong
-        if not input_text:
-            return {"error": "Payload diperlukan"}
+        # ✅ Jika dict dan mengandung 'raw', parse lagi
+        if isinstance(body, dict) and "raw" in body and isinstance(body["raw"], str):
+            try:
+                decoded = urllib.parse.unquote_plus(body["raw"])
+                parsed = dict(urllib.parse.parse_qsl(decoded))
+                body.update(parsed)
+                body.pop("raw", None)  # opsional: buang agar log bersih
+            except Exception:
+                pass
 
-        # Buat kunci cache berdasarkan input
-        cache_key = get_cache_key(input_text)
+        # 🔁 Flatten dict untuk menyatukan nested body
+        def flatten_dict(d, parent_key='', sep='||'):
+            items = []
+            for k, v in d.items():
+                new_key = f"{parent_key}{sep}{k}" if parent_key else k
+                if isinstance(v, dict):
+                    items.extend(flatten_dict(v, new_key, sep=sep).items())
+                else:
+                    items.append((new_key, v))
+            return dict(items)
+
+        flat_body = flatten_dict(body)
+        body_string = " ".join(f"{k}={v}" for k, v in flat_body.items())
+        input_text = f"{method} {url.strip()} {body_string}".strip()
+
+        # 🔐 Gunakan hash untuk cache key agar aman & efisien
+        hashed_input = hashlib.sha256(input_text.encode()).hexdigest()
+        cache_key = f"prediction:{method}:{hashed_input}"
+
+        # 🔍 Cek cache Redis
         hasil_cache = redis_client.get(cache_key)
-
-        # Buat log umum untuk semua prediksi
-        log_common = {
-            "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
-            "level": "INFO",
-            "worker": process_name,
-            "ip": client_ip,
-            "payload": input_text,
-        }
-        if status_code is not None:
-            log_common["status_code"] = status_code
-
-        # Cek cache Redis untuk hasil prediksi
         if hasil_cache:
-            log_common.update({
+            return {
                 "prediction": hasil_cache,
                 "cache_hit": True
-            })
-            current_app.logger.info(json.dumps(log_common))
-            return {"prediction": hasil_cache}
+            }
 
-        # Jika tidak ada di cache, lakukan prediksi
+        # 🧠 Prediksi model
         input_vector = vectorizer.transform([input_text])
         pred = model.predict(input_vector)[0]
         label = {0: "Normal", 1: "SQL Injection", 2: "XSS"}.get(pred, "Tidak Diketahui")
 
-        # Simpan hasil prediksi ke cache Redis dengan waktu kedaluwarsa 60 detik
+        # 💾 Simpan hasil ke Redis selama 60 detik
         redis_client.setex(cache_key, 60, label)
 
-        # Log hasil prediksi
-        log_common.update({
+        return {
             "prediction": label,
             "cache_hit": False
-        })
-        current_app.logger.info(json.dumps(log_common))
-        return {"prediction": label}
+        }
 
-    # Tangani kesalahan yang mungkin terjadi
     except Exception as e:
         current_app.logger.error(json.dumps({
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
