@@ -8,7 +8,6 @@ import datetime
 import multiprocessing
 import threading
 import urllib.parse
-from multiprocessing import current_process
 
 # Import dari modul internal
 from flask import current_app
@@ -63,6 +62,7 @@ def flatten_dict(d, parent_key='', sep='||'):
     return dict(items)
 
 def make_prediction(method, url, body, client_ip, status_code=None):
+    """Fungsi untuk membuat prediksi berdasarkan method, URL, dan body."""
     try:
         # Normalisasi method ke uppercase
         method = method.upper()
@@ -98,6 +98,7 @@ def make_prediction(method, url, body, client_ip, status_code=None):
                     items.append((new_key, v))
             return dict(items)
 
+        # 🔗 Buat input string untuk prediksi
         flat_body = flatten_dict(body)
         body_string = " ".join(f"{k}={v}" for k, v in flat_body.items())
         input_text = f"{method} {url.strip()} {body_string}".strip()
@@ -122,11 +123,13 @@ def make_prediction(method, url, body, client_ip, status_code=None):
         # 💾 Simpan hasil ke Redis selama 60 detik
         redis_client.setex(cache_key, 60, label)
 
+        # 📝 Log prediksi
         return {
             "prediction": label,
             "cache_hit": False
         }
 
+    # Tangani kesalahan umum
     except Exception as e:
         current_app.logger.error(json.dumps({
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

@@ -71,6 +71,7 @@ def subscribe_to_logs():
     app, redis_connection = create_app()
     processed_messages = set()
 
+    # Menggunakan app context untuk akses ke logger Flask
     with app.app_context():
         while True:
             try:
@@ -79,10 +80,12 @@ def subscribe_to_logs():
                 print("[Subscribe] Berlangganan ke 'http_logs'")
                 last_ping = time.time()
 
+                # Mulai mendengarkan pesan dari Redis
                 for message in pubsub.listen():
                     if message['type'] != 'message':
                         continue
 
+                    # Cek apakah pesan sudah diproses sebelumnya
                     try:
                         data = json.loads(message['data'])
                         message_id = data.get('timestamp')
@@ -90,14 +93,17 @@ def subscribe_to_logs():
                             continue
                         processed_messages.add(message_id)
 
+                        # Parsing data dari pesan Redis
                         ip = data.get('ip_address') or data.get('ip') or 'Tidak Diketahui'
                         method = data.get("method", "").upper()
                         url = urllib.parse.unquote(data.get("url", ""))
                         status_code = data.get("status_code")
 
+                        # Validasi data yang diperlukan
                         raw_payload = data.get("payloadData") or data.get("payload")
                         payload_body = {}
 
+                        # ✅ Pastikan raw_payload adalah string atau dict
                         if isinstance(raw_payload, str):
                             try:
                                 parsed = json.loads(raw_payload)
@@ -118,6 +124,7 @@ def subscribe_to_logs():
                             payload_body = {"raw": str(raw_payload)}
 
                         def flatten_dict(d, parent_key='', sep='||'):
+                            """Fungsi untuk meratakan dictionary dengan pemisah."""
                             items = []
                             for k, v in d.items():
                                 new_key = f"{parent_key}{sep}{k}" if parent_key else k
@@ -127,6 +134,7 @@ def subscribe_to_logs():
                                     items.append((new_key, v))
                             return dict(items)
 
+                        # ✅ Flatten dictionary untuk menyatukan nested body
                         flat_body = flatten_dict(payload_body)
                         flat_body.pop("raw", None)  # Hindari duplikasi jika sudah parse
 
@@ -142,6 +150,7 @@ def subscribe_to_logs():
                                 except Exception:
                                     pass
 
+                            # Jika ada raw payload lain, decode juga
                             if "=" in decoded_raw:
                                 try:
                                     parsed_raw = dict(urllib.parse.parse_qsl(decoded_raw))
@@ -156,6 +165,7 @@ def subscribe_to_logs():
                             for k, v in flat_body.items()
                         )
 
+                        # ✅ Log payload dengan informasi yang relevan
                         log_payload = {
                             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                             "level": "INFO",
@@ -164,6 +174,7 @@ def subscribe_to_logs():
                             "payload": f"{method} {url} {masked_body_str}".strip()
                         }
 
+                        # Lakukan prediksi
                         result = make_prediction(
                             method=method,
                             url=url,
@@ -172,6 +183,7 @@ def subscribe_to_logs():
                             status_code=status_code
                         )
 
+                        # Tambahkan hasil prediksi ke log
                         if result.get("prediction"):
                             log_payload.update({
                                 "prediction": result["prediction"],
@@ -179,6 +191,7 @@ def subscribe_to_logs():
                             })
                             current_app.logger.info(json.dumps(log_payload))
 
+                    # Jika terjadi kesalahan saat memproses pesan Redis
                     except Exception as e:
                         current_app.logger.error(json.dumps({
                             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -187,17 +200,21 @@ def subscribe_to_logs():
                             "error": f"Kesalahan saat memproses pesan Redis: {str(e)}"
                         }))
 
+                    # Pastikan Redis tetap terhubung
                     if time.time() - last_ping > 60:
                         redis_connection.ping()
                         last_ping = time.time()
 
+            # Jika Redis tidak dapat terhubung, tunggu dan coba lagi
             except redis.exceptions.ConnectionError as e:
                 print(f"[Subscribe] Redis Connection Error: {e}. Retry dalam 5 detik...")
                 time.sleep(5)
 
 def run_flask_app():
+    """Menjalankan aplikasi Flask di proses terpisah."""
     app.run(host="0.0.0.0", port=5000, debug=False)
 
+# Fungsi untuk memulai worker Redis
 if __name__ == "__main__":
     for i in range(3):
         p = Process(target=start_worker, name=f"WorkerProcess-{i+1}")
@@ -205,11 +222,13 @@ if __name__ == "__main__":
         p.start()
         print(f"[BOOT] WorkerProcess-{i+1} started")
 
+    # Memulai proses untuk berlangganan ke Redis channel 'http_logs'
     subscriber_proc = Process(target=subscribe_to_logs, name="SubscriberProcess")
     subscriber_proc.daemon = True
     subscriber_proc.start()
     print("[BOOT] SubscriberProcess started")
 
+    # Memulai aplikasi Flask di proses terpisah
     flask_proc = Process(target=run_flask_app, name="FlaskProcess")
     flask_proc.daemon = False
     flask_proc.start()
