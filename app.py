@@ -149,7 +149,7 @@ def spawn_processes():
     try:
         flask_proc.join()
     except KeyboardInterrupt:
-        print("\n[Main] KeyboardInterrupt received, shutting down...")
+        print("\n[Main] KeyboardInterupsi diterima, mematikan...")
         subscriber_proc.terminate()
         for proc in multiprocessing.active_children():
             if proc != flask_proc:
