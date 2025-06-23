@@ -40,10 +40,6 @@ def get_worker_name() -> str:
         return _worker_name_cache[pid]
 
 def parse_body_to_input_text(method, url, body) -> str:
-    method = method.upper() if method else ""
-    url = url.strip() if url else ""
-
-    # Decode jika body dikirim sebagai string URL-encoded
     if isinstance(body, str):
         try:
             decoded = urllib.parse.unquote_plus(body)
@@ -51,7 +47,6 @@ def parse_body_to_input_text(method, url, body) -> str:
         except Exception:
             body = {"raw": body}
 
-    # Jika ada field "raw" di dalam dict, coba parse kembali
     if isinstance(body, dict) and "raw" in body:
         try:
             decoded = urllib.parse.unquote_plus(body["raw"])
@@ -61,11 +56,19 @@ def parse_body_to_input_text(method, url, body) -> str:
         except Exception:
             pass
 
-    # Jika body masih berupa string, simpan sebagai "raw"
+    # ✅ Decode 'jsonformdata' jika tersedia
+    if isinstance(body, dict) and "jsonformdata" in body:
+        try:
+            decoded_jsonformdata = urllib.parse.unquote_plus(body["jsonformdata"].strip('"'))
+            parsed_jsonformdata = dict(urllib.parse.parse_qsl(decoded_jsonformdata))
+            body.update(parsed_jsonformdata)
+            del body["jsonformdata"]
+        except Exception:
+            pass
+
     flat_body = flatten_dict(body)
     body_string = " ".join(f"{k}={v}" for k, v in flat_body.items())
 
-    # Final input untuk TF-IDF vectorizer: PARAMETER FLATTENED
     return body_string.strip()
 
 LABELS = {0: "Normal", 1: "SQL Injection", 2: "XSS"}
