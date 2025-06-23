@@ -10,6 +10,7 @@ import urllib.parse
 from flask import current_app
 
 from utils import flatten_dict
+from utils import parse_payload
 
 model_dir = 'model'
 os.makedirs(model_dir, exist_ok=True)
@@ -77,7 +78,9 @@ def predict_label(input_text: str) -> str:
 
 def make_prediction(method, url, body, client_ip):
     try:
-        input_text = parse_body_to_input_text(method, url, body)
+        parsed = parse_payload(body, url=url, ip=client_ip)
+        flat = flatten_dict(parsed)
+        input_text = " ".join(f"{k}={v}" for k, v in flat.items()).strip()
         cache_key = f"prediction:{method}:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
         hasil_cache = redis_client.get(cache_key)

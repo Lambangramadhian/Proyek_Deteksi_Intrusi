@@ -13,7 +13,7 @@ from rq.job import Job
 from app_factory import create_app
 from predict import make_prediction
 from worker import start_worker
-from utils import flatten_dict, parse_payload, mask_sensitive_fields
+from utils import flatten_dict, parse_payload, mask_sensitive_fields, mask_url_query
 
 app, redis_connection = create_app()
 task_queue = Queue(connection=redis_connection)
@@ -57,13 +57,20 @@ def handle_pubsub_message(data):
     ip = data.get("ip_address") or data.get("ip") or "Tidak Diketahui"
     method = data.get("method", "").upper()
     url = urllib.parse.unquote(data.get("url", ""))
+    url = mask_url_query(url)
     raw_payload = data.get("payloadData") or data.get("payload")
 
     payload_body = parse_payload(raw_payload, url=url, ip=ip, logger=current_app.logger)
     flat_body = flatten_dict(payload_body)
-
     flat_body.pop("raw", None)
-    masked_body_str = mask_sensitive_fields(flat_body)
+
+    # ✔️ Decode payload fields again for readability in logs only (NOT for model input)
+    readable_flat_body = {
+        k: urllib.parse.unquote_plus(str(v)) if isinstance(v, str) else v
+        for k, v in flat_body.items()
+    }
+
+    masked_body_str = mask_sensitive_fields(readable_flat_body)
 
     log_payload = {
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -75,17 +82,26 @@ def handle_pubsub_message(data):
 
     result = make_prediction(method=method, url=url, body=payload_body, client_ip=ip)
 
-    log_payload.update({
-        "prediction": result.get("prediction"),
-        "cache_hit": result.get("cache_hit", False)
-    })
-
-    if "error" in result:
-        log_payload["level"] = "WARN"
-        log_payload["event"] = "prediction_failed"
+    if result.get("prediction"):
+        log_payload.update({
+            "prediction": result["prediction"],
+            "cache_hit": result.get("cache_hit", False)
+        })
+        current_app.logger.info(json.dumps(log_payload))
+    elif "error" in result:
+        log_payload.update({
+            "level": "WARN",
+            "event": "prediction_failed",
+            "error": result["error"]
+        })
         current_app.logger.warning(json.dumps(log_payload))
     else:
-        current_app.logger.info(json.dumps(log_payload))
+        log_payload.update({
+            "level": "WARN",
+            "event": "prediction_skipped_or_empty",
+            "reason": "No prediction result returned"
+        })
+        current_app.logger.warning(json.dumps(log_payload))
 
 def subscribe_to_logs():
     processed_messages = set()
