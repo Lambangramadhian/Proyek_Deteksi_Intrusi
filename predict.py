@@ -1,28 +1,39 @@
-import os
-import json
-import redis
-import joblib
-import hashlib
-import datetime
-import multiprocessing
-import threading
-import urllib.parse
-from flask import current_app
+# =====================
+# Library Internal (standar Python & pustaka pihak ketiga)
+# =====================
+import os                                # Operasi sistem file & environment variable
+import json                              # Parsing dan serialisasi data JSON
+import redis                             # Koneksi ke Redis (cache, antrean, dsb)
+import joblib                            # Untuk menyimpan/memuat model ML atau objek Python (biasanya model pickle)
+import hashlib                           # Membuat hash data (misal: SHA-256)
+import datetime                          # Operasi tanggal dan waktu
+import multiprocessing                   # Menjalankan proses paralel (multi-core)
+import threading                         # Menjalankan thread paralel (lebih ringan dari multiprocessing)
+import urllib.parse                      # Parsing dan manipulasi komponen URL
+from flask import current_app            # Mengakses instance aplikasi Flask yang sedang berjalan
 
-from utils import flatten_dict
-from utils import parse_payload
+# =====================
+# Modul Utilitas Proyek (custom / buatan sendiri)
+# =====================
+from utils import (
+    flatten_dict,                       # Fungsi utilitas untuk mengubah nested dict menjadi flat dict
+    parse_payload                       # Fungsi parsing payload dari request menjadi format siap proses
+)
 
+# Inisialisasi direktori model dan memuat model serta vectorizer
 model_dir = 'model'
 os.makedirs(model_dir, exist_ok=True)
 model_path = os.getenv("MODEL_PATH", os.path.join(model_dir, "random_forest_web_ids.pkl"))
 vectorizer_path = os.getenv("VECTORIZER_PATH", os.path.join(model_dir, "tfidf_vectorizer.pkl"))
 
+# Memastikan model dan vectorizer ada
 try:
     model = joblib.load(model_path)
     vectorizer = joblib.load(vectorizer_path)
 except Exception as e:
     raise RuntimeError(f"Gagal memuat model/vectorizer: {e}")
 
+# Inisialisasi koneksi Redis
 redis_client = redis.StrictRedis(
     host=os.getenv("REDIS_HOST", "localhost"),
     port=int(os.getenv("REDIS_PORT", 6379)),
@@ -30,10 +41,12 @@ redis_client = redis.StrictRedis(
     decode_responses=True
 )
 
+# Validasi koneksi Redis
 _worker_name_cache = {}
 _worker_lock = threading.Lock()
 
 def get_worker_name() -> str:
+    """Mengembalikan nama unik untuk proses worker saat ini."""
     pid = multiprocessing.current_process().pid
     with _worker_lock:
         if pid not in _worker_name_cache:
@@ -41,6 +54,7 @@ def get_worker_name() -> str:
         return _worker_name_cache[pid]
 
 def parse_body_to_input_text(method, url, body) -> str:
+    """ Mengonversi body permintaan HTTP menjadi string input untuk model."""
     method = method.upper() if method else ""
     url = url.strip() if url else ""
 
@@ -69,28 +83,34 @@ def parse_body_to_input_text(method, url, body) -> str:
     # Final input untuk TF-IDF vectorizer: PARAMETER FLATTENED
     return body_string.strip()
 
+# Daftar label untuk prediksi
 LABELS = {0: "Normal", 1: "SQL Injection", 2: "XSS"}
 
 def predict_label(input_text: str) -> str:
+    """Memprediksi label dari input teks menggunakan model dan vectorizer."""
     input_vector = vectorizer.transform([input_text])
     pred = model.predict(input_vector)[0]
     return LABELS.get(pred, "Tidak Diketahui")
 
 def make_prediction(method, url, body, client_ip):
+    """Fungsi utama untuk membuat prediksi berdasarkan input HTTP request."""
     try:
         parsed = parse_payload(body, url=url, ip=client_ip)
         flat = flatten_dict(parsed)
         input_text = " ".join(f"{k}={v}" for k, v in flat.items()).strip()
         cache_key = f"prediction:{method}:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
+        # Cek cache Redis
         hasil_cache = redis_client.get(cache_key)
         if hasil_cache:
             return {"prediction": hasil_cache, "cache_hit": True}
 
+        # Jika tidak ada di cache, lakukan prediksi
         label = predict_label(input_text)
         redis_client.setex(cache_key, 60, label)
         return {"prediction": label, "cache_hit": False}
 
+    # Jika terjadi kesalahan, log error dan kembalikan pesan kesalahan
     except Exception as e:
         log_data = {
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
