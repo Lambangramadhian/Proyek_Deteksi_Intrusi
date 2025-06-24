@@ -1,33 +1,35 @@
-# ====================
-# Library Internal (modul-modul buatan sendiri dalam proyek ini)
-# ====================
-import json                                            # Untuk parsing dan pembuatan objek JSON
-import time                                            # Untuk fungsi-fungsi berbasis waktu (misalnya timestamp)
-import redis                                           # Untuk koneksi dengan Redis (digunakan oleh antrean RQ)
-import urllib.parse                                    # Untuk memproses dan memanipulasi URL
-import datetime                                        # Untuk menangani tanggal dan waktu
-import multiprocessing                                 # Untuk menjalankan proses paralel
-import hashlib                                         # Untuk hashing pesan (digunakan dalam Pub/Sub)
+# =====================
+# Library Bawaan Python (Standard Library)
+# =====================
+import json                                            # Untuk parsing dan serialisasi objek JSON
+import time                                            # Untuk fungsi berbasis waktu (delay, timestamp, dsb.)
+import urllib.parse                                    # Untuk parsing dan manipulasi URL
+import datetime                                        # Untuk menangani objek tanggal dan waktu
+import multiprocessing                                 # Untuk menjalankan proses paralel (multi-core)
+import hashlib                                         # Untuk membuat hash (misalnya untuk identifikasi unik atau verifikasi)
 
-from flask import request, jsonify, current_app        # Flask core - menangani permintaan HTTP dan respons JSON
-from multiprocessing import Process, current_process   # Untuk memproses tugas secara paralel
-from rq import Queue                                   # Redis Queue - untuk sistem antrean background job
-from rq.job import Job                                 # Untuk manajemen job pada antrean
+# =====================
+# Library Eksternal (Pihak Ketiga)
+# =====================
+import redis                                           # Redis client – untuk komunikasi dengan server Redis
+from flask import request, jsonify, current_app        # Flask – untuk menangani HTTP request, response, dan konteks aplikasi
+from multiprocessing import Process, current_process   # Untuk membuat dan mengelola proses anak
+from rq import Queue                                   # Redis Queue – untuk antrean tugas background berbasis Redis
+from rq.job import Job                                 # Untuk manajemen job di dalam antrean RQ
 
-# ====================
-# Library Eksternal / Buatan Sendiri (Modul Khusus Proyek)
-# ====================
-from app_factory import create_app                     # Factory function untuk membuat instance Flask app
-from predict import make_prediction                    # Fungsi utama untuk melakukan prediksi
-from worker import start_worker                        # Fungsi untuk memulai worker Redis (background job handler)
-from utils import (                                    # Utilitas tambahan untuk pre-processing dan keamanan data
-    flatten_dict,                                      # Flatten struktur data nested
-    parse_payload,                                     # Parsing payload dari request
-    mask_sensitive_fields,                             # Menyembunyikan data sensitif dalam payload
-    mask_url_query,                                    # Menyembunyikan query parameter sensitif dalam URL
-    mask_inline_sensitive_fields                       # Menyembunyikan data sensitif inline (misal dalam string JSON)
+# =====================
+# Modul Internal Proyek (Custom Modules)
+# =====================
+from app_factory import create_app                     # Factory function untuk inisialisasi instance Flask
+from predict import make_prediction                    # Fungsi utama untuk menjalankan prediksi model
+from worker import start_worker                        # Fungsi untuk menjalankan worker background (RQ worker)
+from utils import (                                    # Modul utilitas untuk transformasi dan sanitasi data
+    flatten_dict,                                      # Mengubah nested dictionary menjadi flat dictionary
+    parse_payload,                                     # Parsing dan validasi payload dari request
+    mask_sensitive_fields,                             # Menyembunyikan (masking) field-field sensitif dalam dict
+    mask_url_query,                                    # Menyembunyikan parameter sensitif dalam query URL
+    mask_inline_sensitive_fields                       # Masking data sensitif dalam string JSON atau payload
 )
-
 
 # Inisialisasi aplikasi Flask dan koneksi Redis
 app, redis_connection = create_app()

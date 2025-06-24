@@ -1,14 +1,18 @@
 # =====================
-# Library Internal (modul bawaan Python & framework utama)
+# Library Standar Python
 # =====================
-import os                                   # Modul OS – untuk akses ke environment variable, path, dsb
-import redis                                # Redis client – untuk koneksi ke database Redis (digunakan untuk antrian, cache, dsb)
-from flask import Flask                     # Flask – framework utama untuk membuat aplikasi web
+import os                                   # Modul OS – untuk akses ke environment variable dan operasi sistem file
 
 # =====================
-# Library Eksternal / Kustom (dibuat dalam proyek ini)
-# ====================                      
-from logging_config import setup_logging    # Fungsi kustom untuk mengatur konfigurasi logging aplikasi
+# Library Eksternal (Pihak Ketiga)
+# =====================
+import redis                                # Redis client – untuk koneksi ke database Redis (digunakan untuk antrean, cache, dsb.)
+from flask import Flask                     # Flask – framework web utama untuk membangun aplikasi berbasis HTTP
+
+# =====================
+# Modul Internal Proyek (Custom Module)
+# =====================
+from logging_config import setup_logging    # Fungsi untuk mengatur konfigurasi logging aplikasi dari modul internal
 
 def create_app():
     """Fungsi untuk membuat dan mengonfigurasi aplikasi Flask."""

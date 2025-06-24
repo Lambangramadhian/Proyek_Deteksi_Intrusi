@@ -1,23 +1,27 @@
 # =====================
-# Library Internal (standar Python & pustaka pihak ketiga)
+# Library Standar Python (Standard Library)
 # =====================
 import os                                # Operasi sistem file & environment variable
-import json                              # Parsing dan serialisasi data JSON
-import redis                             # Koneksi ke Redis (cache, antrean, dsb)
-import joblib                            # Untuk menyimpan/memuat model ML atau objek Python (biasanya model pickle)
-import hashlib                           # Membuat hash data (misal: SHA-256)
+import json                              # Serialisasi dan deserialisasi objek JSON
+import hashlib                           # Membuat hash data (misalnya untuk verifikasi atau identifikasi)
 import datetime                          # Operasi tanggal dan waktu
 import multiprocessing                   # Menjalankan proses paralel (multi-core)
-import threading                         # Menjalankan thread paralel (lebih ringan dari multiprocessing)
+import threading                         # Menjalankan thread paralel (lebih ringan dari proses)
 import urllib.parse                      # Parsing dan manipulasi komponen URL
-from flask import current_app            # Mengakses instance aplikasi Flask yang sedang berjalan
 
 # =====================
-# Modul Utilitas Proyek (custom / buatan sendiri)
+# Library Pihak Ketiga (Third-party Libraries)
+# =====================
+import redis                             # Redis client – koneksi ke Redis server
+import joblib                            # Untuk menyimpan dan memuat model Machine Learning (seperti dengan pickle)
+from flask import current_app            # Flask – mengakses konteks aplikasi aktif
+
+# =====================
+# Modul Internal Proyek (Local Project Modules)
 # =====================
 from utils import (
-    flatten_dict,                       # Fungsi utilitas untuk mengubah nested dict menjadi flat dict
-    parse_payload                       # Fungsi parsing payload dari request menjadi format siap proses
+    flatten_dict,                        # Mengubah nested dictionary menjadi flat dictionary
+    parse_payload                        # Parsing dan validasi payload dari request
 )
 
 # Inisialisasi direktori model dan memuat model serta vectorizer
