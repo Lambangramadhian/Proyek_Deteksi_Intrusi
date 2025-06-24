@@ -13,7 +13,7 @@ from rq.job import Job
 from app_factory import create_app
 from predict import make_prediction
 from worker import start_worker
-from utils import flatten_dict, parse_payload, mask_sensitive_fields, mask_url_query
+from utils import flatten_dict, parse_payload, mask_sensitive_fields, mask_url_query, mask_inline_sensitive_fields
 
 app, redis_connection = create_app()
 task_queue = Queue(connection=redis_connection)
@@ -58,26 +58,32 @@ def handle_pubsub_message(data):
     method = data.get("method", "").upper()
     url = urllib.parse.unquote(data.get("url", ""))
     url = mask_url_query(url)
-    raw_payload = data.get("payloadData") or data.get("payload")
 
+    raw_payload = data.get("payloadData") or data.get("payload")
     payload_body = parse_payload(raw_payload, url=url, ip=ip, logger=current_app.logger)
+
     flat_body = flatten_dict(payload_body)
     flat_body.pop("raw", None)
 
-    # ✔️ Decode payload fields again for readability in logs only (NOT for model input)
-    readable_flat_body = {
+    decoded_and_cleaned = {
         k: urllib.parse.unquote_plus(str(v)) if isinstance(v, str) else v
         for k, v in flat_body.items()
     }
 
-    masked_body_str = mask_sensitive_fields(readable_flat_body)
+    masked_body_str = mask_sensitive_fields(decoded_and_cleaned)
+
+    # Gabungkan semua info ke payload log
+    payload_text = f"{method} {url} {masked_body_str}".strip()
+
+    # ✅ Masking inline untuk sesskey/token/secret yang tersembunyi
+    payload_text = mask_inline_sensitive_fields(payload_text)
 
     log_payload = {
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "level": "INFO",
         "worker": current_process().name,
         "ip": ip,
-        "payload": f"{method} {url} {masked_body_str}".strip()
+        "payload": payload_text
     }
 
     result = make_prediction(method=method, url=url, body=payload_body, client_ip=ip)

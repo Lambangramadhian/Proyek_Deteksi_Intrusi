@@ -2,6 +2,7 @@ import json
 import urllib.parse
 from datetime import datetime
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
+import re
 
 def flatten_dict(d, parent_key='', sep='||'):
     items = []
@@ -16,10 +17,18 @@ def flatten_dict(d, parent_key='', sep='||'):
 def mask_sensitive_fields(flat_dict: dict, sensitive_keys=None) -> str:
     if sensitive_keys is None:
         sensitive_keys = ["password", "token", "auth", "key", "sesskey", "apikey", "access_token"]
-    return " ".join(
-        f"{k}=*****" if any(s in k.lower() for s in sensitive_keys) else f"{k}={v}"
-        for k, v in flat_dict.items()
-    )
+
+    pairs = []
+    for k, v in flat_dict.items():
+        key_lower = k.lower()
+        is_sensitive = any(s in key_lower for s in sensitive_keys)
+
+        v_str = urllib.parse.unquote_plus(str(v)) if isinstance(v, str) else str(v)
+        if is_sensitive:
+            v_str = "*****"
+
+        pairs.append(f"{k}={v_str}")
+    return " ".join(pairs)
 
 def now_str():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -71,3 +80,16 @@ def mask_url_query(url: str, sensitive_keys=None) -> str:
     ]
     new_query = urlencode(masked)
     return urlunparse(parts._replace(query=new_query))
+
+def mask_inline_sensitive_fields(s: str, sensitive_keys=None) -> str:
+    if sensitive_keys is None:
+        sensitive_keys = ["sesskey", "token", "auth", "key", "apikey", "access_token", "password"]
+
+    for key in sensitive_keys:
+        s = re.sub(
+            rf'(?<=&){key}=.*?(?=&|$)',
+            f'{key}=*****',
+            s,
+            flags=re.IGNORECASE
+        )
+    return s
