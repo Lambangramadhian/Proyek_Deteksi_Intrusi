@@ -50,17 +50,9 @@ def now_str():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 def parse_payload(raw_payload, url=None, ip=None, logger=None):
-    """
-    Mengurai payload dari permintaan HTTP menjadi kamus Python yang dapat diproses oleh model.
-    Menangani:
-    - JSON string (berisi list/dict)
-    - dict langsung
-    - string URL-encoded
-    - field `formdata` yang mengandung query string
-    """
     parsed_body = {}
 
-    # Tahap 1: Coba parse dari JSON string
+    # Tahap 1: JSON string
     if isinstance(raw_payload, str):
         try:
             parsed = json.loads(raw_payload)
@@ -68,14 +60,12 @@ def parse_payload(raw_payload, url=None, ip=None, logger=None):
                 full_body = dict(parsed[0])
                 args = full_body.pop("args", {})
 
-                # Tangani args jika berupa list of {"name":..., "value":...}
                 if isinstance(args, list):
                     parsed_args = {}
                     for arg in args:
                         k = arg.get("name")
                         v = arg.get("value")
                         if k:
-                            # Jika value berupa query string, parse ulang
                             if isinstance(v, str) and "=" in v and "&" in v:
                                 try:
                                     sub_items = dict(parse_qsl(v))
@@ -86,7 +76,6 @@ def parse_payload(raw_payload, url=None, ip=None, logger=None):
                             else:
                                 parsed_args[k] = v
                     full_body.update(parsed_args)
-
                 elif isinstance(args, dict):
                     full_body.update(args)
 
@@ -100,15 +89,12 @@ def parse_payload(raw_payload, url=None, ip=None, logger=None):
         except json.JSONDecodeError:
             parsed_body = {"raw": raw_payload}
 
-    # Tahap 2: Jika sudah dict sejak awal
     elif isinstance(raw_payload, dict):
         parsed_body = raw_payload
-
-    # Tahap 3: Fallback, jika bukan dict/string
     else:
         parsed_body = {"raw": str(raw_payload)}
 
-    # Tahap 4: Coba decode bagian "raw" jika masih ada
+    # Tahap 4: Decode raw
     raw_value = parsed_body.get("raw")
     if isinstance(raw_value, str):
         try:
@@ -118,12 +104,21 @@ def parse_payload(raw_payload, url=None, ip=None, logger=None):
         except Exception:
             pass
 
-    # Tahap 5: Tangani formdata jika ada (khusus Moodle/AJAX)
+    # Tahap 5: Tangani formdata
     formdata_value = parsed_body.get("formdata")
     if isinstance(formdata_value, str) and "=" in formdata_value:
         try:
             formdata_parsed = dict(parse_qsl(formdata_value))
             parsed_body.update(formdata_parsed)
+        except Exception:
+            pass
+
+    # ✅ Tambahkan ini untuk jsonformdata
+    jsonformdata_value = parsed_body.get("jsonformdata")
+    if isinstance(jsonformdata_value, str) and "=" in jsonformdata_value:
+        try:
+            jsonformdata_parsed = dict(parse_qsl(jsonformdata_value))
+            parsed_body.update(jsonformdata_parsed)
         except Exception:
             pass
 

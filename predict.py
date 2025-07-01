@@ -8,6 +8,7 @@ import datetime                          # Operasi tanggal dan waktu
 import multiprocessing                   # Menjalankan proses paralel (multi-core)
 import threading                         # Menjalankan thread paralel (lebih ringan dari proses)
 import urllib.parse                      # Parsing dan manipulasi komponen URL
+import html                              # ✅ untuk decode HTML escape (&lt;, &gt;, dll.)
 
 # =====================
 # Library Pihak Ketiga (Third-party Libraries)
@@ -101,20 +102,29 @@ def make_prediction(method, url, body, client_ip):
     try:
         parsed = parse_payload(body, url=url, ip=client_ip)
         flat = flatten_dict(parsed)
+
+        # Gabungkan jadi input untuk model
         input_text = " ".join(f"{k}={v}" for k, v in flat.items()).strip()
+
+        # ✅ Decode HTML escape (penting untuk deteksi XSS)
+        input_text = html.unescape(input_text)
+
+        # Cache key untuk Redis
         cache_key = f"prediction:{method}:{hashlib.sha256(input_text.encode()).hexdigest()}"
 
-        # Cek cache Redis
+        # Cek cache
         hasil_cache = redis_client.get(cache_key)
         if hasil_cache:
             return {"prediction": hasil_cache, "cache_hit": True}
 
-        # Jika tidak ada di cache, lakukan prediksi
+        # Prediksi
         label = predict_label(input_text)
+
+        # Simpan hasil ke Redis (cache)
         redis_client.setex(cache_key, 60, label)
+
         return {"prediction": label, "cache_hit": False}
 
-    # Jika terjadi kesalahan, log error dan kembalikan pesan kesalahan
     except Exception as e:
         log_data = {
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -129,4 +139,5 @@ def make_prediction(method, url, body, client_ip):
             import logging
             logging.basicConfig(level=logging.ERROR)
             logging.error(json.dumps(log_data))
+
         return {"error": "Kesalahan server internal"}
